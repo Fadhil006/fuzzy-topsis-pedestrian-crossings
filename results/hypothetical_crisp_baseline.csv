@@ -1,0 +1,5 @@
+rank,alternative_id,score,method
+1,HYP-A,0.5083333333333333,equal_weight_central_mean
+2,HYP-B,0.5,equal_weight_central_mean
+2,HYP-C,0.5,equal_weight_central_mean
+4,HYP-D,0.31666666666666665,equal_weight_central_mean

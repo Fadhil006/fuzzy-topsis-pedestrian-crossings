@@ -1,0 +1,4 @@
+step,input,rule,output,status
+1,raw_observation_template.csv,"No actual observations supplied; do not impute",cleaned_decision_matrix.csv,pending
+2,count_intervals_template.csv,"Collect repeated count windows and calculate hourly rates",raw_observation_template.csv,pending
+3,audit_assessments_template.csv,"Retain two assessor records and photo evidence",raw_observation_template.csv,pending

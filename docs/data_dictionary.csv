@@ -1,0 +1,13 @@
+field,definition,unit_or_allowed_values,collection_method,priority_direction,uncertainty,required_for
+alternative_id,Stable ID for one feasible action package,unique text,Assign in inventory,not a criterion,none,all runs
+crossing_id,Verified crossing location ID,unique text among eligible rows,GPS/photo/site inventory,not a criterion,none,all runs
+location_description,Approach and landmarks,text,field inventory,not a criterion,none,all runs
+intervention_type,Proposed action package targeting recorded deficiency,text,engineer/authority screening,not a criterion,none,all runs
+survey_date,Date of observations,YYYY-MM-DD,field log,not a criterion,repeat days,all runs
+evidence_photo_ids,Photo or evidence identifiers,nonempty text,field audit,not a criterion,none,all runs
+feasibility_status,Pre-ranking package eligibility,eligible or rejected,engineering screen with reason in notes,gate before ranking,none,all runs
+"ped_low, ped_mid, ped_high","Minimum, median and maximum repeated crossing count rates",people/hour,count_intervals_template.csv; convert each count by 60/minutes,higher raises priority,temporal variation,all runs
+"vehicle_low, vehicle_mid, vehicle_high","Minimum, median and maximum motor-vehicle count rates",vehicles/hour,same windows as pedestrian counts,higher raises priority,temporal variation,all runs
+"access_low, access_mid, access_high",Range of accessibility-deficiency ratings,0–3 ordinal,paired access audit and documented adjudication,higher raises priority,assessor disagreement,all runs
+"deficiency_low, deficiency_mid, deficiency_high",Range of safety-control or visibility-deficiency ratings,0–3 ordinal,paired photo audit,higher raises priority,assessor disagreement,all runs
+"destination_low, destination_mid, destination_high",Essential-destination access importance range,0–3 ordinal,verified destinations and predefined walk-network catchment,higher raises priority,assessor disagreement,extension run
