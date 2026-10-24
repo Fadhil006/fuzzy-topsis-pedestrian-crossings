@@ -1,0 +1,11 @@
+first,second,spearman,n
+ped,vehicle,1.0,4
+ped,access,-0.9486832980505139,4
+ped,deficiency,-0.8944271909999159,4
+ped,destination,-0.316227766016838,4
+vehicle,access,-0.9486832980505139,4
+vehicle,deficiency,-0.8944271909999159,4
+vehicle,destination,-0.316227766016838,4
+access,deficiency,0.9428090415820635,4
+access,destination,0.5000000000000001,4
+deficiency,destination,0.23570226039551584,4

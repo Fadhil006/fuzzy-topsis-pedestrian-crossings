@@ -43,6 +43,32 @@ class ModelChecks(unittest.TestCase):
             validate_weights([0, 0])
         self.assertAlmostEqual(float(vertex_distance([0, 0, 0], [1, 1, 1])), 1)
 
+    def test_large_finite_weights_remain_normalized(self):
+        np.testing.assert_allclose(validate_weights([1e308, 1e308]), [.5, .5])
+
+    def test_identifiers_are_trimmed_before_duplicate_check(self):
+        data = pd.read_csv(ROOT / "data/hypothetical_demo.csv")
+        data.loc[1, "alternative_id"] = " " + data.loc[0, "alternative_id"] + " "
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "duplicate.csv"
+            data.to_csv(path, index=False)
+            with self.assertRaisesRegex(ValueError, "unique"):
+                load_and_validate(path)
+
+    def test_uncertainty_scenarios_and_distance_trace(self):
+        _, eligible = load_and_validate(ROOT / "data/hypothetical_demo.csv")
+        with tempfile.TemporaryDirectory() as temp:
+            tables = evaluate(eligible, Path(temp), prefix="hypothetical_", draws=10)
+            self.assertIn("uncertainty_sensitivity", tables)
+            scenarios = tables["uncertainty_sensitivity"]
+            full = scenarios[scenarios.width_factor == 1].set_index("alternative_id")
+            base = tables["base_ranking"].set_index("alternative_id")
+            np.testing.assert_allclose(full.loc[base.index, "score"], base.score)
+            trace = tables["calculation_trace"]
+            totals = trace.groupby("alternative_id").distance_positive.sum()
+            np.testing.assert_allclose(totals.loc[base.index], base.distance_positive)
+            self.assertTrue(np.isfinite(scenarios.score).all())
+
     def test_complete_demo_pipeline_and_field_validation(self):
         data = ROOT / "data" / "hypothetical_demo.csv"
         _, eligible = load_and_validate(data)

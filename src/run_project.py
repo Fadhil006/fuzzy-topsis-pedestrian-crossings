@@ -1,11 +1,14 @@
 """Run field or explicitly hypothetical crossing-intervention evaluations."""
 from __future__ import annotations
 import argparse
+import hashlib
+import json
+import platform
 from html import escape
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from model import fuzzy_topsis, intervalize, normalize_priority, rank_dataframe
+from model import fuzzy_topsis, intervalize, normalize_priority, rank_dataframe, vertex_distance
 
 ROOT = Path(__file__).resolve().parents[1]
 CRITERIA = ("ped", "vehicle", "access", "deficiency", "destination")
@@ -27,6 +30,7 @@ def load_and_validate(path):
     for col in META:
         if df[col].isna().any() or df[col].astype(str).str.strip().eq("").any():
             raise ValueError(f"missing {col}; record evidence rather than imputing it")
+        df[col] = df[col].str.strip()
     if df.alternative_id.duplicated().any():
         raise ValueError("alternative_id must be unique")
     if not df.feasibility_status.isin(["eligible", "rejected"]).all():
@@ -152,6 +156,46 @@ def evaluate(frame, outdir, prefix="", draws=1000):
     runs, summary = sensitivity(ids, base, base_score, draws=draws)
     tables["weight_sensitivity_runs"] = runs
     tables["weight_sensitivity_summary"] = summary
+    # Contract widths around the same central observations; these are scenarios,
+    # not newly collected evidence. Refit bounds consistently in every scenario.
+    raw = triangles_from_frame(frame, CRITERIA[:4])
+    scenarios = []
+    for factor in (0.0, 0.5, 1.0):
+        adjusted = raw[:, :, 1:2] + factor * (raw - raw[:, :, 1:2])
+        normalized = intervalize(adjusted)
+        if not (np.ptp(normalized, axis=0).max(axis=1) > 1e-12).any():
+            score = np.full(len(ids), .5)
+            status = "non_discriminating_all_tied"
+        else:
+            score = fuzzy_topsis(normalized, np.ones(4))[0]
+            status = "computed"
+        table = ranks(ids, score, "uncertainty_width_scenario")
+        table["width_factor"] = factor
+        table["status"] = status
+        table["spearman_vs_base"] = spearman_scores(base_score, score)
+        scenarios.append(table)
+    tables["uncertainty_sensitivity"] = pd.concat(scenarios, ignore_index=True)
+    active = np.ptp(base, axis=0).max(axis=1) > 1e-12
+    weights = active.astype(float) / active.sum()
+    trace = []
+    for i, alternative in enumerate(ids):
+        for j, criterion in enumerate(CRITERIA[:4]):
+            weighted = base[i, j] * weights[j]
+            trace.append({"alternative_id": alternative, "criterion": criterion,
+                          "active": bool(active[j]), "weight": weights[j],
+                          **{f"normalized_{s}": base[i, j, q]
+                             for q, s in enumerate(("low", "mid", "high"))},
+                          "distance_positive": float(vertex_distance(weighted, np.repeat(weights[j], 3))),
+                          "distance_negative": float(vertex_distance(weighted, np.zeros(3)))})
+    tables["calculation_trace"] = pd.DataFrame(trace)
+    correlation_rows = []
+    all_central = triangles_from_frame(frame, CRITERIA)[:, :, 1]
+    for j, first in enumerate(CRITERIA):
+        for k2 in range(j + 1, len(CRITERIA)):
+            correlation_rows.append({"first": first, "second": CRITERIA[k2],
+                                     "spearman": spearman_scores(all_central[:, j], all_central[:, k2]),
+                                     "n": len(ids)})
+    tables["criterion_correlations"] = pd.DataFrame(correlation_rows)
     for name, table in tables.items():
         table.to_csv(outdir / f"{prefix}{name}.csv", index=False)
     label = "Hypothetical example" if prefix.startswith("hypothetical") else "Field observations"
@@ -177,10 +221,18 @@ def main():
     log = pd.DataFrame({"alternative_id": original.alternative_id,
                         "feasibility_status": original.feasibility_status,
                         "action": np.where(original.feasibility_status.eq("eligible"), "included", "excluded")})
+    log["notes"] = original["notes"].fillna("") if "notes" in original else ""
     log.to_csv(args.output_dir / f"{prefix}preprocessing_log.csv", index=False)
     eligible.to_csv(args.output_dir / f"{prefix}cleaned_decision_matrix.csv", index=False)
+    manifest = {"input_file": str(source), "input_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+                "evidence_status": "hypothetical" if args.demo else "user_supplied_unverified_field_data",
+                "python": platform.python_version(), "numpy": np.__version__, "pandas": pd.__version__,
+                "draws": args.draws, "seed": 20261009, "width_factors": [0, .5, 1],
+                "eligible_count": len(eligible), "excluded_count": len(original) - len(eligible),
+                "tie_policy": "equal minimum rank; ID display order breaks ties for top-k statistics"}
+    (args.output_dir / f"{prefix}run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print(tables["base_ranking"].to_string(index=False))
-    print(f"Wrote {len(tables) + 3} files to {args.output_dir}")
+    print(f"Wrote {len(tables) + 4} files to {args.output_dir}")
 
 if __name__ == "__main__":
     main()

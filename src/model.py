@@ -12,8 +12,9 @@ def validate_weights(weights):
     """Return nonnegative finite weights scaled to sum to one."""
     w = np.asarray(weights, dtype=float)
     if (w.ndim != 1 or w.size == 0 or not np.isfinite(w).all()
-            or (w < 0).any() or w.sum() <= 0):
+            or (w < 0).any() or w.max() <= 0):
         raise ValueError("weights must be finite, nonnegative, and have positive sum")
+    w = w / w.max()  # Avoid overflow when summing large but finite weights.
     return w / w.sum()
 
 def normalize_priority(values, directions):

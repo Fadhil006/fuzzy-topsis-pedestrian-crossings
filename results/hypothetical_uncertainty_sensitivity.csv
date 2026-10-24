@@ -1,0 +1,13 @@
+rank,alternative_id,score,method,width_factor,status,spearman_vs_base
+1,HYP-A,0.5083333333333333,uncertainty_width_scenario,0.0,computed,0.632455532033676
+2,HYP-B,0.5,uncertainty_width_scenario,0.0,computed,0.632455532033676
+2,HYP-C,0.5,uncertainty_width_scenario,0.0,computed,0.632455532033676
+4,HYP-D,0.31666666666666665,uncertainty_width_scenario,0.0,computed,0.632455532033676
+1,HYP-A,0.5624457480804801,uncertainty_width_scenario,0.5,computed,0.7999999999999999
+2,HYP-B,0.5470500951129527,uncertainty_width_scenario,0.5,computed,0.7999999999999999
+3,HYP-C,0.49739270518207646,uncertainty_width_scenario,0.5,computed,0.7999999999999999
+4,HYP-D,0.4809198914892808,uncertainty_width_scenario,0.5,computed,0.7999999999999999
+1,HYP-A,0.5956458335592981,uncertainty_width_scenario,1.0,computed,1.0
+2,HYP-B,0.5612185293246226,uncertainty_width_scenario,1.0,computed,1.0
+3,HYP-D,0.5597629955302444,uncertainty_width_scenario,1.0,computed,1.0
+4,HYP-C,0.5051056210353784,uncertainty_width_scenario,1.0,computed,1.0

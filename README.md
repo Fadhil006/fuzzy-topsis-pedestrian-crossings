@@ -58,3 +58,13 @@ The command rejects missing or invalid values, excludes rejected candidates, sav
 - docs/contribution_log.csv: student contribution log template.
 
 The final screening order cannot establish a budget-optimal portfolio. Obtain engineering review, cost estimates, and independent audit evidence before allocating resources. Do not interpret agreement with a crisp baseline as proof of correctness.
+
+## Completed evaluation exports
+
+Each run now writes 13 files: the clean matrix and preprocessing log; base, crisp and extension rankings; comparison table; weight runs and summary; an SVG chart; uncertainty scenarios; criterion correlations; calculation trace; and a JSON run manifest. The manifest records the input hash, dependency versions, seed and evidence status. Rejection reasons are preserved in the log. All results in this repository remain hypothetical.
+
+Uncertainty scenarios contract widths by factors 0, 0.5 and 1 around the same centers and refit normalization. They test assumptions, not alternative measured datasets. See docs/method_specification.md for non-discriminating scenarios and tie conventions. The calculation trace reconstructs each baseline distance, and criterion correlations flag possible overlap without proving redundancy.
+
+Use docs/field_readiness.md for the remaining empirical work, data/validation_review_template.csv for independent review, and docs/viva_guide.md to prepare a demonstration. Main report text occupies five pages; references and appendices follow separately. Author details, the personal contribution log and instructor-specific formatting still require student input.
+
+To rebuild the Word report after generating the demonstration, install the optional authoring dependency `python-docx` and run `python scripts/build_report.py`. It reads the ranking and comparison exports; the narrative experiment counts describe the documented default 1,000-draw run. Regenerate that default before building the report.

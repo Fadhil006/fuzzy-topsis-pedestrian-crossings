@@ -14,4 +14,7 @@ Baseline and sensitivity,Executable,"run_project.py; synthetic outputs only unti
 Independent validation,Pending,"Separate audit or expert review requires real site evidence"
 Practical interpretation and limitations,Documented,"Word report and README; no crash-reduction or budget-optimality claim"
 Contribution log,Template,"docs/contribution_log.csv; student must complete personal history"
-Four-to-five-page report excluding references and appendices,Partial,"Editable Word report prepared; separate instructor style/author data unavailable and empirical results pending"
+Four-to-five-page report excluding references and appendices,Complete length pending institutional details,"Five main-text pages plus separate references/appendices; instructor style and author details require student review; empirical evidence explicitly pending"
+Uncertainty sensitivity,Implemented,"Three width-contraction scenarios and documented scaling and tie conventions"
+Calculation audit trail,Implemented,"Criterion trace reconstructs baseline distances; input hash and runtime versions in run manifest"
+Field validation handoff,Prepared,"field_readiness.md and validation_review_template.csv; independent review has not occurred"

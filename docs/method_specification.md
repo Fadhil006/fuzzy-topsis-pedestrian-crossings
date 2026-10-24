@@ -8,6 +8,16 @@ Normalize criterion j with L_j=min_i l_ij and U_j=max_i u_ij. For q in {l,c,u}, 
 
 For active criteria, provisional weights are equal, w_j=1/m. Form v_ij=(w_j z_ijl, w_j z_ijc, w_j z_iju). The project-specific attainable ideals are A_j+=(w_j,w_j,w_j) and A_j-=(0,0,0). The vertex metric is d(a,b)=sqrt([(a_l-b_l)^2+(a_c-b_c)^2+(a_u-b_u)^2]/3). Total distances **sum over criteria**: D_i+=sum_j d(v_ij,A_j+), D_i-=sum_j d(v_ij,A_j-). Closeness C_i=D_i-/(D_i++D_i-), sorted descending. Exact ties are ordered by alternative ID for stable output.
 
-The score depends on the included alternatives because min/max bounds do. It is not a probability. A zero denominator or non-discriminating matrix is an error, not a result. Check data plausibility, scale assumptions, and potential double counting before using any ranking.
+The score depends on the included alternatives because min/max bounds do. It is not a probability. A zero denominator or non-discriminating matrix is an error in the main ranking. Check data plausibility, scale assumptions, and potential double counting before using any ranking.
 
 The simple-priority baseline uses central observations only. For each nonconstant benefit criterion its crisp value is (x_ij−min_i x_ij)/(max_i x_ij−min_i x_ij), then the active normalized values are averaged with equal weights. A constant central criterion is omitted. Spearman correlation uses average ranks for ties and is left undefined when an entire ranking has a single tied value. Display order for exact score ties is alternative ID.
+
+## Evaluation and trace exports
+
+Uncertainty scenarios use x(alpha) = c + alpha * (x-c), with alpha in {0, 0.5, 1}, and refit observed bounds in each scenario. These contractions are hypothetical stress tests, not evidence-derived replacement measurements. They change both width and scaling. The alpha=0 case equals the crisp equal-weight baseline when central criteria discriminate: vertex distances reduce to absolute distances and the total denominator is one.
+
+If a contraction makes every criterion identical across candidates, only that scenario uses the display convention score=0.5 and rank=1 for all candidates, with status `non_discriminating_all_tied`. This is not a computed TOPSIS result; its rank correlation is undefined. The main model still rejects non-discriminating data. A wholly tied crisp baseline similarly uses zero scores as an arbitrary display convention.
+
+The baseline calculation trace gives normalized triples, active weights and both criterion distances; summing by alternative reconstructs ranking distances. Criterion correlations use average ranks of central observations and are descriptive overlap screens, not significance tests. With only four synthetic candidates they do not support empirical conclusions.
+
+Top-choice and top-k statistics use the deterministic ID order at exact score ties; they are selection summaries, not tie-inclusive sets. Interpret tied boundaries explicitly. The run manifest records input hash, software versions, seed, settings and evidence status. A `field_` filename means user-supplied input mode, not authenticated evidence.

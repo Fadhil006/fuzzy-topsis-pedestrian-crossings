@@ -1,11 +1,13 @@
-Verification date: 2026-10-09
-Python environment: bundled Python 3.12 runtime with NumPy and pandas
-Command: python -m unittest discover -s tests -v
-Result: 5 test cases passed, 0 failed.
-Independent arithmetic: the two-criterion A example has D+ = 0.4536691234015604, D- = 0.6040969250144994, C = 0.5711063669694236; tests assert these values.
-Command: python src/run_project.py --demo --draws 1000
-Result: completed; 4 synthetic alternatives, 8 CSV exports and 1 SVG chart. All output filenames and input records identify the demonstration as hypothetical.
-CSV check: all eight hypothetical CSV files contain rows and parse successfully.
-SVG check: hypothetical_weight_sensitivity.svg parses as XML.
-Document check: report rendered to 4 pages and all pages visually inspected.
-No empirical site ranking or independent validation was possible because no field observations were supplied.
+test_benefit_and_cost_orientation (test_model.ModelChecks.test_benefit_and_cost_orientation) ... ok
+test_complete_demo_pipeline_and_field_validation (test_model.ModelChecks.test_complete_demo_pipeline_and_field_validation) ... ok
+test_constant_column_cannot_change_ranking_or_scores (test_model.ModelChecks.test_constant_column_cannot_change_ranking_or_scores) ... ok
+test_identifiers_are_trimmed_before_duplicate_check (test_model.ModelChecks.test_identifiers_are_trimmed_before_duplicate_check) ... ok
+test_independently_calculated_two_criterion_case (test_model.ModelChecks.test_independently_calculated_two_criterion_case) ... ok
+test_invalid_and_non_discriminating_input (test_model.ModelChecks.test_invalid_and_non_discriminating_input) ... ok
+test_large_finite_weights_remain_normalized (test_model.ModelChecks.test_large_finite_weights_remain_normalized) ... ok
+test_uncertainty_scenarios_and_distance_trace (test_model.ModelChecks.test_uncertainty_scenarios_and_distance_trace) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.132s
+
+OK
