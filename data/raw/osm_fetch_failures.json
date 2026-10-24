@@ -1,0 +1,23 @@
+{
+  "recorded_at_utc": "2026-10-24T12:47:00Z",
+  "attempted_source_urls": [
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.private.coffee/api/interpreter"
+  ],
+  "failures": [
+    {
+      "url": "https://overpass-api.de/api/interpreter",
+      "error": "Network unreachable ([Errno 101]); refresh log output."
+    },
+    {
+      "url": "https://overpass.kumi.systems/api/interpreter",
+      "error": "Read operation timed out; refresh log output."
+    },
+    {
+      "url": "https://overpass.private.coffee/api/interpreter",
+      "error": "Fetch attempt was terminated when the enclosing command reached its 240-second timeout; no response was captured."
+    }
+  ],
+  "note": "This is a refresh failure record, not an Overpass response. The existing osm_context.json and successful osm_metadata.json provenance were preserved."
+}

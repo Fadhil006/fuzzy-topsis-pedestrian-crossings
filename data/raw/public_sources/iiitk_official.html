@@ -1,0 +1,791 @@
+  <!DOCTYPE html>
+    <html ng-app="app" lang="en">
+      <head>
+        <meta name="description" content="IIIT Kottayam">
+        <meta name="description" content="IIIT Kottayam Website">
+        <script>
+          window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+          ga('create', 'UA-123597315-4', 'auto'); /*4 for production*/
+        </script>
+        <!--<script async src='https://www.google-analytics.com/analytics.js'></script>-->
+        <script async src='scripts/vendor/analytics.js'></script>
+        <meta charset="utf-8">
+        <title ng-bind="title">IIIT Kottayam</title>
+        <link rel="shortcut icon" type="image/png" href="data/images/main/logo-mini.png"/>
+        <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Hind" rel="stylesheet">-->
+        <link href="fonts/roboto/roboto-hindi.css" rel="stylesheet">
+        <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+        <link href="fonts/material-icons.css" rel="stylesheet">
+        <link href="styles/ngProgress.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
+        <script type="text/javascript" src="scripts/app.js?ver=010052019"></script>
+        <script type="text/javascript" src="scripts/vendor/angular-animate.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/angular-route.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/ocLazyLoad.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/hammer.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/ngprogress.min.js"></script>
+        <style>
+          ::-webkit-scrollbar {width: 10px;}
+          ::-webkit-scrollbar-track {background-color: #f1f1f1;border:none;}
+          ::-webkit-scrollbar-thumb {background-color: #888;}
+          ::-webkit-scrollbar-thumb:hover {background-color: #555;}
+          .bg-dull-white{background:#f7f7f7 !important;}
+          .border-top{border-top-width: 1px !important;}
+          .border-bottom{border-bottom-width: 1px !important;}
+          .border-all{border-width: 1px !important;}
+          .border{border-style: solid;border-width: 0;}
+          .border-dull{border-color:rgba(160, 160, 160, 0.2);}
+          .link-color{color:rgb(8, 55, 97) !important;}
+          .border-radius-top{border-radius:4px 4px 0 0;}
+          .border-radius-bottom{border-radius:0 0 4px 4px;}
+          .border-radius{border-radius:4px !important}
+          .flex{display:flex;}
+          .flex-wrap{flex-wrap:wrap;}
+          .flex-center{align-items:center;}
+          .flex-end{align-items:flex-end;}
+          .flex-center-h{justify-content: center;}
+          .flex-justify{justify-content:space-between;}
+          .flex-row{flex-direction:row;}
+          .flex-row-reverse{flex-direction:row-reverse}
+          .flex-column{flex-direction:column;}
+          .bg-overlay{background-color:rgba(0,0,0,0.14) !important;}
+          .custom-card-depth{box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2) !important;}
+          .institute-blue-bg{background:rgb(66,133,244) !important;}
+          .institute-blue{color:rgb(66,133,244);}
+          .institute-text-green{color:rgb(56, 178, 71);}
+          .institute-green-bg{background:rgb(56, 178, 71);}
+          body{font-family: Trebuchet MS, Helvetica, sans-serif;font-size:16px;background-color:#f7f7f7;}
+          h1,h2,h3,h4,h5,h6{color:rgb(66,133,244);font-family:Trebuchet MS, Helvetica, sans-serif;}
+          #topControl{width:100%;background-color: rgb(66,133,244);box-shadow: 0 0 4px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.1);}
+          #topControl h4{margin:4px 0 !important;}
+          #topControl input[type=text]:not(.browser-default){box-sizing:border-box;padding:4px 10px;border-radius:4px;color:white;font-size:20px;border:none; background:rgba(0,0,0,0.1);margin:0 10px 10px 0}
+          .tabs-scroll{
+          background:transparent !important;
+          color:rgba(0,0,0,0.3) !important;
+          font-weight:bold !important;
+          display:none;
+          height: auto !important;width:auto !important; padding:0 !important}
+          @media screen and (min-width:995px){
+            #topControl h4{text-align:left;}
+            #topControl input[type=text]:not(.browser-default){margin:0;}
+            .autocomplete-content.dropdown-content{width:39.1%;}
+            .autocomplete-content{margin-top:0px !important;}
+            .tabs .indicator{background-color:transparent;}
+          }
+          .autocomplete-content{margin-top:-10px !important}
+          .para{font-family:Trebuchet MS, Helvetica, sans-serif;}
+          .justify{text-align: justify !important;}
+          .container{width:80% !important;}
+          .tabs .indicator{height:3px !important;}
+          blockquote.error{border-left:none; font-size:20px;color: #cc0000}
+          html,body{overflow-x:hidden}
+          .autocomplete-content{position:absolute !important; width:80%;box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);}
+        </style>
+        <link type="text/css" rel="stylesheet" href="styles/materialize.min.css"  media="screen,projection"/>
+        <link rel="stylesheet" href="styles/font-awesome.min.css">
+        <style>
+          nav i.right{margin-left:0px; margin-right:1px !important}
+          nav ul a{margin-right:8px; color:#000;font-size:16px;letter-spacing: 0.5px; padding:0 4px !important; font-weight:normal !important;color:rgb(56, 178, 71);}
+          .dropdown-content li>a{font-size:16px; padding:11px 8px !important;color:rgb(56, 178, 71);box-shadow: 1px 3px #c2c9c7;}
+          nav{z-index:900;line-height:60px;transition-property:all;transition-timing-function:ease-in-out;box-shadow: none;color:rgb(56, 178, 71);}
+          nav ul a{transition:all .3s ease-in;font-weight:bold;border-bottom: solid 3px transparent;}
+          nav ul a:hover{border-bottom:solid 3px rgb(56, 178, 71);color:rgb(56, 178, 71);background:none;}
+          .activeMenuTab{border-bottom:solid 3px rgb(56, 178, 71);color:rgb(56, 178, 71);}
+          .activeSideMenuTab{color:rgb(56, 178, 71) !important;font-weight:bold !important;}
+          #slide-out li a{border-bottom:solid 1px #f1f1f1;font-weight:bold;}
+          .side-nav .collapsible-header:hover,.side-nav .collapsible-header .active,.side-nav li.active {background:#f1f1f1;}
+          .side-nav li:hover,.side-nav li a:hover{background:none}
+        </style>
+        <style>
+          .top-container {padding:2px 10px 0 10px;}
+          .header {background: #555;color: #f1f1f1;}
+          .sticky {position: fixed;top: 0;width: 100%;}
+          .sticky + .content {padding-top: 64px;}
+          .custom-brand-name{color:transparent;background: url(data/images/main/logo-bg-clipped.png) repeat;background-size: 200%;background-clip: text;-webkit-background-clip: text;animation-name:masked-animation;animation-duration:40s;animation-iteration-count: infinite;animation-timing-function: linear;font-family: 'Hind', sans-serif;}
+          .big-head{font-size:45px;}
+          /*If we want the our font size in a range where 14px is the minimum size at the smallest viewport width of 300px and where 26px is the maximum size at the largest viewport width of 1600px, then our equation looks.*/
+          .small-head{font-size: calc(18px + (38 - 18) * ((100vw - 300px) / (1920 - 300)));}
+          .custom-responsive-image{height:50px;position:absolute;top:20px;left:15px;}
+          @media only screen and (min-width: 565px) {.custom-responsive-image{height:80px;top:10px;left:10px}}
+          @media only screen and (min-width: 650px) {.custom-responsive-image{height:100px;top:5px;left:10px}}
+          @media only screen and (min-width: 900px) {.custom-responsive-image{height:120px;top:5px; left:10px}}
+          @media only screen and (min-width: 1920px) {.custom-responsive-image{height:150px;top:5px; left:10px}}
+          .custom-logo-mobile{height:54px !important;top:0px !important;}
+          @media only screen and (max-width:565px){#mobile-head .custom-spacer{display:none} #mobile-head{align-items:center!important; justify-content: center !important;}}
+          @-webkit-keyframes masked-animation {0% {background-position: bottom left;}	100% {background-position: top right;}}
+          @keyframes masked-animation {0% {background-position: bottom left;}	100% {background-position: top right;}}
+        </style>
+        <style>
+          .text-blink{
+            animation-name: blink;
+            animation-duration: 2s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation-iteration-count: infinite;
+          }
+          @keyframes blink{
+            from{opacity:0}
+            to{opacity:1}
+          }
+        </style>
+        <style>
+          .custom-view{background:transparent;transition-property:all;transition-timing-function:ease-in-out;}
+          .page-footer{background-color: #bfbaba;}
+          .fa{font-size:25px;margin-right:5px;margin-left:5px;background-color:#fff;color:#182c39;border-radius:51%;padding:10px;height:50px;width:50px;text-align:center;line-height:31px;text-decoration:none;transition:all .5s}
+          .fa-facebook:focus,.fa-facebook:hover{color:#2b55ff}
+          .fa-instagram:focus,.fa-instagram:hover{color:#8a3ab9}
+          .fa-twitter:focus,.fa-twitter:hover{color:#00aced}
+          .fa-linkedin:focus,.fa-linkedin:hover{color:#00aced}
+          .fa-youtube:focus,.fa-youtube:hover{color:#b31217}
+          .fa-bank:focus,.fa-bank:hover,.fa-envelope:focus,.fa-envelope:hover,.fa-phone:focus,.fa-phone:hover{color:#4285f4}
+        </style>
+        <style>
+        /* Modal Background */
+  /* .modal {
+      display: none; /* Hidden by default */
+      /*position: auto;*/
+      /* position: center; */
+      /* margin: 10% auto; */
+      /* z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 40%; */
+      /* height:90%; */
+      /* background-color: rgba(0, 0, 0, 0);
+      overflow: hidden;
+
+  }
+
+  /* Modal Content */
+  /* .modal-content {
+      background-color: white; */
+      /*margin: 1% auto;*/
+      /* padding: 10px;
+      border-radius: 0px;
+      width: 100%;
+      height:100%;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+
+
+  } */
+
+
+  /* Close Button */
+
+
+  .modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100vw;
+    height:100vh;
+
+    /* Light transparent background */
+    background: rgba(0,0,0,.30);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:15px;
+    box-sizing:border-box;
+    overflow:auto;
+  }
+  .modal-content{
+      position:relative;
+      background:#fff;
+      width:700px;
+      max-width:90vw;
+      padding:15px;
+      border-radius:10px;
+      text-align:center;
+      box-shadow:0 8px 30px rgba(0,0,0,.25);
+  }
+
+  .modal-content img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:8px;
+  }
+  /* Popup Box */
+  .modal-content{
+      position:relative;
+      background:#fff;
+      width:850px;
+      max-width:90vw;
+      border-radius:10px;
+      padding:15px;
+      text-align:center;
+
+      box-shadow:0 8px 30px rgba(0,0,0,.25);
+  }
+
+  /* Heading */
+  .modal-content h5{
+      margin:0 0 12px;
+      font-size:20px;
+      line-height:1.4;
+  }
+
+  .modal-content h5 a{
+      color:#0086e6;
+      text-decoration:none;
+  }
+
+  .modal-content h5 a:hover{
+      text-decoration:underline;
+  }
+
+  /* Image */
+  .modal-content img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:8px;
+  }
+
+  /* Close Button */
+  .close-btn{
+      position:absolute;
+      top:10px;
+      right:15px;
+      font-size:34px;
+      font-weight:bold;
+      color:#777;
+      cursor:pointer;
+      line-height:1;
+  }
+
+  .close-btn:hover{
+      color:#000;
+  }
+
+  /* Mobile */
+  @media (max-width:768px){
+
+      .modal-content{
+          width:95%;
+          max-width:360px;
+          padding:12px;
+      }
+
+      .modal-content h5{
+          font-size:18px;
+      }
+
+      .modal-content img{
+          max-height:60vh;
+          object-fit:contain;
+      }
+
+      .close-btn{
+          font-size:28px;
+          top:8px;
+          right:10px;
+      }
+  }
+
+        </style>
+      </head>
+      <body>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+      var modal = document.getElementById("autoModal");
+      var closeBtn = document.querySelector(".close-btn");
+
+
+      // Show modal after 2 seconds
+      setTimeout(function() {
+          modal.style.display = "flex";
+      }, 250);
+
+      // Close modal when the close button is clicked
+      closeBtn.addEventListener("click", function() {
+          modal.style.display = "none";
+      });
+
+      // Close modal when clicking outside of it
+      window.addEventListener("click", function(event) {
+          if (event.target === modal) {
+              modal.style.display = "none";
+          }
+      });
+  });
+
+        </script>
+
+
+        <div id="autoModal" class="modal">
+      <div class="modal-content" data-backdrop="static">
+          <span class="close-btn">&times;</span>
+          <!-- <h5><a href="https://www.youtube.com/watch?v=jLQ5ZffROXk&list=LL&index=6">Click Here To Experience Our Beautiful Campus</a></h5> -->
+          <!-- <h5><a href="https://www.linkedin.com/posts/iiit-kottayam_iiitkottayam-8thconvocation-convocation2026-activity-7504152994867908609-c5JW?utm_source=share&utm_medium=member_android&rcm=ACoAAC9KlGYBQarR1bT4maOdS2Zh391xt8Os60s">For More Details Click Here</a></h5> -->
+
+          <!--<h4>YouTube Live Streaming</h4>-->
+          <!--<h5>Ph.D Programme - August 2025 </h5>-->
+          <!--<h5> e-M.Tech Jan 2026-Admissions Open</h5><br>-->
+          <!--<h5> INTERNATIONAL CONFERENCE </h5><br>-->
+          <!--International Conference on Computation and Humanities:Overlapping Research in Digital Spaces<br>(CHORDS 2025)
+          <a href="data/pdf/CHORDS 25 Flyer.pdf" target="_blank">CLICK HERE</a><img width="30" height="30" src="data/images/info/new1.gif"><br><br>-->
+          <!--Fourth International Conference on Speech & Language Technology for Low-resource Languages (SPELLL 2025)
+          <a href="https://spelll.org/" target="_blank">CLICK HERE </a><img width="30" height="30" src="data/images/info/new1.gif"><br><br>-->
+          <!--The 7th International Conference on Innovative Trends In Information Technology <br>(ICITIIT’26)
+          <a href="https://icitiit26.iiitkottayam.ac.in/" target="_blank">CLICK HERE</a><img width="30" height="30" src="data/images/info/new1.gif">-->
+          <!-- <a href="https://www.youtube.com/watch?v=jLQ5ZffROXk&list=LL&index=6"><img src="data/images/home/virtual_tour1.png"> -->
+          <!-- <a href="https://www.linkedin.com/posts/iiit-kottayam_iiitkottayam-8thconvocation-convocation2026-activity-7504152994867908609-c5JW?utm_source=share&utm_medium=member_android&rcm=ACoAAC9KlGYBQarR1bT4maOdS2Zh391xt8Os60s" target="_blank"><img src="data/images/home/Upcoming_convocation_2026_6.png"> -->
+          <!-- <a href="https://www.youtube.com/live/4MAfFR96dGs"><img src="data/images/home/Convocation_banner_1.png"> -->
+          <a href="https://emtech.iiitkottayam.ac.in/"><img src="data/images/home/e_mtech_Admission.png">
+          <!-- <a href="https://www.linkedin.com/posts/iiit-kottayam_iiitkottayam-8thconvocation-convocation2026-activity-7504152994867908609-c5JW?utm_source=share&utm_medium=member_android&rcm=ACoAAC9KlGYBQarR1bT4maOdS2Zh391xt8Os60s" ><img src="data/images/home/Upcoming_convocation_2026_8.png"> -->
+          <!--<img src="data/images/home/convo_7.jpg" style="width:90%;height:45%;">-->
+          <!--<a href="#!convocation_2025" target="_blank"><img src="data/images/convocation/convo-7.jpeg" style="width:100%;height:90%;">Click Here for more details...</a>-->
+          <!--<a href="https://phd.iiitkottayam.ac.in/" target="_blank"><img src="data/images/home/phdaug25.jpg" style="width:100%;height:90%;"></a>-->
+          <!--<a href="http://emtech.iiitkottayam.ac.in/" target="_blank"><img src="data/images/home/flyer-emtechjan2026.jpg" style="width:100%;height:90%;"></a>-->
+          <!--<p>This modal opens automatically when the page loads.</p>-->
+          <!--<p><font color="red">User credentials and other relevant information regarding the Online Admission Test for e-MTech (scheduled on 13th July 2025) will be sent to the registered email IDs by Friday, 11th July 2025.</font></p>-->
+      </div>
+  </div>
+
+  <!--        <script type="text/javascript" src="scripts/vendor/jquery-3.2.1.min.js"></-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+          <script type="text/javascript" src="scripts/vendor/materialize.min.js"></script>
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!admin">Administration</a></li>
+  			    <li><a href="#!dept_head">Head of Department</a></li>
+            <li><a href="#!faculty">Faculty</a></li>
+            <li><a href="#!technical">Technical</a></li>
+  	        <li><a href="#!professional">Professional Support Staff</a></li>
+            <li><a href="#!researchScholar">Research Scholars</a></li>
+            <li class="divider"></li>
+            <li><a href="#!students/batch15">B.Tech Students</a></li>
+   	        <li><a href="#!executivemtech/mtech_batch25">M.Tech Students</a></li>
+            <li><a href="#!imtechStudents/imtech_batch26">iM.Tech Students</a></li>
+            <li><a href="#!emtechStudents/emtech_batch26">e-M.Tech Students</a></li>
+  		      <!--<li><a href="#!gender">Gender Index</a></li>-->
+          </ul>
+          <ul id="dropdown2" class="dropdown-content">
+  	        <li><a href="#!institute">Governance</a></li>
+            <li><a href="#!admission">Admission</a></li>
+            <li><a href="#!academics">Academics&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+  			    <li><a href="#!scholarship">Scholarship</a></li>
+            <li><a href="#!loan">Educational Loans</a></li>
+          </ul>
+          <ul id="dropdown8" class="dropdown-content">
+            <li><a href="#!btech_cs_home">B.Tech(CSE)</a></li>
+            <li><a href="#!btech_ec_home">B.Tech(ECE)</a></li>
+            <li><a href="#!btech_cyber_home">B.Tech(Cyber Security)</a></li>
+            <li><a href="#!btech_ai_home">B.Tech(AI & Data Science)</a></li>
+            <li><a href="#!btech_MnC_home">B.Tech(Mathematics and Computing)</a></li>
+            <li><a href="https://emtech.iiitkottayam.ac.in/">e-M.Tech</a></li>
+            <li><a href="https://mtech.iiitkottayam.ac.in">M.Tech<sub style="font-size:10px;">(After B.Tech/MCA/M.Sc)</sub></a></li>
+            <li><a href="https://imtech.iiitkottayam.ac.in">iM.Tech<sub style="font-size:10px;">(After 12<sup>th</sup> Std/Diploma)</sub></a></li>
+            <li><a href="data/images/home/Dual-Degree.JPEG">Dual-Degree</a></li>
+            <li><a href="https://phd.iiitkottayam.ac.in/">PhD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+          </ul>
+          <ul id="dropdown9" class="dropdown-content">
+            <li><a href="#!nirf_home">2025</a></li>
+            <li><a href="#!nirf_home">2026</a></li>
+          </ul>
+          <ul id="dropdown3" class="dropdown-content">
+            <li><a href="#!campus/hostel">Hostel</a></li>
+  	        <li><a href="#!campus/security">Security</a></li>
+            <li><a href="#!campus/internet">IIIT Kottayam Campus Network</a></li>
+  	        <li><a href="#!campus/gymnasium">Gymnasium</a></li>
+            <li><a href="#!campus/sports">Sports</a></li>
+  	        <li><a href="https://opac.iiitkottayam.ac.in">Library</a></li>
+  	        <li><a href="#!campus/atm">Bank/ATM</a></li>
+  	        <li><a href="#!campus/medical">Medical Centre</a></li>
+            <li><a href="#!studMess">Student Co-operative Mess</a></li>
+          </ul>
+          <ul id="dropdown4" class="dropdown-content">
+  		      <li><a href="#!innovations">Innovation Cell</a></li>
+            <li><a href="#!fdp_webinar">IIIT Kottayam FDP & Webinars</a></li>
+  			    <li><a href="#!events">Gallery</a></li>
+            <li><a href="#!culturalClub">Cultural Club</a></li>
+            <li><a href="#!codingClub">Technical Club</a></li>
+            <li><a href="#!sportsClub">Sports Club</a></li>
+            <li><a href="#!socialClub">Trendles Club</a></li>
+            <li><a href="#!cybersecurityClub">Cyber Security Club</a></li>
+            <li><a href="#!mindquest">Mind Quest</a></li>
+            <li><a href="#!magazine">Magazine</a></li>
+            <li><a href="#!ieee">IEEE Student Branch</a></li>
+            <li><a href="#!acm">ACM Student Chapter</a></li>
+          </ul>
+  	      <ul id="dropdown5" class="dropdown-content">
+  	        <li><a href="#!idy2020">International Day of Yoga-2020</a></li>
+            <li><a href="#!idy2019">International Day of Yoga-2019</a></li>
+            <li class="divider"></li>
+  	        <li><a href="#!idy">International Day of Yoga-2018</a></li>
+          </ul>
+        	<ul id="dropdown6" class="dropdown-content">
+            <li><a href="#!researchPublication">Faculty Research Papers</a></li>
+            <li><a href="#!researchGroups">Research Groups</a></li>
+            <li><a href="#!studentPublication">UG Student Research Papers</a></li>
+            <li><a href="#!researchProject">Research Project Fundings</a></li>
+            <li><a href="#!awards">Awards & Recognition</a></li>
+            <li><a href="#!collaboration">International Collaborations</a></li>
+            <li><a href="#!researchActivities">Research Activities</a></li>
+            <li><a href="http://icentre.iiitkottayam.ac.in/">Innovations & Startups</a></li>
+            <li class="divider"></li>
+          </ul>
+          <ul id="slide-out" class="side-nav" style="z-index:2000;">
+            <li><a href="#!home" ng-class="{activeSideMenuTab: activeTab=='home'}">Home</a></li>
+            <li>
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header" style="padding:0 32px">NIRF</a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='nirf_home'}" href="#!nirf_home" style="font-weight:normal;;padding:0 50px">2025</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#!whyIIITK" ng-class="{activeSideMenuTab: activeTab=='whyIIIT'}">Why IIIT Kottayam</a></li>
+            <li>
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header" style="padding:0 32px">Institute</a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='institute'}" href="#!institute" style="font-weight:normal;;padding:0 50px">Institute</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='admission'}" href="#!admission">Admission</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='academics'}" href="#!academics">Academics</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='scholarship'}" href="#!scholarship">Scholarship</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='loan'}" href="#!loan">Loans</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header" style="padding:0 32px">Courses</a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='btech_cs_home'}" href="#!btech_cs_home" style="font-weight:normal;;padding:0 50px">B.Tech(CSE)</a></li>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='btech_ec_home'}" href="#!btech_ec_home" style="font-weight:normal;;padding:0 50px">B.Tech(ECE)</a></li>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='btech_cyber_home'}" href="#!btech_cyber_home" style="font-weight:normal;;padding:0 50px">B.Tech(Cyber Security)</a></li>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='btech_ai_home'}" href="#!btech_ai_home" style="font-weight:normal;;padding:0 50px">B.Tech(AI & DATA SCIENCE)</a></li>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='btech_MnC_home'}" href="#!btech_MnC_home" style="font-weight:normal;;padding:0 50px">B.Tech(MnC)</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='https://emtech.iiitkottayam.ac.in/'}" href="https://emtech.iiitkottayam.ac.in/">e-M.Tech</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='http://mtech.iiitkottayam.ac.in'}" href="http://mtech.iiitkottayam.ac.in">M.Tech</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='https://imtech.iiitkottayam.ac.in/'}" href="https://imtech.iiitkottayam.ac.in/">iM.Tech</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='data/images/home/Dual-Degree.JPEG'}" href="data/images/home/Dual-Degree.JPEG">Dual-Degree</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='https://phd.iiitkottayam.ac.in/'}" href="https://phd.iiitkottayam.ac.in/">PhD</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header" style="padding:0 32px">People</a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='admin'}" href="#!admin" style="font-weight:normal;;padding:0 50px">Administration</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='faculty'}" href="#!faculty">Faculty</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='dept_head'}" href="#!dept_head">Head of Department</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='researchScholar'}" href="#!researchScholar">Research Scholars</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='technical'}" href="#!technical">Technical</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='professional'}" href="#!professional">Professional Support Staff</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='students'}" href="#!students/batch15">B.Tech Students</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='executivemtech'}" href="#!executivemtech">Executive Mtech Students</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='imtechStudents'}" href="#!imtechStudents">Integrated Mtech Students</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='emtechStudents'}" href="#!emtechStudents">e-MTech Students</a></li>
+                      <!--<li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='gender'}" href="#!gender">Gender Index</a></li>-->
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header" style="padding:0 32px">Facilities</a>
+                  <div class="collapsible-body">
+                    <ul>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='campus/hostel'}" href="#!campus/hostel">Hostel</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='campus/security'}" href="#!campus/security">Security</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='campus/internet'}" href="#!campus/internet">Internet</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='campus/gymnasium'}" href="#!campus/gymnasium">Gymnasium</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='campus/sports'}" href="#!campus/sports">Sports</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='campus/library'}" href="https://opac.iiitkottayam.ac.in">Library</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='campus/atm'}" href="#!campus/atm">Bank/ATM</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='campus/medical'}" href="#!campus/medical">Medical</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='campus/studMess'}" href="#!studMess"">Student Co-operative Mess</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+  	        <li>
+              <a ng-class="{activeSideMenuTab: activeTab=='placement'}" href="#!placement">Placement</a></li>
+              <li>
+                <ul class="collapsible collapsible-accordion">
+                  <li>
+                    <a class="collapsible-header" style="padding:0 32px">IIC & Clubs</a>
+                    <div class="collapsible-body">
+                      <ul>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='innovations'}" href="#!innovations">Innovation Cell</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='webinar'}" href="#!webinar">IIIT Kottayam-Webinar Series-2020</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='events'}" href="#!events">Gallery</a></li>
+                        <li><a ng-class="{activeSideMenuTab: activeTab=='codingClub'}" href="#!codingClub" style="font-weight:normal;padding:0 50px">Technical Club</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='culturalClub'}" href="#!culturalClub">Cultural Club</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='sportsClub'}" href="#!sportsClub">Sports Club</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='socialClub'}" href="#!socialClub">Social Club</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='cybersecurityClub'}" href="#!cybersecurityClub">Cyber Security Club</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='mindquest'}" href="#!mindquest">Mind Quest</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='magazine'}" href="#!magazine">Magazine</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='ieee'}" href="#!ieee">IEEE</a></li>
+                        <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='acm'}" href="#!acm">ACM</a></li>
+  4                   </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </li>
+          	<li>
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header" style="padding:0 32px">Research</a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='researchPublication'}" href="#!researchPublication" style="font-weight:normal;padding:0 50px">Faculty Research Papers</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='researchProject'}" href="#!researchGroups">Research Groups</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='studentPublication'}" href="#!studentPublication">UG Student Research Papers</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='researchProject'}" href="#!researchProject">Research Project Fundings</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='awards'}" href="#!awards">Awards & Recognition</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='collaboration'}" href="#!collaboration">International Collaborations</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='researchActivities'}" href="#!researchActivities">Research Activities</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='innovations&startups'}" href="http://icentre.iiitkottayam.ac.in/">Innovations & Startups</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li><a ng-class="{activeSideMenuTab: activeTab=='career'}" href="data/pdf/recruiterscorner.pdf">Recruiters Corner</a></li>
+            <li>
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header" style="padding:0 32px">Tenders</a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><a ng-class="{activeSideMenuTab: activeTab=='tenders/livetenders'}" href="#!tenders/liveTenders" style="font-weight:normal;padding:0 50px">Live Tenders</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='tenders/closedtenders'}" href="#!tenders/closedTenders">Closed Tenders</a></li>
+                      <li><a style="font-weight:normal;padding:0 50px" ng-class="{activeSideMenuTab: activeTab=='tenders/cancelledtenders'}" href="#!tenders/cancelledTenders">Cancelled Tenders</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li><a ng-class="{activeSideMenuTab: activeTab=='contact'}" href="#!contact">Contact</a></li>
+  			    <li><a ng-class="{activeSideMenuTab: activeTab=='media'}" href="#!media">@Media</a></li>
+          </ul>
+          <div class="top-container white hide-on-med-and-down">
+            <div class="flex flex-justify flex-end">
+              <a href="#!home"><img src="data/images/main/logo.jpg" alt="IIIT Kottayam Logo" style="height:80px;position:absolute; top:10px;margin-left: 200px"></a>
+              <div class="custom-spacer"></div>
+              <div class="flex flex-column flex-end">
+                <br>
+                <span class="custom-brand-name big-head notranslate" style="margin:0;font-size:16px"><a href="#!home" style="color:transparent; margin-right: 200px">ഇന്ത്യൻ ഇൻസ്റ്റിറ്റ്യൂട്ട് ഓഫ് ഇൻഫർമേഷൻ ടെക്നോളജി കോട്ടയം</a></span>
+
+                <span class="custom-brand-name big-head notranslate" style="margin:0;font-family: 'Hind', sans-serif;font-size:28px"><a href="#!home" style="color:transparent; margin-right: 200px">भारतीय सूचना प्रौद्योगिकी संस्थान कोट्टायम</a></span>
+
+                <span class="custom-brand-name big-head notranslate" style="margin:0;font-size:21.5px"><a href="#!home" style="color:transparent; margin-right: 200px;">Indian Institute of Information Technology Kottayam</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="top-container white show-on-medium-and-down" style="display:none">
+            <div class="flex flex-justify flex-end" id="mobile-head">
+              <div class="custom-spacer"></div>
+              <span class="custom-brand-name small-head truncate notranslate" style="margin:0;"><a href="#!home" style="color:transparent">भारतीय सूचना प्रौद्योगिकी संस्थान कोट्टायम</a></span>
+            </div>
+          </div>
+          <nav class="white header flex flex-row flex-justify" id="myHeader">
+            <div style="overflow:hidden" class="hide-on-med-and-down">
+              <a href="#!home"><img id="logo-on-small-nav" src="data/images/main/logo.jpg" alt="IIIT Kottayam Logo" style="height:60px;display:none;padding-top:5px"></a>
+            </div>
+            <div style="display:none" class="show-on-medium-and-down">
+              <a href="#!home"><img src="data/images/main/logo.jpg" alt="IIIT Kottayam Logo" class="custom-responsive-image" style="padding-top:5px"></a>
+            </div>
+            <div class="nav-wrapper" style="margin-right: 200px;">
+              <ul class="right hide-on-med-and-down">
+                <li><a ng-class="{activeMenuTab: activeTab=='home'}" href="#!home">Home</a></li>
+                <li><a ng-class="{activeMenuTab: activeTab=='whyIIIT'}" href="#!whyIIITK">Why IIITK</a></li>
+                <li><a ng-class="{'activeMenuTab':  activeTab=='nirf_home' }" class="dropdown-button" href="" data-activates="dropdown9">NIRF<i class="material-icons right notranslate">arrow_drop_down</i></a></li>
+                <li><a ng-class="{'activeMenuTab': activeTab=='institute'||activeTab=='academics'|| activeTab=='admission'|| activeTab=='scholarship'}" class="dropdown-button" href="#!institute" data-activates="dropdown2">Institute<i class="material-icons right notranslate">arrow_drop_down</i></a></li>
+                <li><a ng-class="{'activeMenuTab':  activeTab=='btech_cs_home' ||activeTab=='btech_ec_home' ||activeTab=='btech_ai_home' || activeTab=='mtech_home' || activeTab=='phd_home'}" class="dropdown-button" href="" data-activates="dropdown8">Courses<i class="material-icons right notranslate">arrow_drop_down</i></a></li>
+                <li><a ng-class="{activeMenuTab: activeTab=='faculty' || activeTab=='students'|| activeTab=='dept_head' || activeTab=='admin' || activeTab=='researchScholar' || activeTab=='technical' || activeTab=='professional' || activeTab=='executivemtech' || activeTab=='imtechStudents' || activeTab=='emtechStudents' || activeTab=='gender'}" class="dropdown-button" href="#!admin" data-activates="dropdown1">People<i class="material-icons right notranslate">arrow_drop_down</i></a></li>
+                <li><a ng-class="{activeMenuTab: activeTab=='campus' || activeTab=='campus/hostel' || activeTab=='campus/security' || activeTab=='campus/internet' || activeTab=='campus/gymnasium' || activeTab=='campus/sports' || activeTab=='campus/atm' || activeTab=='campus/medical'}" href="#!Campus" class="dropdown-button" data-activates="dropdown3">Facilities<i class="material-icons right notranslate">arrow_drop_down</i></a></li>
+                <li><a ng-class="{activeMenuTab: activeTab=='events' || activeTab=='webinar' || activeMenuTab: activeTab=='sportsClub' || activeTab=='culturalClub' || activeTab=='codingClub' || activeTab=='socialClub' || activeTab=='ieee' || activeTab=='acm'|| activeTab=='innovations'}" class="dropdown-button" data-activates="dropdown4" href="#!innovations">IIC & Clubs<i class="material-icons right notranslate">arrow_drop_down</i></a></li>
+                <li><a ng-class="{activeMenuTab: activeTab=='researchPublication' || activeTab=='researchProject' || activeTab=='awards' || activeTab=='collaboration' || activeTab=='researchActivities' || activeTab=='innovations&startups'}" class="dropdown-button" data-activates="dropdown6" href="#!researchPublication">Research<i class="material-icons right notranslate">arrow_drop_down</i></a></li>
+                <li><a ng-class="{activeMenuTab: activeTab=='placement'}" href="#!placement">Placement</a></li>
+                <li><a ng-class="{activeMenuTab: activeTab=='recruiters corner'}" href="data/pdf/recruiterscorner.pdf">Recruiters Corner</a></li>
+                <li><a ng-class="{activeMenuTab: activeTab=='media'}" href="#!media">@Media</a></li>
+              </ul>
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons institute-text-green notranslate">menu</i></a>
+            </div>
+          </nav>
+          <div ng-view class="custom-view content"></div>
+          <footer class="page-footer black-text border border-top border-dull">
+            <div class="container">
+              <div class="row center-align">
+                <div class="col s12">
+                  <a href="https://twitter.com/IIITKKottayam" target="new" class="twitter"><i class="fa fa-twitter"></i></a>
+                  <a href="https://www.facebook.com/IIITKottayamofficial/" target="new" class="facebook"><i class="fa fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/in/iiit-kottayam" target="new" class="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  <a href="https://www.youtube.com/channel/UC3jrKDXjl7_c5bld5x8C1vw" target="new" class="youtube"><i class="fa fa-youtube"></i></a>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col s6 m3">
+                <ul>
+                  <li><a href="#!lmsredirect" class="black-text">LMS (IIIT Kottayam)</a><img width="30" height="30" src="data/images/info/new1.gif"></li>
+                  <!--<li><a href="#!idy" class="black-text">IDY-2022</a></li>-->
+                  <li><a href="#!placement" class="black-text">Placement</a></li>
+                  <li><a href="#!sitemap" class="black-text">Site Map</a></li>
+                  <li><a href="#!events" class="black-text">Events</a></li>
+                  <li><a href="https://drive.google.com/drive/folders/1DY5DYKzb2yzneYGRcmefoTStB0E9JfUu?usp=sharing" class="black-text">Gallery</a></li>
+                  <li><a href="https://docs.google.com/document/d/1doyb4eyxv5uo7JZMw4dbKtU_trv8oAU-rnf-EmobaYI/edit?usp=share_link" class="black-text">English @ Ease/Psychological Tips</a></li>
+                </ul>
+              </div>
+              <div class="col s6 m3">
+                <ul>
+                  <li><a href="https://www.mathworks.com/academia/tah-portal/indian-institute-of-information-technology-kottayam-31453279.html" class="black-text">Matlab for IIIT Kottayam</a></li>
+                  <li><a href="#!tenders" class="black-text">Tenders</a></li>
+                  <li><a href="#!career" class="black-text">Career</a></li>
+                  <li><a href="#!acm" class="black-text">ACM</a></li>
+                  <li><a href="#!contact" class="black-text">Contact</a></li>
+                  <li><a href="https://drive.google.com/file/d/1ZWPnGnomsmGgfPSbtqZuOUgp6pHrkVyj/view?usp=sharing" class="black-text" target="_blank">Internal Directory</a></li>
+                  <li><a href="https://accounts.google.com/" class="black-text">Institute Email </a></li>
+                  <li><a href="https://docs.google.com/document/d/1brMRJlg-ehzWS4kNCb6WQIxwx3S9tvj8skfLUs9f8IU/edit?usp=drive_link" class="black-text">Forms to Download(Internal)</a></li>
+                </ul>
+              </div>
+              <div class="col s6 m3">
+                <ul>
+                  <li><a href="https://www.onlinesbi.sbi/sbicollect/icollecthome.htm" target="_blank" class="black-text">Pay Your Fees Online</a></li>
+                  <li><a href="#!campus/gymnasium" class="black-text">Gymnasium</a></li>
+                  <li><a href="#!ieee" class="black-text">IEEE</a></li>
+                  <li><a href="#!campus/hostel" class="black-text">Hostel</a></li>
+                  <li><a href="#!campus/internet" class="black-text">Internet</a></li>
+                  <li><a href="#!campus/sports" class="black-text">Sports and Yoga</a></li>
+                  <li><a href="https://docs.google.com/document/d/1g64N6BUUN_lLy6E9tRtyugtBcy1uCL1C/edit?usp=share_link&ouid=103053165573494839436&rtpof=true&sd=true" class="black-text" target="_blank">Group Mail ID's</a></li>
+                  <li><a href="#!iem" class="black-text">IEM</a></li>
+                  <li><a href="https://erpemp.iiitkottayam.ac.in/" class="black-text">Staff ERP (Leave)</a></li>
+                </ul>
+              </div>
+              <div class="col s6 m3">
+                <ul>
+                  <li><a href="#!rti" class="black-text">RTI</a></li>
+                  <li><a href="#!reservation" class="black-text">Reservation Policy</a></li>
+                  <li><a href="#!nationalScholarship" target="_blank" class="black-text">National Scholarship Portal</a></li>
+                  <li><a href="#!internal_complaints_committee" class="black-text">Internal Complaints Committee</a></li>
+                  <li><a href="data/pdf/Grievance Redressal Committee.pdf" class="black-text">Grievance Redressal Committee</a></li>
+                  <li><a href="data/pdf/OM-Disciplinary Action Committee-revised-Jan2024.pdf" class="black-text">Disciplinary Action Committee</a></li>
+                  <li><a href="data/pdf/OM-formation of SC-ST-OBC Cell-Jan2024.pdf" class="black-text" target="_blank">SC/ST/OBC cell</a></li>
+                  <li><a href="data/pdf/cvo_new.pdf" class="black-text" target="_blank">CVO</a></li>
+                  <li><a href="#!antiragging" class="black-text">Anti-Ragging</a></li>
+                  <li><a href="data/pdf/Educational_Verification.pdf" class="black-text">Educational Verification</a></li>
+                  <li><a href="#!reach" class="black-text">Reach IIIT Kottayam</a></li>
+                  <li>
+                  <b>GST NO: 32AAAAI9154L1ZJ</b></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="row" style="width:100%">
+                <div class="col s12 center-align black-text">
+                  <br>&copy; IIIT Kottayam 2026<br>Indian Institute of Information Technology Kottayam
+                  <p>This page was viewed</p>
+                  <h1 class="count" id="count">84000</h1>
+                  <p class="count_times">times</p>
+                  <style>
+                    @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+                    .count {
+                      font-size: 25px;
+                      margin: 0;
+                    }
+                    .count_times {
+                      color: rgba(255, 255, 255, 0.8);
+                      letter-spacing: 2px;
+                      margin: 0;
+                    }
+                  </style>
+                  <script>
+                    const countEl = document.getElementById('count');
+                    updateVisitCount();
+                    function updateVisitCount() {
+                      fetch('https://api.countapi.xyz/update/IIITK_/IIITK_/?amount=1')
+                      .then(res => res.json())
+                      .then(res => {
+                        countEl.innerHTML = res.value;
+                      })
+                    }
+                  </script>
+                </div>
+                <div class="col s12">
+                  <br>
+                </div>
+                <div class="col s12 right-align">
+                  <div id="google_translate_element"></div>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+          </script>
+          <!--<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+          <script type="text/javascript" src="scripts/vendor/translate.js"></script>
+      </body>
+      <script>
+        function changeGoogleStyles() {
+          if(($goog = $('.goog-te-menu-frame').contents().find('body')).length) {
+            var stylesHtml = '<style>'+
+                '.goog-te-menu2 {'+
+                    'border:none !important;'+
+                    'width:250px !important;'+
+                    'overflow-y:hidden !important;'+
+                    'overflow-x:auto !important;'+
+                    'box-sizing:border-box !important;'+
+                    'height:auto !important;'+
+                '}'+
+            '</style>';
+            $goog.prepend(stylesHtml);
+          } else {
+              setTimeout(changeGoogleStyles, 50);
+          }
+        }
+        changeGoogleStyles();
+        $( document ).ready(function () {
+          $(".button-collapse").sideNav({closeOnClick: true,edge:'right'});
+          $(".dropdown-button").dropdown({constrainWidth:false,belowOrigin:true,hover:true});
+          window.onscroll = function() {myFunction()};
+          var header = document.getElementById("myHeader");
+          var sticky = header.offsetTop;
+          var ele=document.getElementById('logo-on-small-nav');
+          function myFunction() {
+          var scrollTop     = $(window).scrollTop(),
+          topContainerOffset = $('#topControl').offset().top,
+          height = $('#topControl').height(),
+          distance = (topContainerOffset - scrollTop);
+          if(Math.round(distance+height)<63){$('nav').css({'box-shadow':'0 0 4px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.1)'})}
+          else{$('nav').css({'box-shadow':'none'})}
+          if (window.pageYOffset >= sticky) {header.classList.add("sticky");ele.style.display="block";document.getElementsByClassName('custom-responsive-image')[0].classList.add('custom-logo-mobile');}
+          else{header.classList.remove("sticky");ele.style.display="none";document.getElementsByClassName('custom-responsive-image')[0].classList.remove('custom-logo-mobile');}}
+        });
+      </script>
+    </html>

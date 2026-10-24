@@ -1,0 +1,23 @@
+{
+  "evidence_status": "public_source_informed_synthetic",
+  "candidate_count": 28,
+  "target_count": 28,
+  "seed": 20261024,
+  "radius_m": 3000,
+  "campus_center": [
+    9.7554364,
+    76.649535
+  ],
+  "input_sha256": "e3c564fe5cfdde8fb309f7ccc8224e28f06bbc351a4bb8b7d1b99651ac0fff8d",
+  "input_metadata_sha256": "1fff6145771bba046367268b1f2e4f064aaa57a24247d156782a0db070676036",
+  "extract_bbox_south_west_north_east": [
+    9.7284,
+    76.6225,
+    9.7825,
+    76.6765
+  ],
+  "generator_sha256": "c33a88bfaf6a2a5600021b0b6b403954238c0794f846a537fd7af557866d1607",
+  "dataset_sha256": "e767e2a8a3a878717872d37a7c09ad670525dea1253a480b29f874154da8c63a",
+  "actual_field_observations": 0,
+  "selection": "mapped road junctions/crossings or nodes <=100m from mapped destinations; >=80m spacing"
+}

@@ -12,6 +12,17 @@ The score depends on the included alternatives because min/max bounds do. It is 
 
 The simple-priority baseline uses central observations only. For each nonconstant benefit criterion its crisp value is (x_ij−min_i x_ij)/(max_i x_ij−min_i x_ij), then the active normalized values are averaged with equal weights. A constant central criterion is omitted. Spearman correlation uses average ranks for ties and is left undefined when an entire ranking has a single tied value. Display order for exact score ties is alternative ID.
 
+## Public-source-informed synthetic mode
+
+The separate `--synthetic-input` mode accepts integer 1–5 proxy scores and
+documented synthetic low/mid/high bounds in 1–5. They are **not** measured hourly
+counts or 0–3 field audits. Field input validation remains unchanged. Its final
+`outputs/fuzzy_topsis_results.csv` uses the five-criterion extension, while the
+base/crisp/weight/uncertainty diagnostics retain the four-criterion definition
+below. All arithmetic and provisional equal weights remain the same. See
+`reports/synthetic_data_methodology.md` for the evidence, ordinal equal-spacing
+assumption, correlated proxies, candidate selection, confidence widths and limits.
+
 ## Evaluation and trace exports
 
 Uncertainty scenarios use x(alpha) = c + alpha * (x-c), with alpha in {0, 0.5, 1}, and refit observed bounds in each scenario. These contractions are hypothetical stress tests, not evidence-derived replacement measurements. They change both width and scaling. The alpha=0 case equals the crisp equal-weight baseline when central criteria discriminate: vertex distances reduce to absolute distances and the total denominator is one.

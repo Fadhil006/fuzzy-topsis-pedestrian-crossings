@@ -18,10 +18,18 @@ META = ("alternative_id", "crossing_id", "location_description", "intervention_t
 def columns(name):
     return [f"{name}_{suffix}" for suffix in ("low", "mid", "high")]
 
-def load_and_validate(path):
+SYNTHETIC_META = ("latitude", "longitude", "data_status", "location_status", "score_provenance",
+                  "assumptions", "confidence", "source_refs")
+SCORE_COLUMNS = {"pedestrian_demand": "ped", "vehicle_exposure": "vehicle",
+                 "accessibility_deficiency": "access", "control_visibility_deficiency": "deficiency",
+                 "essential_destination_access": "destination"}
+
+def load_and_validate(path, synthetic=False):
     """Load one collated row per candidate package; retain excluded rows in the log."""
     df = pd.read_csv(path, dtype={k: str for k in META}, keep_default_na=True)
     needed = list(META) + [c for name in CRITERIA for c in columns(name)]
+    if synthetic:
+        needed += list(SYNTHETIC_META) + list(SCORE_COLUMNS)
     missing = [c for c in needed if c not in df.columns]
     if missing:
         raise ValueError("missing columns: " + ", ".join(missing))
@@ -31,6 +39,26 @@ def load_and_validate(path):
         if df[col].isna().any() or df[col].astype(str).str.strip().eq("").any():
             raise ValueError(f"missing {col}; record evidence rather than imputing it")
         df[col] = df[col].str.strip()
+    if not synthetic and "data_status" in df.columns and df.data_status.astype(str).eq("public_source_informed_synthetic").any():
+        raise ValueError("synthetic rows require --synthetic-input; do not load them as field input")
+    if synthetic:
+        for col in SYNTHETIC_META:
+            if df[col].isna().any() or df[col].astype(str).str.strip().eq("").any():
+                raise ValueError(f"missing synthetic provenance {col}")
+            df[col] = df[col].astype(str).str.strip()
+        if not df.data_status.eq("public_source_informed_synthetic").all() or not df.location_status.eq("hypothetical_candidate_not_verified_crossing").all():
+            raise ValueError("synthetic status labels are required")
+        if not df.survey_date.astype(str).str.lower().isin(["unknown", "not_field_survey", "synthetic"]).all():
+            raise ValueError("synthetic survey_date must be an explicit unknown/not_field_survey label")
+        for col, low, high in (("latitude", -90, 90), ("longitude", -180, 180)):
+            values = pd.to_numeric(df[col], errors="coerce")
+            if values.isna().any() or not np.isfinite(values).all() or ((values < low) | (values > high)).any():
+                raise ValueError(f"invalid {col} coordinates")
+            df[col] = values
+        if ((df.latitude < 8) | (df.latitude > 13) | (df.longitude < 74) | (df.longitude > 78)).any():
+            raise ValueError("synthetic coordinates must lie within the broad Kerala regional bounds")
+        if df.crossing_id.duplicated().any():
+            raise ValueError("crossing_id must be unique")
     if df.alternative_id.duplicated().any():
         raise ValueError("alternative_id must be unique")
     if not df.feasibility_status.isin(["eligible", "rejected"]).all():
@@ -44,7 +72,7 @@ def load_and_validate(path):
         raise ValueError("at least two eligible interventions are required")
     if eligible.crossing_id.duplicated().any():
         raise ValueError("use one intervention package per crossing in this design")
-    if pd.to_datetime(eligible.survey_date, format="%Y-%m-%d", errors="coerce").isna().any():
+    if not synthetic and pd.to_datetime(eligible.survey_date, format="%Y-%m-%d", errors="coerce").isna().any():
         raise ValueError("survey_date must use YYYY-MM-DD")
     for name in CRITERIA:
         cols = columns(name)
@@ -54,9 +82,18 @@ def load_and_validate(path):
         a = numeric.to_numpy(float)
         if not np.isfinite(a).all() or (a < 0).any() or (a[:, 0] > a[:, 1]).any() or (a[:, 1] > a[:, 2]).any():
             raise ValueError(f"{name} requires finite nonnegative low <= mid <= high")
-        if name in {"access", "deficiency", "destination"} and (a > 3).any():
+        if not synthetic and name in {"access", "deficiency", "destination"} and (a > 3).any():
             raise ValueError(f"{name} ratings must be on the documented 0–3 scale")
+        if synthetic and ((a < 1).any() or (a > 5).any()):
+            raise ValueError(f"{name} synthetic bounds must be on the 1–5 scale")
         eligible.loc[:, cols] = numeric
+    if synthetic:
+        for score_col, criterion in SCORE_COLUMNS.items():
+            score = pd.to_numeric(eligible[score_col], errors="coerce")
+            if score.isna().any() or not np.equal(score, np.floor(score)).all() or ((score < 1) | (score > 5)).any():
+                raise ValueError(f"{score_col} must be an integer from 1 to 5")
+            if not np.array_equal(score.to_numpy(float), eligible[f"{criterion}_mid"].to_numpy(float)):
+                raise ValueError(f"{score_col} must match {criterion}_mid")
     return df, eligible
 
 def triangles_from_frame(frame, criteria):
@@ -198,7 +235,12 @@ def evaluate(frame, outdir, prefix="", draws=1000):
     tables["criterion_correlations"] = pd.DataFrame(correlation_rows)
     for name, table in tables.items():
         table.to_csv(outdir / f"{prefix}{name}.csv", index=False)
-    label = "Hypothetical example" if prefix.startswith("hypothetical") else "Field observations"
+    if prefix == "synthetic_":
+        result = tables["extension_ranking"].rename(columns={"score": "closeness_coefficient"})
+        result = result.merge(frame, on="alternative_id")
+        result.insert(0, "evidence_status", "synthetic")
+        result.to_csv(outdir / "fuzzy_topsis_results.csv", index=False)
+    label = "Hypothetical example" if prefix.startswith("hypothetical") else ("Synthetic input" if prefix == "synthetic_" else "Field observations")
     write_sensitivity_figure(summary, outdir / f"{prefix}weight_sensitivity.svg",
                              f"{label}: top-ranked intervention under weight variation")
     return tables
@@ -206,33 +248,38 @@ def evaluate(frame, outdir, prefix="", draws=1000):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, help="completed collated field CSV")
+    parser.add_argument("--synthetic-input", type=Path, help="explicitly synthetic input CSV")
     parser.add_argument("--demo", action="store_true", help="run labelled synthetic example")
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "results")
+    parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--draws", type=int, default=1000)
     args = parser.parse_args()
-    if args.demo == bool(args.input):
-        parser.error("provide exactly one of --demo or --input")
+    if sum((args.demo, args.input is not None, args.synthetic_input is not None)) != 1:
+        parser.error("provide exactly one of --demo, --input, or --synthetic-input")
     if args.draws < 1:
         parser.error("--draws must be positive")
-    source = ROOT / "data" / "hypothetical_demo.csv" if args.demo else args.input
-    original, eligible = load_and_validate(source)
-    prefix = "hypothetical_" if args.demo else "field_"
-    tables = evaluate(eligible, args.output_dir, prefix=prefix, draws=args.draws)
+    synthetic = args.synthetic_input is not None
+    outdir = args.output_dir or (ROOT / "outputs" if synthetic else ROOT / "results")
+    source = ROOT / "data" / "hypothetical_demo.csv" if args.demo else (args.synthetic_input if synthetic else args.input)
+    original, eligible = load_and_validate(source, synthetic=synthetic)
+    prefix = "hypothetical_" if args.demo else ("synthetic_" if synthetic else "field_")
+    tables = evaluate(eligible, outdir, prefix=prefix, draws=args.draws)
     log = pd.DataFrame({"alternative_id": original.alternative_id,
                         "feasibility_status": original.feasibility_status,
                         "action": np.where(original.feasibility_status.eq("eligible"), "included", "excluded")})
     log["notes"] = original["notes"].fillna("") if "notes" in original else ""
-    log.to_csv(args.output_dir / f"{prefix}preprocessing_log.csv", index=False)
-    eligible.to_csv(args.output_dir / f"{prefix}cleaned_decision_matrix.csv", index=False)
+    log.to_csv(outdir / f"{prefix}preprocessing_log.csv", index=False)
+    eligible.to_csv(outdir / f"{prefix}cleaned_decision_matrix.csv", index=False)
     manifest = {"input_file": str(source), "input_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
-                "evidence_status": "hypothetical" if args.demo else "user_supplied_unverified_field_data",
+                "evidence_status": "hypothetical" if args.demo else ("public_source_informed_synthetic" if synthetic else "user_supplied_unverified_field_data"),
+                "primary_model": "five_criterion_extension" if synthetic else "four_criterion_base",
+                "diagnostics_note": "four_criterion_base outputs retained separately" if synthetic else "",
                 "python": platform.python_version(), "numpy": np.__version__, "pandas": pd.__version__,
                 "draws": args.draws, "seed": 20261009, "width_factors": [0, .5, 1],
                 "eligible_count": len(eligible), "excluded_count": len(original) - len(eligible),
                 "tie_policy": "equal minimum rank; ID display order breaks ties for top-k statistics"}
-    (args.output_dir / f"{prefix}run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(tables["base_ranking"].to_string(index=False))
-    print(f"Wrote {len(tables) + 4} files to {args.output_dir}")
+    (outdir / f"{prefix}run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    print((tables["extension_ranking"] if synthetic else tables["base_ranking"]).to_string(index=False))
+    print(f"Wrote {len(tables) + (5 if synthetic else 4)} files to {outdir}")
 
 if __name__ == "__main__":
     main()

@@ -32,8 +32,11 @@ The crisp baseline applies a separate criterion-wise min–max scale to central 
 
 ## Reproduce
 
-Use Python 3.10 or later. Install dependencies:
+Use Python 3.10 or later. Create a project-local environment (also avoids Arch
+Linux's externally managed system-Python restriction) and install dependencies:
 
+    python -m venv .venv
+    source .venv/bin/activate
     python -m pip install -r requirements.txt
 
 Run the labelled demonstration and the mathematical checks:
@@ -59,7 +62,65 @@ The command rejects missing or invalid values, excludes rejected candidates, sav
 
 The final screening order cannot establish a budget-optimal portfolio. Obtain engineering review, cost estimates, and independent audit evidence before allocating resources. Do not interpret agreement with a crisp baseline as proof of correctness.
 
-## Completed evaluation exports
+## Public-source-informed synthetic dataset
+
+The preserved snapshot produces **28 hypothetical candidate locations**, selected
+from actual mapped OSM road nodes around IIIT Kottayam, with synthetic 1–5
+criterion estimates and documented fuzzy ranges. These are not 28 independently
+verified crossings. No field measurements or engineering feasibility review are
+available. Government portals/research are source context, not crossing-level
+calibration. Missing OSM tags mean unknown, not absent. A refreshed extract can
+produce fewer candidates; the generator never invents locations to fill a quota.
+
+Run from the repository root after activating `.venv`:
+
+```sh
+# Offline reproduction from the preserved public map extract:
+python scripts/build_synthetic_dataset.py
+python src/run_project.py \
+  --synthetic-input data/processed/pedestrian_crossings_fuzzy_topsis.csv \
+  --output-dir outputs
+python -m unittest discover -s tests -v
+```
+
+The final **five-criterion** ranking is `outputs/fuzzy_topsis_results.csv`;
+`outputs/synthetic_base_ranking.csv` is the separate four-criterion model.
+Weight/uncertainty diagnostics currently describe that four-criterion baseline,
+not the final five-criterion ranking. All new outputs are synthetic-labelled and
+do not overwrite the original four-row demonstration in `results/`.
+
+Key artifacts:
+
+- `data/raw/`: actual public-source responses, saved query and retrieval metadata.
+- `data/source_inventory.csv`: URLs, coverage, intended use, licensing and hashes.
+- `data/processed/pedestrian_crossings_fuzzy_topsis.csv`: complete synthetic input,
+  including integer estimates, fuzzy ranges, coordinates and per-row provenance.
+- `data/processed/pedestrian_crossings_observed.csv`: empty actual-observation
+  template; synthetic values are never copied into it.
+- `data/processed/synthetic_generation_manifest.json`: deterministic generation
+  seed **20261024**, scope and content hashes.
+- `reports/synthetic_data_methodology.md`: exact scoring, candidate selection,
+  assumptions, confidence labels and limitations.
+
+Optional source refresh (requires network; a newer map may change the dataset):
+
+```sh
+python scripts/fetch_public_sources.py
+python scripts/fetch_osm_context.py --refresh
+python scripts/fetch_public_sources.py --cached
+```
+
+The final cached command updates inventory checksums from the saved bodies and
+current OSM metadata without making network requests. Failed OSM refreshes retain
+the previous successful snapshot; see `data/raw/osm_fetch_failures.json`.
+
+OSM attribution: © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright),
+ODbL 1.0. The dataset is suitable for a reproducible demonstration, **not a validated
+real-site safety ranking**. The instructor's actual-data requirement still needs
+explicit approval if this synthetic alternative is used for submission. The Word
+and PDF reports are not automatically updated to this new experiment.
+
+## Original four-row demonstration exports
 
 Each run now writes 13 files: the clean matrix and preprocessing log; base, crisp and extension rankings; comparison table; weight runs and summary; an SVG chart; uncertainty scenarios; criterion correlations; calculation trace; and a JSON run manifest. The manifest records the input hash, dependency versions, seed and evidence status. Rejection reasons are preserved in the log. All results in this repository remain hypothetical.
 

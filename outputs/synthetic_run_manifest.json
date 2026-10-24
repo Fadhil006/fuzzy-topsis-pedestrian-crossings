@@ -1,0 +1,20 @@
+{
+  "input_file": "data/processed/pedestrian_crossings_fuzzy_topsis.csv",
+  "input_sha256": "e767e2a8a3a878717872d37a7c09ad670525dea1253a480b29f874154da8c63a",
+  "evidence_status": "public_source_informed_synthetic",
+  "primary_model": "five_criterion_extension",
+  "diagnostics_note": "four_criterion_base outputs retained separately",
+  "python": "3.14.8",
+  "numpy": "2.5.4",
+  "pandas": "2.3.3",
+  "draws": 1000,
+  "seed": 20261009,
+  "width_factors": [
+    0,
+    0.5,
+    1
+  ],
+  "eligible_count": 28,
+  "excluded_count": 0,
+  "tie_policy": "equal minimum rank; ID display order breaks ties for top-k statistics"
+}

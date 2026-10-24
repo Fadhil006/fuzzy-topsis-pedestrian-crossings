@@ -1,0 +1,2595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W232NJ9R4J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W232NJ9R4J');
+</script>
+    <title>Data Sets - Dataportal of Kerala</title>
+    
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://datahub.kerala.gov.in/webassets/assets/images/fav.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://datahub.kerala.gov.in/webassets/assets/images/fav.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://datahub.kerala.gov.in/webassets/assets/images/fav.png">
+    <meta name="description" content="">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/animate/animate.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/animate/custom-animate.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/jarallax/jarallax.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/nouislider/nouislider.pips.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/odometer/odometer.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/swiper/swiper.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/insur-icons/style.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/insur-two-icon/style.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/tiny-slider/tiny-slider.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/reey-font/stylesheet.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/bxslider/jquery.bxslider.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/bootstrap-select/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/vegas/vegas.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/timepicker/timePicker.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/vendors/ion.rangeSlider/css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/css/style.css">
+    <link rel="stylesheet" href="https://datahub.kerala.gov.in/webassets/assets/css/style-responsive.css">
+    
+    <style>
+.search-filter-wrapper {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+/* Keyword Tag Display */
+.search-input-wrapper {
+    position: relative;
+}
+
+.keyword-tag-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    min-height: 48px;
+}
+
+.keyword-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.keyword-tag i.icon-magnifying-glass {
+    font-size: 14px;
+}
+
+.keyword-tag .keyword-text {
+    font-weight: 600;
+}
+
+.clear-keyword-btn {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    font-size: 12px;
+}
+
+.clear-keyword-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.change-keyword-btn {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.change-keyword-btn:hover {
+    background: #f0f0f0;
+    border-color: #999;
+    color: #333;
+}
+
+.search-input-group {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.search-input-group .form-control {
+    flex: 1;
+    height: 48px;
+    font-size: 15px;
+}
+
+.search-input-group .btn {
+    flex-shrink: 0;
+    padding: 0 25px;
+    height: 48px;
+    background-color: var(--dp-base, #015FC9);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.search-input-group .btn:hover {
+    background-color: var(--dp-black, #1a1a1a);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(1, 95, 201, 0.3);
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-select, .form-control {
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: white;
+    height: 48px;
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: var(--dp-base, #015FC9);
+    box-shadow: 0 0 0 0.25rem rgba(1, 95, 201, 0.15);
+    outline: none;
+}
+
+.form-select:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    height: 48px;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+/* Results Count Styling */
+.search-filter-wrapper .row.mt-3 p {
+    color: #555;
+    font-size: 15px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 6px;
+    border-left: 4px solid var(--dp-base, #015FC9);
+    margin: 0;
+}
+
+.search-filter-wrapper .row.mt-3 p strong {
+    color: var(--dp-base, #015FC9);
+    font-size: 18px;
+}
+
+/* Equal height chart cards */
+.datasets-chart-card .chart-card {
+    height: 550px !important;
+    min-height: 550px !important;
+    max-height: 550px !important;
+}
+.datasets-chart-card .chart-card .chart-container {
+    height: 350px !important;
+    min-height: 350px !important;
+    max-height: 350px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-filter-wrapper {
+        padding: 20px;
+    }
+    
+    .form-label {
+        font-size: 13px;
+    }
+    
+    .btn-secondary {
+        margin-top: 10px;
+    }
+    
+    .keyword-tag-display {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 991px) {
+    .datasets-chart-card .chart-card {
+        height: auto !important;
+        min-height: 500px !important;
+        max-height: none !important;
+    }
+}
+</style>
+</head>
+
+<body class="custom-cursor">
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <div class="preloader">
+    <div class="preloader__image"></div>
+</div>
+    <div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+        <div class="logo-box">
+            <a href="https://datahub.kerala.gov.in" aria-label="logo image">
+                <img src="https://datahub.kerala.gov.in/webassets/assets/images/logo-w.svg" width="143" alt="">
+            </a>
+        </div>
+        
+        <div class="mobile-nav__container"></div>
+
+        <ul class="mobile-nav__contact list-unstyled">
+            <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:sample@gmail56.com">sample@gmail56.com</a>
+            </li>
+            <li>
+                <i class="fa fa-phone-alt"></i>
+                <a href="tel:666-888-0000">666 888 0000</a>
+            </li>
+        </ul>
+        
+        <div class="mobile-nav__top">
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook-square"></a>
+                <a href="#" class="fab fa-pinterest-p"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="search-popup">
+    <div class="search-popup__overlay search-toggler"></div>
+    <div class="search-popup__content">
+        <form action="#">
+            <label for="search" class="sr-only">search here</label>
+            <input type="text" id="search" placeholder="Search Here...">
+            <button type="submit" aria-label="search submit" class="thm-btn">
+                <i class="icon-magnifying-glass"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+    <div class="page-wrapper">
+        <header class="main-header clearfix">
+    <div class="main-header__top">
+        <div class="container">
+            <div class="main-header__top-inner">
+                <div class="main-header__top-address">
+                    <ul class="list-unstyled main-header__top-address-list">
+                        <li class="dropdown">
+                            <i class="icon">
+                                <span class="icon-pin"></span>
+                            </i>
+                            <div class="text">
+                                <p style="color: #fff;"><b>മലയാളം</b></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main-header__top-right">
+                    <div class="main-header__top-menu-box">
+                        <ul class="list-unstyled main-header__top-menu">
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="main-header__top-social-box">
+                        <div class="main-header__top-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="main-menu clearfix">
+    <div class="main-menu__wrapper clearfix">
+        <div class="container">
+            <div class="main-menu__wrapper-inner clearfix">
+                <div class="main-menu__left">
+                    <div class="main-menu__logo">
+                        <a href="https://datahub.kerala.gov.in">
+                            <img src="https://datahub.kerala.gov.in/webassets/assets/images/logo1.png" alt="">
+                        </a>
+                    </div>
+                    <div class="main-menu__main-menu-box">
+                        <div class="main-menu__main-menu-box-inner">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                                        <ul class="main-menu__list">
+                                <li class="">
+                                    <a href="https://datahub.kerala.gov.in">Home</a>
+                                </li>
+                                
+                                                                                                        
+                                                                            
+                                        <li class="">
+                                            <a href="/about">About</a>
+                                        </li>
+                                                                                                                                            
+                                                                            
+                                        <li class="dropdown ">
+                                            <a href="javascript:void(0);">Kerala at a Glance</a>
+                                            <ul>
+                                                                                                                                                            
+                                                        <li class="dropdown">
+                                                            <a href="javascript:void(0);">1. Demography</a>
+                                                            <ul>
+                                                                
+                                                                                                                                
+                                                                                                                                    
+                                                                                                                                                                                                                    <li>
+                                                                            <a href="https://health.kerala.gov.in/dashboardhomelive"  target="_blank" rel="noopener noreferrer" >Population Overview</a>
+                                                                        </li>
+                                                                                                                                                                                                                    <li>
+                                                                            <a href="https://health.kerala.gov.in/static_vital_statistics_details"  target="_blank" rel="noopener noreferrer" >Vital Statistics</a>
+                                                                        </li>
+                                                                                                                                                                                                </ul>
+                                                        </li>
+                                                                                                                                                                                                                
+                                                        <li class="dropdown">
+                                                            <a href="javascript:void(0);">3. Sector Snapshot</a>
+                                                            <ul>
+                                                                
+                                                                                                                                
+                                                                                                                                    
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/agriculture">
+                                                                                Agriculture
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/digital-kerala">
+                                                                                Digital Kerala
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/economy">
+                                                                                Economy
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/education">
+                                                                                Education
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/environment">
+                                                                                Environment
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/finance">
+                                                                                Finance
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/fisheries">
+                                                                                Fisheries
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/food-safety">
+                                                                                Food Safety
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/health">
+                                                                                Health
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/housing">
+                                                                                Housing
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/industry">
+                                                                                Industry
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/infrastructure">
+                                                                                Infrastructure
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/logistics">
+                                                                                Logistics
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/lsgd">
+                                                                                LSGD
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/sc-st">
+                                                                                SC-ST
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/tourism">
+                                                                                Tourism
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/transport">
+                                                                                Transport
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/welfare">
+                                                                                Welfare
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                            <li>
+                                                                            <a href="https://datahub.kerala.gov.in/sector/women-children">
+                                                                                Women &amp; Children
+                                                                            </a>
+                                                                        </li>
+                                                                                                                                                                                                </ul>
+                                                        </li>
+                                                                                                                                                </ul>
+                                        </li>
+                                                                                                                                            
+                                                                            
+                                        <li class="current">
+                                            <a href="/datasets">Data Sets</a>
+                                        </li>
+                                                                                                                                            
+                                                                            
+                                        <li class="">
+                                            <a href="/contact-us">Contact Us</a>
+                                        </li>
+                                                                                                </ul>
+                        </div>
+                        <div class="main-menu__main-menu-box-search-get-quote-btn">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+</header>
+
+<div class="stricky-header stricked-menu main-menu">
+    <div class="sticky-header__content"></div>
+</div>
+        
+        
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header-bg" style="background-image: url(https://datahub.kerala.gov.in/webassets/assets/images/backgrounds/in1.png)">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <ul class="thm-breadcrumb list-unstyled">
+                <li><a href="https://datahub.kerala.gov.in">Home</a></li>
+                <li><span>/</span></li>
+                <li>Data Sets</li>
+            </ul>
+            <h2>Data Sets</h2>
+            <p class="page-header__text">Explore all available datasets and visualizations</p>
+        </div>
+    </div>
+</section>
+<!--Page Header End-->
+
+<!--Datasets Start-->
+<section class="news-sidebar ftr">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Search and Filter Box -->
+                <div class="search-filter-wrapper mb-4">
+                    <form action="https://datahub.kerala.gov.in/datasets" method="GET" id="searchFilterForm">
+                        <div class="row g-3 align-items-end">
+                            <!-- Keyword Search -->
+                            <div class="col-xl-4 col-lg-4 col-md-12">
+                                <label class="form-label">Search</label>
+                                <div class="search-input-wrapper">
+                                                                        <!-- Search input (hidden when keyword exists) -->
+                                    <div class="search-input-group" id="searchInputGroup" style="">
+                                        <input type="text" name="q" id="searchInput" class="form-control" placeholder="Search datasets, indicators, reports..." value="">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="icon-magnifying-glass"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Filter Type Dropdown -->
+                            <div class="col-xl-3 col-lg-3 col-md-6">
+                                <label class="form-label">Search By</label>
+                                <select class="form-select" id="filterType" name="filter_type">
+                                    <option value="all" selected>All</option>
+                                    <option value="category" >Category</option>
+                                    <option value="sector" >Sector</option>
+                                    <option value="datarecordtype" >Data Record Type</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Dynamic Filter Value Dropdown -->
+                            <div class="col-xl-3 col-lg-3 col-md-6">
+                                <label class="form-label">Filter Value</label>
+                                <select class="form-select" id="filterValue" name="filter_value" disabled>
+                                    <option value="">All</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Reset Button -->
+                            <div class="col-xl-2 col-lg-2 col-md-12">
+                                <button type="button" class="btn btn-secondary w-100" id="resetBtn">Reset</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Results Count -->
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <p class="mb-0"><strong>91</strong> datasets found</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                                <!-- Charts Grid - 2 per row with equal height -->
+                <div class="row">
+                                        <div class="col-lg-6 col-md-6 mb-4 datasets-chart-card">
+                        <div class="chart-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e5e7eb; height: 100%; display: flex; flex-direction: column;">
+    
+    <div style="padding: 16px 20px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+        <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: #1f2937; line-height: 1.4; flex: 1;">
+            Priyadarshini Free Travel for Socio Economic Development of Women
+        </h4>
+        <a href="https://datahub.kerala.gov.in/charts/eyJpdiI6IlV2NWhuVGUzc0d2THVhUHozRmF1SkE9PSIsInZhbHVlIjoiZ2ZBZDBsdlBvVkF2aEpjTXdrWWF6dz09IiwibWFjIjoiZDhlMzM5OGFiY2RiMzNhYzZlMjA1ZDFiYTY2MWY2MTE5ZThkODI2M2NiM2NkN2QyZDA2Y2YyNmFkNDExYmFlMyIsInRhZyI6IiJ9" target="_blank" 
+           title="View Full Details in New Tab"
+           style="color: #9ca3af; padding: 4px; border-radius: 4px; display: flex; align-items: center; text-decoration: none; transition: color 0.2s;"
+           onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+        </a>
+    </div>
+    
+    
+        
+    
+    <div style="padding: 16px 20px; flex: 1; display: flex; flex-direction: column;">
+        <div id="dataset-chart-938" 
+             class="chart-container"
+             style="width: 100%; height: 450px; position: relative; flex: 1; min-height: 450px;"
+             data-chart="{&quot;chartType&quot;:&quot;amcharts5_multi_line&quot;,&quot;chartData&quot;:{&quot;labels&quot;:[&quot;15.06.2026&quot;,&quot;16.06.2026&quot;,&quot;17.06.2026&quot;,&quot;18.06.2026&quot;,&quot;19.06.2026&quot;,&quot;20.06.2026&quot;,&quot;21.06.2026&quot;,&quot;22.06.2026&quot;,&quot;23.06.2026&quot;,&quot;24.06.2026&quot;,&quot;25.06.2026&quot;,&quot;26.06.2026&quot;,&quot;27.06.2026&quot;,&quot;28.06.2026&quot;,&quot;29.06.2026&quot;,&quot;30.06.2026&quot;,&quot;01.07.2026&quot;,&quot;02.07.2026&quot;,&quot;03.07.2026&quot;,&quot;04.07.2026&quot;,&quot;05.07.2026&quot;,&quot;06.07.2026&quot;,&quot;07.07.2026&quot;,&quot;08.07.2026&quot;,&quot;09.07.2026&quot;,&quot;10.07.2026&quot;,&quot;11.07.2026&quot;,&quot;12.07.2026&quot;,&quot;13.07.2026&quot;,&quot;14.07.2026&quot;,&quot;15.07.2026&quot;,&quot;16.07.2026&quot;,&quot;17.07.2026&quot;,&quot;18.07.2026&quot;,&quot;19.07.2026&quot;,&quot;20.07.2026&quot;,&quot;21.07.2026&quot;,&quot;22.07.2026&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;PFT Passengers&quot;,&quot;data&quot;:[714402,1180417,1215953,1265208,1296432,1263243,821425,1398907,1367059,1385107,1364571,1052308,1306703,821347,1488673,1453565,1413378,1423675,1380139,1296785,872089,1527559,1480510,1427717,1407809,1428592,1165625,899457,1524469,1499880,1485495,1471991,1451329,1385999,881252,1290043,1512447,1492540]}]},&quot;columns&quot;:[&quot;Date&quot;,&quot;PFT Passengers&quot;],&quot;rows&quot;:[[&quot;15.06.2026&quot;,&quot;714402&quot;],[&quot;16.06.2026&quot;,&quot;1180417&quot;],[&quot;17.06.2026&quot;,&quot;1215953&quot;],[&quot;18.06.2026&quot;,&quot;1265208&quot;],[&quot;19.06.2026&quot;,&quot;1296432&quot;],[&quot;20.06.2026&quot;,&quot;1263243&quot;],[&quot;21.06.2026&quot;,&quot;821425&quot;],[&quot;22.06.2026&quot;,&quot;1398907&quot;],[&quot;23.06.2026&quot;,&quot;1367059&quot;],[&quot;24.06.2026&quot;,&quot;1385107&quot;],[&quot;25.06.2026&quot;,&quot;1364571&quot;],[&quot;26.06.2026&quot;,&quot;1052308&quot;],[&quot;27.06.2026&quot;,&quot;1306703&quot;],[&quot;28.06.2026&quot;,&quot;821347&quot;],[&quot;29.06.2026&quot;,&quot;1488673&quot;],[&quot;30.06.2026&quot;,&quot;1453565&quot;],[&quot;01.07.2026&quot;,&quot;1413378&quot;],[&quot;02.07.2026&quot;,&quot;1423675&quot;],[&quot;03.07.2026&quot;,&quot;1380139&quot;],[&quot;04.07.2026&quot;,&quot;1296785&quot;],[&quot;05.07.2026&quot;,&quot;872089&quot;],[&quot;06.07.2026&quot;,&quot;1527559&quot;],[&quot;07.07.2026&quot;,&quot;1480510&quot;],[&quot;08.07.2026&quot;,&quot;1427717&quot;],[&quot;09.07.2026&quot;,&quot;1407809&quot;],[&quot;10.07.2026&quot;,&quot;1428592&quot;],[&quot;11.07.2026&quot;,&quot;1165625&quot;],[&quot;12.07.2026&quot;,&quot;899457&quot;],[&quot;13.07.2026&quot;,&quot;1524469&quot;],[&quot;14.07.2026&quot;,&quot;1499880&quot;],[&quot;15.07.2026&quot;,&quot;1485495&quot;],[&quot;16.07.2026&quot;,&quot;1471991&quot;],[&quot;17.07.2026&quot;,&quot;1451329&quot;],[&quot;18.07.2026&quot;,&quot;1385999&quot;],[&quot;19.07.2026&quot;,&quot;881252&quot;],[&quot;20.07.2026&quot;,&quot;1290043&quot;],[&quot;21.07.2026&quot;,&quot;1512447&quot;],[&quot;22.07.2026&quot;,&quot;1492540&quot;]],&quot;xAxisColumns&quot;:[&quot;0&quot;],&quot;yAxisColumns&quot;:[&quot;1&quot;],&quot;options&quot;:{&quot;title&quot;:&quot;Priyadarshini Free Travel for Socio Economic Development of Women&quot;,&quot;xAxisLabel&quot;:&quot;Date&quot;,&quot;yAxisLabel&quot;:&quot;Number of Passengers&quot;,&quot;colors&quot;:[&quot;#1f77b4&quot;,&quot;#ff7f0e&quot;,&quot;#2ca02c&quot;,&quot;#d62728&quot;]}}">
+            <div id="dataset-chart-938-amcharts" style="width: 100%; height: 100%; display: none;"></div>
+            <canvas id="dataset-chart-938-canvas" style="width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
+    
+    
+    <div style="padding: 12px 20px; background: #f9fafb; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 50px; margin-top: auto;">
+        <div style="font-size: 12px; color: #6b7280; line-height: 1.4; flex: 1; min-width: 200px; word-wrap: break-word; overflow-wrap: break-word;">
+            <span style="color: #dc2626;">Source:</span> Transport Department
+        </div>
+        <div style="display: flex; gap: 6px; flex-shrink: 0;">
+            <button onclick="downloadChartPNG('dataset-chart-938', 'priyadarshini-free-travel-for-socio-economic-development-of-women')" 
+                    title="Download PNG"
+                    style="background: #3b82f6; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ PNG
+            </button>
+            <button onclick="downloadChartCSV('dataset-chart-938', 'priyadarshini-free-travel-for-socio-economic-development-of-women')" 
+                    title="Download CSV"
+                    style="background: #10b981; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ CSV
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const containerId = 'dataset-chart-938';
+    let originalConfig = null;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById(containerId);
+        if (container) {
+            const configStr = container.getAttribute('data-chart');
+            if (configStr) {
+                originalConfig = JSON.parse(configStr);
+            }
+        }
+        
+        // Filter handler
+        document.querySelectorAll('.chart-filter-select[data-container="' + containerId + '"]').forEach(select => {
+            select.addEventListener('change', function() {
+                if (!originalConfig) return;
+                
+                const filterType = this.getAttribute('data-filter');
+                const selectedValue = this.value;
+                const container = document.getElementById(containerId);
+                
+                let chartData = originalConfig.chartData;
+                
+                if (selectedValue && filterType === 'metric') {
+                    const colIdx = parseInt(selectedValue);
+                    const xCol = (originalConfig.xAxisColumns || [0])[0] || 0;
+                    
+                    chartData = {
+                        labels: originalConfig.rows.map(row => row[xCol]),
+                        datasets: [{
+                            label: originalConfig.columns[colIdx] || 'Value',
+                            data: originalConfig.rows.map(row => parseFloat(row[colIdx]) || 0)
+                        }]
+                    };
+                }
+                
+                if (typeof ChartRenderer !== 'undefined') {
+                    new ChartRenderer().render(container, originalConfig.chartType, chartData, originalConfig.options || {});
+                }
+            });
+        });
+    });
+    
+    // Export functions (global)
+    window.downloadChartPNG = window.downloadChartPNG || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) {
+            console.error('Container not found:', id);
+            return;
+        }
+        
+        // Check if this is an amCharts chart
+        const amchartsDiv = container.querySelector('[id$="-amcharts"]');
+        const isAmChart = amchartsDiv && amchartsDiv.style.display !== 'none';
+        
+        if (isAmChart && container._root) {
+            // amCharts 5 export using built-in exporting
+            console.log('Exporting amCharts chart...');
+            
+            // Use amCharts 5 export functionality
+            try {
+                // Get the chart instance from the root
+                const root = container._root;
+                
+                // Create a temporary exporting menu
+                const exporting = am5plugins_exporting.Exporting.new(root, {
+                    menu: am5plugins_exporting.ExportingMenu.new(root, {}),
+                    filePrefix: filename,
+                    pngOptions: {
+                        quality: 0.95,
+                        maintainPixelRatio: true
+                    }
+                });
+                
+                // Export as PNG
+                exporting.export("png").then(function(imgData) {
+                    // Create download link
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = imgData;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Clean up
+                    exporting.dispose();
+                }).catch(function(error) {
+                    console.error('amCharts export error:', error);
+                    alert('Failed to export chart. Please try again.');
+                });
+                
+            } catch (error) {
+                console.error('amCharts export error:', error);
+                
+                // Fallback to html2canvas
+                if (typeof html2canvas !== 'undefined') {
+                    console.log('Falling back to html2canvas...');
+                    html2canvas(amchartsDiv, {
+                        backgroundColor: '#ffffff',
+                        scale: 2,
+                        logging: false
+                    }).then(function(canvas) {
+                        const link = document.createElement('a');
+                        link.download = filename + '.png';
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                    }).catch(function(err) {
+                        console.error('html2canvas error:', err);
+                        alert('Failed to export chart. Please try again.');
+                    });
+                } else {
+                    alert('Export functionality not available. Please ensure all required libraries are loaded.');
+                }
+            }
+        } else {
+            // Chart.js export (canvas-based)
+            const canvas = container.querySelector('canvas');
+            if (canvas && canvas.style.display !== 'none') {
+                console.log('Exporting Chart.js chart...');
+                const link = document.createElement('a');
+                link.download = filename + '.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            } else if (typeof html2canvas !== 'undefined') {
+                // Fallback to html2canvas for any other chart type
+                console.log('Exporting using html2canvas...');
+                html2canvas(container, {
+                    backgroundColor: '#ffffff',
+                    scale: 2,
+                    logging: false
+                }).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                }).catch(function(err) {
+                    console.error('html2canvas error:', err);
+                    alert('Failed to export chart. Please try again.');
+                });
+            } else {
+                console.error('No export method available');
+                alert('Unable to export chart. No canvas or html2canvas found.');
+            }
+        }
+    };
+    
+    window.downloadChartCSV = window.downloadChartCSV || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) return;
+        
+        try {
+            const config = JSON.parse(container.getAttribute('data-chart'));
+            if (config.columns && config.rows) {
+                let csv = config.columns.join(',') + '\n';
+                config.rows.forEach(row => {
+                    csv += row.map(c => '"' + (c || '') + '"').join(',') + '\n';
+                });
+                
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename + '.csv';
+                link.click();
+            }
+        } catch (e) {
+            console.error('CSV export error:', e);
+        }
+    };
+})();
+</script>
+                    </div>
+                                        <div class="col-lg-6 col-md-6 mb-4 datasets-chart-card">
+                        <div class="chart-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e5e7eb; height: 100%; display: flex; flex-direction: column;">
+    
+    <div style="padding: 16px 20px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+        <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: #1f2937; line-height: 1.4; flex: 1;">
+            SC ST population 2011 census
+        </h4>
+        <a href="https://datahub.kerala.gov.in/charts/eyJpdiI6ImJFZmpybjZMOHQ2VjNnOGZzLzNJakE9PSIsInZhbHVlIjoiN3ZFL0huYzF1cG5McDAzak91SE1pdz09IiwibWFjIjoiNzliNTE0YTQ3ZmQ3NDM5MTZkZmIzMTEyNDIyNjZjZjI1NjlkZTFhN2YwZjgyNTE1OWI3ZjIzNDFiNTQ2YjYyNiIsInRhZyI6IiJ9" target="_blank" 
+           title="View Full Details in New Tab"
+           style="color: #9ca3af; padding: 4px; border-radius: 4px; display: flex; align-items: center; text-decoration: none; transition: color 0.2s;"
+           onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+        </a>
+    </div>
+    
+    
+        
+    
+    <div style="padding: 16px 20px; flex: 1; display: flex; flex-direction: column;">
+        <div id="dataset-chart-929" 
+             class="chart-container"
+             style="width: 100%; height: 450px; position: relative; flex: 1; min-height: 450px;"
+             data-chart="{&quot;chartType&quot;:&quot;clustered_column&quot;,&quot;chartData&quot;:{&quot;labels&quot;:[&quot;SC Population&quot;,&quot;ST Population&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Rural Male&quot;,&quot;data&quot;:[883819,213208]},{&quot;label&quot;:&quot;Rural Female&quot;,&quot;data&quot;:[934462,219884]},{&quot;label&quot;:&quot;Urban Male&quot;,&quot;data&quot;:[593989,24995]},{&quot;label&quot;:&quot;Urban Female&quot;,&quot;data&quot;:[627303,26752]}]},&quot;columns&quot;:[&quot;Category&quot;,&quot;Rural Male&quot;,&quot;Rural Female&quot;,&quot;Urban Male&quot;,&quot;Urban Female&quot;],&quot;rows&quot;:[[&quot;SC Population&quot;,&quot;883819&quot;,&quot;934462&quot;,&quot;593989&quot;,&quot;627303&quot;],[&quot;ST Population&quot;,&quot;213208&quot;,&quot;219884&quot;,&quot;24995&quot;,&quot;26752&quot;]],&quot;xAxisColumns&quot;:[&quot;0&quot;],&quot;yAxisColumns&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;],&quot;options&quot;:{&quot;title&quot;:&quot;SC ST population 2011 census&quot;,&quot;xAxisLabel&quot;:&quot;Population Category&quot;,&quot;yAxisLabel&quot;:&quot;Population Value&quot;,&quot;colors&quot;:[&quot;#8b4513&quot;,&quot;#daa520&quot;,&quot;#228b22&quot;,&quot;#4682b4&quot;]}}">
+            <div id="dataset-chart-929-amcharts" style="width: 100%; height: 100%; display: none;"></div>
+            <canvas id="dataset-chart-929-canvas" style="width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
+    
+    
+    <div style="padding: 12px 20px; background: #f9fafb; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 50px; margin-top: auto;">
+        <div style="font-size: 12px; color: #6b7280; line-height: 1.4; flex: 1; min-width: 200px; word-wrap: break-word; overflow-wrap: break-word;">
+            <span style="color: #dc2626;">Source:</span> Economic Review 2026
+        </div>
+        <div style="display: flex; gap: 6px; flex-shrink: 0;">
+            <button onclick="downloadChartPNG('dataset-chart-929', 'sc-st-population-2011-census')" 
+                    title="Download PNG"
+                    style="background: #3b82f6; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ PNG
+            </button>
+            <button onclick="downloadChartCSV('dataset-chart-929', 'sc-st-population-2011-census')" 
+                    title="Download CSV"
+                    style="background: #10b981; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ CSV
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const containerId = 'dataset-chart-929';
+    let originalConfig = null;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById(containerId);
+        if (container) {
+            const configStr = container.getAttribute('data-chart');
+            if (configStr) {
+                originalConfig = JSON.parse(configStr);
+            }
+        }
+        
+        // Filter handler
+        document.querySelectorAll('.chart-filter-select[data-container="' + containerId + '"]').forEach(select => {
+            select.addEventListener('change', function() {
+                if (!originalConfig) return;
+                
+                const filterType = this.getAttribute('data-filter');
+                const selectedValue = this.value;
+                const container = document.getElementById(containerId);
+                
+                let chartData = originalConfig.chartData;
+                
+                if (selectedValue && filterType === 'metric') {
+                    const colIdx = parseInt(selectedValue);
+                    const xCol = (originalConfig.xAxisColumns || [0])[0] || 0;
+                    
+                    chartData = {
+                        labels: originalConfig.rows.map(row => row[xCol]),
+                        datasets: [{
+                            label: originalConfig.columns[colIdx] || 'Value',
+                            data: originalConfig.rows.map(row => parseFloat(row[colIdx]) || 0)
+                        }]
+                    };
+                }
+                
+                if (typeof ChartRenderer !== 'undefined') {
+                    new ChartRenderer().render(container, originalConfig.chartType, chartData, originalConfig.options || {});
+                }
+            });
+        });
+    });
+    
+    // Export functions (global)
+    window.downloadChartPNG = window.downloadChartPNG || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) {
+            console.error('Container not found:', id);
+            return;
+        }
+        
+        // Check if this is an amCharts chart
+        const amchartsDiv = container.querySelector('[id$="-amcharts"]');
+        const isAmChart = amchartsDiv && amchartsDiv.style.display !== 'none';
+        
+        if (isAmChart && container._root) {
+            // amCharts 5 export using built-in exporting
+            console.log('Exporting amCharts chart...');
+            
+            // Use amCharts 5 export functionality
+            try {
+                // Get the chart instance from the root
+                const root = container._root;
+                
+                // Create a temporary exporting menu
+                const exporting = am5plugins_exporting.Exporting.new(root, {
+                    menu: am5plugins_exporting.ExportingMenu.new(root, {}),
+                    filePrefix: filename,
+                    pngOptions: {
+                        quality: 0.95,
+                        maintainPixelRatio: true
+                    }
+                });
+                
+                // Export as PNG
+                exporting.export("png").then(function(imgData) {
+                    // Create download link
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = imgData;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Clean up
+                    exporting.dispose();
+                }).catch(function(error) {
+                    console.error('amCharts export error:', error);
+                    alert('Failed to export chart. Please try again.');
+                });
+                
+            } catch (error) {
+                console.error('amCharts export error:', error);
+                
+                // Fallback to html2canvas
+                if (typeof html2canvas !== 'undefined') {
+                    console.log('Falling back to html2canvas...');
+                    html2canvas(amchartsDiv, {
+                        backgroundColor: '#ffffff',
+                        scale: 2,
+                        logging: false
+                    }).then(function(canvas) {
+                        const link = document.createElement('a');
+                        link.download = filename + '.png';
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                    }).catch(function(err) {
+                        console.error('html2canvas error:', err);
+                        alert('Failed to export chart. Please try again.');
+                    });
+                } else {
+                    alert('Export functionality not available. Please ensure all required libraries are loaded.');
+                }
+            }
+        } else {
+            // Chart.js export (canvas-based)
+            const canvas = container.querySelector('canvas');
+            if (canvas && canvas.style.display !== 'none') {
+                console.log('Exporting Chart.js chart...');
+                const link = document.createElement('a');
+                link.download = filename + '.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            } else if (typeof html2canvas !== 'undefined') {
+                // Fallback to html2canvas for any other chart type
+                console.log('Exporting using html2canvas...');
+                html2canvas(container, {
+                    backgroundColor: '#ffffff',
+                    scale: 2,
+                    logging: false
+                }).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                }).catch(function(err) {
+                    console.error('html2canvas error:', err);
+                    alert('Failed to export chart. Please try again.');
+                });
+            } else {
+                console.error('No export method available');
+                alert('Unable to export chart. No canvas or html2canvas found.');
+            }
+        }
+    };
+    
+    window.downloadChartCSV = window.downloadChartCSV || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) return;
+        
+        try {
+            const config = JSON.parse(container.getAttribute('data-chart'));
+            if (config.columns && config.rows) {
+                let csv = config.columns.join(',') + '\n';
+                config.rows.forEach(row => {
+                    csv += row.map(c => '"' + (c || '') + '"').join(',') + '\n';
+                });
+                
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename + '.csv';
+                link.click();
+            }
+        } catch (e) {
+            console.error('CSV export error:', e);
+        }
+    };
+})();
+</script>
+                    </div>
+                                        <div class="col-lg-6 col-md-6 mb-4 datasets-chart-card">
+                        <div class="chart-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e5e7eb; height: 100%; display: flex; flex-direction: column;">
+    
+    <div style="padding: 16px 20px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+        <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: #1f2937; line-height: 1.4; flex: 1;">
+            Details of Operation TOOFAN
+        </h4>
+        <a href="https://datahub.kerala.gov.in/charts/eyJpdiI6InhFUWR4NER5cFlkSlc0Yk9SQkF2M2c9PSIsInZhbHVlIjoiZnErbklsNy9CaGdCZlRxaTIwUWhIZz09IiwibWFjIjoiNWQ5YjFiZmNkOTU5MmI2NDdhYjc0MjZlMmVhNjhmZDBlN2NkZTk5OGJlYzJlNTdlODQwZjIwOTljYzY4NDRkYyIsInRhZyI6IiJ9" target="_blank" 
+           title="View Full Details in New Tab"
+           style="color: #9ca3af; padding: 4px; border-radius: 4px; display: flex; align-items: center; text-decoration: none; transition: color 0.2s;"
+           onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+        </a>
+    </div>
+    
+    
+        
+    
+    <div style="padding: 16px 20px; flex: 1; display: flex; flex-direction: column;">
+        <div id="dataset-chart-937" 
+             class="chart-container"
+             style="width: 100%; height: 450px; position: relative; flex: 1; min-height: 450px;"
+             data-chart="{&quot;chartType&quot;:&quot;column_line_mix&quot;,&quot;chartData&quot;:{&quot;labels&quot;:[&quot;Thiruvananthapuram&quot;,&quot;Kollam&quot;,&quot;Pathanamthitta&quot;,&quot;Alappuzha&quot;,&quot;Kottayam&quot;,&quot;Idukki&quot;,&quot;Ernakulam&quot;,&quot;Thrissur&quot;,&quot;Palakkad&quot;,&quot;Malappuram&quot;,&quot;Kozhikode&quot;,&quot;Wayanad&quot;,&quot;Kannur&quot;,&quot;Kasaragod&quot;,&quot;Railway&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Total cases&quot;,&quot;data&quot;:[9,4,0,8,12,3,4,4,8,5,6,8,2,1,1]},{&quot;label&quot;:&quot;Accused arrested&quot;,&quot;data&quot;:[9,4,0,10,12,3,4,4,9,6,6,10,2,1,0]}]},&quot;columns&quot;:[&quot;District&quot;,&quot;Total cases&quot;,&quot;Accused arrested&quot;,&quot;MDMA seized (gm)&quot;,&quot;Ganja seized (gm)&quot;,&quot;Ganja beedi seized&quot;],&quot;rows&quot;:[[&quot;Thiruvananthapuram&quot;,&quot;9&quot;,&quot;9&quot;,&quot;2.088&quot;,&quot;10.94&quot;,&quot;2&quot;],[&quot;Kollam&quot;,&quot;4&quot;,&quot;4&quot;,&quot;0&quot;,&quot;2&quot;,&quot;3&quot;],[&quot;Pathanamthitta&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],[&quot;Alappuzha&quot;,&quot;8&quot;,&quot;10&quot;,&quot;0&quot;,&quot;12&quot;,&quot;5&quot;],[&quot;Kottayam&quot;,&quot;12&quot;,&quot;12&quot;,&quot;0&quot;,&quot;51&quot;,&quot;4&quot;],[&quot;Idukki&quot;,&quot;3&quot;,&quot;3&quot;,&quot;0&quot;,&quot;8&quot;,&quot;1&quot;],[&quot;Ernakulam&quot;,&quot;4&quot;,&quot;4&quot;,&quot;0&quot;,&quot;9&quot;,&quot;2&quot;],[&quot;Thrissur&quot;,&quot;4&quot;,&quot;4&quot;,&quot;0&quot;,&quot;86&quot;,&quot;2&quot;],[&quot;Palakkad&quot;,&quot;8&quot;,&quot;9&quot;,&quot;0&quot;,&quot;23&quot;,&quot;8&quot;],[&quot;Malappuram&quot;,&quot;5&quot;,&quot;6&quot;,&quot;0&quot;,&quot;16104&quot;,&quot;4&quot;],[&quot;Kozhikode&quot;,&quot;6&quot;,&quot;6&quot;,&quot;0.64&quot;,&quot;0&quot;,&quot;3&quot;],[&quot;Wayanad&quot;,&quot;8&quot;,&quot;10&quot;,&quot;3&quot;,&quot;13.45&quot;,&quot;6&quot;],[&quot;Kannur&quot;,&quot;2&quot;,&quot;2&quot;,&quot;0&quot;,&quot;2.36&quot;,&quot;1&quot;],[&quot;Kasaragod&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],[&quot;Railway&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;7741&quot;,&quot;0&quot;]],&quot;xAxisColumns&quot;:[&quot;0&quot;],&quot;yAxisColumns&quot;:[&quot;1&quot;,&quot;2&quot;],&quot;options&quot;:{&quot;title&quot;:&quot;Details of Operation TOOFAN&quot;,&quot;xAxisLabel&quot;:&quot;District&quot;,&quot;yAxisLabel&quot;:&quot;Cases&quot;,&quot;colors&quot;:[&quot;#d70439&quot;,&quot;#13a452&quot;,&quot;#228b22&quot;,&quot;#4682b4&quot;,&quot;#9467bd&quot;,&quot;#8c564b&quot;,&quot;#e377c2&quot;,&quot;#7f7f7f&quot;]}}">
+            <div id="dataset-chart-937-amcharts" style="width: 100%; height: 100%; display: none;"></div>
+            <canvas id="dataset-chart-937-canvas" style="width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
+    
+    
+    <div style="padding: 12px 20px; background: #f9fafb; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 50px; margin-top: auto;">
+        <div style="font-size: 12px; color: #6b7280; line-height: 1.4; flex: 1; min-width: 200px; word-wrap: break-word; overflow-wrap: break-word;">
+            <span style="color: #dc2626;">Source:</span> Home department
+        </div>
+        <div style="display: flex; gap: 6px; flex-shrink: 0;">
+            <button onclick="downloadChartPNG('dataset-chart-937', 'details-of-operation-toofan')" 
+                    title="Download PNG"
+                    style="background: #3b82f6; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ PNG
+            </button>
+            <button onclick="downloadChartCSV('dataset-chart-937', 'details-of-operation-toofan')" 
+                    title="Download CSV"
+                    style="background: #10b981; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ CSV
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const containerId = 'dataset-chart-937';
+    let originalConfig = null;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById(containerId);
+        if (container) {
+            const configStr = container.getAttribute('data-chart');
+            if (configStr) {
+                originalConfig = JSON.parse(configStr);
+            }
+        }
+        
+        // Filter handler
+        document.querySelectorAll('.chart-filter-select[data-container="' + containerId + '"]').forEach(select => {
+            select.addEventListener('change', function() {
+                if (!originalConfig) return;
+                
+                const filterType = this.getAttribute('data-filter');
+                const selectedValue = this.value;
+                const container = document.getElementById(containerId);
+                
+                let chartData = originalConfig.chartData;
+                
+                if (selectedValue && filterType === 'metric') {
+                    const colIdx = parseInt(selectedValue);
+                    const xCol = (originalConfig.xAxisColumns || [0])[0] || 0;
+                    
+                    chartData = {
+                        labels: originalConfig.rows.map(row => row[xCol]),
+                        datasets: [{
+                            label: originalConfig.columns[colIdx] || 'Value',
+                            data: originalConfig.rows.map(row => parseFloat(row[colIdx]) || 0)
+                        }]
+                    };
+                }
+                
+                if (typeof ChartRenderer !== 'undefined') {
+                    new ChartRenderer().render(container, originalConfig.chartType, chartData, originalConfig.options || {});
+                }
+            });
+        });
+    });
+    
+    // Export functions (global)
+    window.downloadChartPNG = window.downloadChartPNG || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) {
+            console.error('Container not found:', id);
+            return;
+        }
+        
+        // Check if this is an amCharts chart
+        const amchartsDiv = container.querySelector('[id$="-amcharts"]');
+        const isAmChart = amchartsDiv && amchartsDiv.style.display !== 'none';
+        
+        if (isAmChart && container._root) {
+            // amCharts 5 export using built-in exporting
+            console.log('Exporting amCharts chart...');
+            
+            // Use amCharts 5 export functionality
+            try {
+                // Get the chart instance from the root
+                const root = container._root;
+                
+                // Create a temporary exporting menu
+                const exporting = am5plugins_exporting.Exporting.new(root, {
+                    menu: am5plugins_exporting.ExportingMenu.new(root, {}),
+                    filePrefix: filename,
+                    pngOptions: {
+                        quality: 0.95,
+                        maintainPixelRatio: true
+                    }
+                });
+                
+                // Export as PNG
+                exporting.export("png").then(function(imgData) {
+                    // Create download link
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = imgData;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Clean up
+                    exporting.dispose();
+                }).catch(function(error) {
+                    console.error('amCharts export error:', error);
+                    alert('Failed to export chart. Please try again.');
+                });
+                
+            } catch (error) {
+                console.error('amCharts export error:', error);
+                
+                // Fallback to html2canvas
+                if (typeof html2canvas !== 'undefined') {
+                    console.log('Falling back to html2canvas...');
+                    html2canvas(amchartsDiv, {
+                        backgroundColor: '#ffffff',
+                        scale: 2,
+                        logging: false
+                    }).then(function(canvas) {
+                        const link = document.createElement('a');
+                        link.download = filename + '.png';
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                    }).catch(function(err) {
+                        console.error('html2canvas error:', err);
+                        alert('Failed to export chart. Please try again.');
+                    });
+                } else {
+                    alert('Export functionality not available. Please ensure all required libraries are loaded.');
+                }
+            }
+        } else {
+            // Chart.js export (canvas-based)
+            const canvas = container.querySelector('canvas');
+            if (canvas && canvas.style.display !== 'none') {
+                console.log('Exporting Chart.js chart...');
+                const link = document.createElement('a');
+                link.download = filename + '.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            } else if (typeof html2canvas !== 'undefined') {
+                // Fallback to html2canvas for any other chart type
+                console.log('Exporting using html2canvas...');
+                html2canvas(container, {
+                    backgroundColor: '#ffffff',
+                    scale: 2,
+                    logging: false
+                }).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                }).catch(function(err) {
+                    console.error('html2canvas error:', err);
+                    alert('Failed to export chart. Please try again.');
+                });
+            } else {
+                console.error('No export method available');
+                alert('Unable to export chart. No canvas or html2canvas found.');
+            }
+        }
+    };
+    
+    window.downloadChartCSV = window.downloadChartCSV || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) return;
+        
+        try {
+            const config = JSON.parse(container.getAttribute('data-chart'));
+            if (config.columns && config.rows) {
+                let csv = config.columns.join(',') + '\n';
+                config.rows.forEach(row => {
+                    csv += row.map(c => '"' + (c || '') + '"').join(',') + '\n';
+                });
+                
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename + '.csv';
+                link.click();
+            }
+        } catch (e) {
+            console.error('CSV export error:', e);
+        }
+    };
+})();
+</script>
+                    </div>
+                                        <div class="col-lg-6 col-md-6 mb-4 datasets-chart-card">
+                        <div class="chart-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e5e7eb; height: 100%; display: flex; flex-direction: column;">
+    
+    <div style="padding: 16px 20px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+        <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: #1f2937; line-height: 1.4; flex: 1;">
+            Performance of State&#039;s and UT&#039;s on SDGs
+        </h4>
+        <a href="https://datahub.kerala.gov.in/charts/eyJpdiI6IkdOcG9KWlljK0V2Z0tmQzZvUDE3TVE9PSIsInZhbHVlIjoidG91bWJ2Q21jc0dpaGVSYlNVK1I4UT09IiwibWFjIjoiNzc1Y2U5MTZlNTMxYTdhNGY1ZDYzYjY4NTJlYzA0OGRjZGFhNjg4NWMxMmQ0NGIzMDRmMzEwZTIwNTYwNmYxZiIsInRhZyI6IiJ9" target="_blank" 
+           title="View Full Details in New Tab"
+           style="color: #9ca3af; padding: 4px; border-radius: 4px; display: flex; align-items: center; text-decoration: none; transition: color 0.2s;"
+           onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+        </a>
+    </div>
+    
+    
+        <div style="padding: 12px 20px; background: #f9fafb; border-bottom: 1px solid #f0f0f0;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+                                                                    <select class="chart-filter-select" 
+                            data-container="dataset-chart-936" 
+                            data-filter="metric"
+                            style="padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; background: #fff; min-width: 140px;">
+                        <option value="">Select Metric</option>
+                                                                                                                <option value="1">SDG 1</option>
+                                                                                                                                            <option value="2">SDG 2</option>
+                                                                                                                                            <option value="3">SDG 3</option>
+                                                                                                                                            <option value="4">SDG 4</option>
+                                                                                                                                            <option value="5">SDG 5</option>
+                                                                                                                                            <option value="6">SDG 6</option>
+                                                                                                                                            <option value="7">SDG 7</option>
+                                                                                                                                            <option value="8">SDG 8</option>
+                                                                                                                                            <option value="9">SDG 9</option>
+                                                                                                                                            <option value="10">SDG 10</option>
+                                                                                                                                            <option value="11">SDG 11</option>
+                                                                                                                                            <option value="12">SDG 12</option>
+                                                                                                                                            <option value="13">SDG 13</option>
+                                                                                                                                            <option value="14">SDG 15</option>
+                                                                                                                                            <option value="15">SDG 16</option>
+                                                                                                                                            <option value="16">Composite SDG</option>
+                                                                        </select>
+                                    </div>
+    </div>
+        
+    
+    <div style="padding: 16px 20px; flex: 1; display: flex; flex-direction: column;">
+        <div id="dataset-chart-936" 
+             class="chart-container"
+             style="width: 100%; height: 450px; position: relative; flex: 1; min-height: 450px;"
+             data-chart="{&quot;chartType&quot;:&quot;india_map&quot;,&quot;chartData&quot;:{&quot;labels&quot;:[&quot;Andhra Pradesh&quot;,&quot;Arunachal Pradesh&quot;,&quot;Assam&quot;,&quot;Bihar&quot;,&quot;Chhattisgarh&quot;,&quot;Goa&quot;,&quot;Gujarat&quot;,&quot;Haryana&quot;,&quot;Himachal Pradesh&quot;,&quot;Jharkhand&quot;,&quot;Karnataka&quot;,&quot;Kerala&quot;,&quot;Madhya Pradesh&quot;,&quot;Maharashtra&quot;,&quot;Manipur&quot;,&quot;Meghalaya&quot;,&quot;Mizoram&quot;,&quot;Nagaland&quot;,&quot;Odisha&quot;,&quot;Punjab&quot;,&quot;Rajasthan&quot;,&quot;Sikkim&quot;,&quot;Tamil Nadu&quot;,&quot;Telangana&quot;,&quot;Tripura&quot;,&quot;Uttar Pradesh&quot;,&quot;Uttarakhand&quot;,&quot;West Bengal&quot;,&quot;Andaman and Nicobar Islands&quot;,&quot;Chandigarh&quot;,&quot;D and N Haveli&quot;,&quot;Daman &amp; Diu&quot;,&quot;Delhi&quot;,&quot;Jammu &amp; Kashmir&quot;,&quot;Lakshadweep&quot;,&quot;Puducherry&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Composite SDG&quot;,&quot;data&quot;:[67,53,55,50,56,65,64,57,69,53,66,70,58,64,60,54,56,57,58,62,57,65,67,67,58,55,64,60,61,70,63,61,61,59,63,66]}]},&quot;columns&quot;:[&quot;States&quot;,&quot;SDG 1&quot;,&quot;SDG 2&quot;,&quot;SDG 3&quot;,&quot;SDG 4&quot;,&quot;SDG 5&quot;,&quot;SDG 6&quot;,&quot;SDG 7&quot;,&quot;SDG 8&quot;,&quot;SDG 9&quot;,&quot;SDG 10&quot;,&quot;SDG 11&quot;,&quot;SDG 12&quot;,&quot;SDG 13&quot;,&quot;SDG 15&quot;,&quot;SDG 16&quot;,&quot;Composite SDG&quot;],&quot;rows&quot;:[[&quot;Andhra Pradesh&quot;,&quot;69&quot;,&quot;35&quot;,&quot;76&quot;,&quot;52&quot;,&quot;37&quot;,&quot;96&quot;,&quot;86&quot;,&quot;78&quot;,&quot;66&quot;,&quot;68&quot;,&quot;36&quot;,&quot;57&quot;,&quot;70&quot;,&quot;86&quot;,&quot;86&quot;,&quot;67&quot;],[&quot;Arunachal Pradesh&quot;,&quot;34&quot;,&quot;66&quot;,&quot;50&quot;,&quot;58&quot;,&quot;33&quot;,&quot;88&quot;,&quot;74&quot;,&quot;52&quot;,&quot;31&quot;,&quot;38&quot;,&quot;43&quot;,&quot;67&quot;,&quot;31&quot;,&quot;71&quot;,&quot;62&quot;,&quot;53&quot;],[&quot;Assam&quot;,&quot;48&quot;,&quot;39&quot;,&quot;44&quot;,&quot;44&quot;,&quot;33&quot;,&quot;78&quot;,&quot;70&quot;,&quot;62&quot;,&quot;46&quot;,&quot;67&quot;,&quot;40&quot;,&quot;68&quot;,&quot;47&quot;,&quot;90&quot;,&quot;52&quot;,&quot;55&quot;],[&quot;Bihar&quot;,&quot;33&quot;,&quot;26&quot;,&quot;44&quot;,&quot;19&quot;,&quot;40&quot;,&quot;81&quot;,&quot;62&quot;,&quot;64&quot;,&quot;47&quot;,&quot;74&quot;,&quot;50&quot;,&quot;47&quot;,&quot;43&quot;,&quot;54&quot;,&quot;64&quot;,&quot;50&quot;],[&quot;Chhattisgarh&quot;,&quot;49&quot;,&quot;27&quot;,&quot;52&quot;,&quot;52&quot;,&quot;43&quot;,&quot;92&quot;,&quot;56&quot;,&quot;67&quot;,&quot;38&quot;,&quot;60&quot;,&quot;49&quot;,&quot;58&quot;,&quot;29&quot;,&quot;97&quot;,&quot;71&quot;,&quot;56&quot;],[&quot;Goa&quot;,&quot;53&quot;,&quot;76&quot;,&quot;60&quot;,&quot;71&quot;,&quot;46&quot;,&quot;77&quot;,&quot;95&quot;,&quot;71&quot;,&quot;45&quot;,&quot;19&quot;,&quot;79&quot;,&quot;63&quot;,&quot;41&quot;,&quot;99&quot;,&quot;79&quot;,&quot;65&quot;],[&quot;Gujarat&quot;,&quot;47&quot;,&quot;39&quot;,&quot;67&quot;,&quot;47&quot;,&quot;36&quot;,&quot;92&quot;,&quot;75&quot;,&quot;75&quot;,&quot;88&quot;,&quot;59&quot;,&quot;77&quot;,&quot;33&quot;,&quot;63&quot;,&quot;77&quot;,&quot;86&quot;,&quot;64&quot;],[&quot;Haryana&quot;,&quot;47&quot;,&quot;43&quot;,&quot;65&quot;,&quot;68&quot;,&quot;36&quot;,&quot;81&quot;,&quot;77&quot;,&quot;71&quot;,&quot;73&quot;,&quot;54&quot;,&quot;49&quot;,&quot;39&quot;,&quot;34&quot;,&quot;40&quot;,&quot;76&quot;,&quot;57&quot;],[&quot;Himachal Pradesh&quot;,&quot;60&quot;,&quot;44&quot;,&quot;67&quot;,&quot;81&quot;,&quot;52&quot;,&quot;82&quot;,&quot;64&quot;,&quot;76&quot;,&quot;70&quot;,&quot;78&quot;,&quot;79&quot;,&quot;52&quot;,&quot;61&quot;,&quot;92&quot;,&quot;84&quot;,&quot;69&quot;],[&quot;Jharkhand&quot;,&quot;28&quot;,&quot;22&quot;,&quot;55&quot;,&quot;42&quot;,&quot;34&quot;,&quot;78&quot;,&quot;50&quot;,&quot;70&quot;,&quot;70&quot;,&quot;64&quot;,&quot;57&quot;,&quot;36&quot;,&quot;99&quot;,&quot;67&quot;,&quot;53&quot;,&quot;53&quot;],[&quot;Karnataka&quot;,&quot;49&quot;,&quot;37&quot;,&quot;72&quot;,&quot;67&quot;,&quot;42&quot;,&quot;88&quot;,&quot;86&quot;,&quot;78&quot;,&quot;40&quot;,&quot;70&quot;,&quot;48&quot;,&quot;72&quot;,&quot;71&quot;,&quot;89&quot;,&quot;75&quot;,&quot;66&quot;],[&quot;Kerala&quot;,&quot;64&quot;,&quot;74&quot;,&quot;82&quot;,&quot;74&quot;,&quot;51&quot;,&quot;77&quot;,&quot;70&quot;,&quot;61&quot;,&quot;88&quot;,&quot;75&quot;,&quot;48&quot;,&quot;57&quot;,&quot;56&quot;,&quot;98&quot;,&quot;77&quot;,&quot;70&quot;],[&quot;Madhya Pradesh&quot;,&quot;40&quot;,&quot;24&quot;,&quot;50&quot;,&quot;54&quot;,&quot;45&quot;,&quot;92&quot;,&quot;62&quot;,&quot;67&quot;,&quot;44&quot;,&quot;68&quot;,&quot;48&quot;,&quot;58&quot;,&quot;47&quot;,&quot;94&quot;,&quot;63&quot;,&quot;58&quot;],[&quot;Maharashtra&quot;,&quot;47&quot;,&quot;34&quot;,&quot;76&quot;,&quot;65&quot;,&quot;41&quot;,&quot;93&quot;,&quot;82&quot;,&quot;70&quot;,&quot;59&quot;,&quot;70&quot;,&quot;48&quot;,&quot;71&quot;,&quot;50&quot;,&quot;85&quot;,&quot;72&quot;,&quot;64&quot;],[&quot;Manipur&quot;,&quot;42&quot;,&quot;69&quot;,&quot;62&quot;,&quot;70&quot;,&quot;34&quot;,&quot;87&quot;,&quot;72&quot;,&quot;27&quot;,&quot;43&quot;,&quot;81&quot;,&quot;48&quot;,&quot;85&quot;,&quot;37&quot;,&quot;100&quot;,&quot;70&quot;,&quot;60&quot;],[&quot;Meghalaya&quot;,&quot;68&quot;,&quot;35&quot;,&quot;53&quot;,&quot;55&quot;,&quot;34&quot;,&quot;70&quot;,&quot;52&quot;,&quot;65&quot;,&quot;22&quot;,&quot;76&quot;,&quot;48&quot;,&quot;60&quot;,&quot;36&quot;,&quot;99&quot;,&quot;59&quot;,&quot;54&quot;],[&quot;Mizoram&quot;,&quot;67&quot;,&quot;75&quot;,&quot;52&quot;,&quot;61&quot;,&quot;37&quot;,&quot;81&quot;,&quot;81&quot;,&quot;42&quot;,&quot;8&quot;,&quot;66&quot;,&quot;48&quot;,&quot;50&quot;,&quot;45&quot;,&quot;75&quot;,&quot;63&quot;,&quot;56&quot;],[&quot;Nagaland&quot;,&quot;56&quot;,&quot;70&quot;,&quot;29&quot;,&quot;47&quot;,&quot;42&quot;,&quot;75&quot;,&quot;70&quot;,&quot;28&quot;,&quot;23&quot;,&quot;61&quot;,&quot;48&quot;,&quot;100&quot;,&quot;51&quot;,&quot;94&quot;,&quot;84&quot;,&quot;57&quot;],[&quot;Odisha&quot;,&quot;47&quot;,&quot;34&quot;,&quot;61&quot;,&quot;40&quot;,&quot;35&quot;,&quot;85&quot;,&quot;50&quot;,&quot;59&quot;,&quot;72&quot;,&quot;69&quot;,&quot;48&quot;,&quot;44&quot;,&quot;69&quot;,&quot;99&quot;,&quot;61&quot;,&quot;58&quot;],[&quot;Punjab&quot;,&quot;48&quot;,&quot;61&quot;,&quot;71&quot;,&quot;67&quot;,&quot;46&quot;,&quot;74&quot;,&quot;89&quot;,&quot;65&quot;,&quot;69&quot;,&quot;50&quot;,&quot;48&quot;,&quot;35&quot;,&quot;57&quot;,&quot;59&quot;,&quot;83&quot;,&quot;62&quot;],[&quot;Rajasthan&quot;,&quot;56&quot;,&quot;35&quot;,&quot;58&quot;,&quot;51&quot;,&quot;39&quot;,&quot;76&quot;,&quot;61&quot;,&quot;65&quot;,&quot;38&quot;,&quot;70&quot;,&quot;48&quot;,&quot;30&quot;,&quot;60&quot;,&quot;75&quot;,&quot;76&quot;,&quot;57&quot;],[&quot;Sikkim&quot;,&quot;65&quot;,&quot;66&quot;,&quot;59&quot;,&quot;58&quot;,&quot;49&quot;,&quot;79&quot;,&quot;97&quot;,&quot;68&quot;,&quot;27&quot;,&quot;64&quot;,&quot;48&quot;,&quot;60&quot;,&quot;38&quot;,&quot;100&quot;,&quot;69&quot;,&quot;65&quot;],[&quot;Tamil Nadu&quot;,&quot;72&quot;,&quot;48&quot;,&quot;76&quot;,&quot;70&quot;,&quot;40&quot;,&quot;90&quot;,&quot;90&quot;,&quot;74&quot;,&quot;53&quot;,&quot;65&quot;,&quot;48&quot;,&quot;63&quot;,&quot;45&quot;,&quot;91&quot;,&quot;78&quot;,&quot;67&quot;],[&quot;Telangana&quot;,&quot;52&quot;,&quot;36&quot;,&quot;66&quot;,&quot;64&quot;,&quot;26&quot;,&quot;84&quot;,&quot;93&quot;,&quot;82&quot;,&quot;61&quot;,&quot;94&quot;,&quot;48&quot;,&quot;58&quot;,&quot;66&quot;,&quot;88&quot;,&quot;77&quot;,&quot;67&quot;],[&quot;Tripura&quot;,&quot;70&quot;,&quot;49&quot;,&quot;61&quot;,&quot;55&quot;,&quot;32&quot;,&quot;69&quot;,&quot;56&quot;,&quot;63&quot;,&quot;48&quot;,&quot;45&quot;,&quot;48&quot;,&quot;92&quot;,&quot;37&quot;,&quot;88&quot;,&quot;73&quot;,&quot;58&quot;],[&quot;Uttar Pradesh&quot;,&quot;40&quot;,&quot;31&quot;,&quot;34&quot;,&quot;48&quot;,&quot;41&quot;,&quot;94&quot;,&quot;63&quot;,&quot;64&quot;,&quot;63&quot;,&quot;46&quot;,&quot;48&quot;,&quot;62&quot;,&quot;48&quot;,&quot;62&quot;,&quot;69&quot;,&quot;55&quot;],[&quot;Uttarakhand&quot;,&quot;64&quot;,&quot;45&quot;,&quot;58&quot;,&quot;66&quot;,&quot;38&quot;,&quot;90&quot;,&quot;78&quot;,&quot;73&quot;,&quot;55&quot;,&quot;59&quot;,&quot;48&quot;,&quot;59&quot;,&quot;50&quot;,&quot;95&quot;,&quot;85&quot;,&quot;64&quot;],[&quot;West Bengal&quot;,&quot;52&quot;,&quot;40&quot;,&quot;70&quot;,&quot;50&quot;,&quot;38&quot;,&quot;83&quot;,&quot;58&quot;,&quot;72&quot;,&quot;68&quot;,&quot;73&quot;,&quot;48&quot;,&quot;57&quot;,&quot;37&quot;,&quot;88&quot;,&quot;73&quot;,&quot;60&quot;],[&quot;Andaman and Nicobar Islands&quot;,&quot;48&quot;,&quot;38&quot;,&quot;65&quot;,&quot;61&quot;,&quot;48&quot;,&quot;85&quot;,&quot;73&quot;,&quot;55&quot;,&quot;13&quot;,&quot;94&quot;,&quot;48&quot;,&quot;69&quot;,&quot;72&quot;,&quot;85&quot;,&quot;65&quot;,&quot;61&quot;],[&quot;Chandigarh&quot;,&quot;48&quot;,&quot;73&quot;,&quot;54&quot;,&quot;80&quot;,&quot;47&quot;,&quot;100&quot;,&quot;84&quot;,&quot;64&quot;,&quot;74&quot;,&quot;33&quot;,&quot;48&quot;,&quot;77&quot;,&quot;54&quot;,&quot;93&quot;,&quot;89&quot;,&quot;70&quot;],[&quot;D and N Haveli&quot;,&quot;33&quot;,&quot;45&quot;,&quot;57&quot;,&quot;53&quot;,&quot;44&quot;,&quot;91&quot;,&quot;80&quot;,&quot;63&quot;,&quot;100&quot;,&quot;57&quot;,&quot;48&quot;,&quot;65&quot;,&quot;41&quot;,&quot;100&quot;,&quot;80&quot;,&quot;63&quot;],[&quot;Daman &amp; Diu&quot;,&quot;58&quot;,&quot;12&quot;,&quot;50&quot;,&quot;43&quot;,&quot;39&quot;,&quot;96&quot;,&quot;81&quot;,&quot;54&quot;,&quot;100&quot;,&quot;80&quot;,&quot;48&quot;,&quot;41&quot;,&quot;46&quot;,&quot;89&quot;,&quot;76&quot;,&quot;61&quot;],[&quot;Delhi&quot;,&quot;54&quot;,&quot;56&quot;,&quot;54&quot;,&quot;64&quot;,&quot;27&quot;,&quot;61&quot;,&quot;96&quot;,&quot;60&quot;,&quot;100&quot;,&quot;69&quot;,&quot;48&quot;,&quot;39&quot;,&quot;30&quot;,&quot;82&quot;,&quot;64&quot;,&quot;61&quot;],[&quot;Jammu &amp; Kashmir&quot;,&quot;58&quot;,&quot;55&quot;,&quot;62&quot;,&quot;54&quot;,&quot;53&quot;,&quot;85&quot;,&quot;76&quot;,&quot;46&quot;,&quot;49&quot;,&quot;47&quot;,&quot;48&quot;,&quot;61&quot;,&quot;59&quot;,&quot;74&quot;,&quot;69&quot;,&quot;59&quot;],[&quot;Lakshadweep&quot;,&quot;56&quot;,&quot;57&quot;,&quot;58&quot;,&quot;62&quot;,&quot;37&quot;,&quot;69&quot;,&quot;43&quot;,&quot;43&quot;,&quot;0&quot;,&quot;93&quot;,null,&quot;75&quot;,&quot;100&quot;,&quot;100&quot;,&quot;82&quot;,&quot;63&quot;],[&quot;Puducherry&quot;,&quot;56&quot;,&quot;71&quot;,&quot;71&quot;,&quot;67&quot;,&quot;35&quot;,&quot;86&quot;,&quot;97&quot;,&quot;58&quot;,&quot;86&quot;,&quot;92&quot;,&quot;53&quot;,&quot;43&quot;,&quot;39&quot;,&quot;37&quot;,&quot;94&quot;,&quot;66&quot;]],&quot;xAxisColumns&quot;:[&quot;0&quot;],&quot;yAxisColumns&quot;:[&quot;16&quot;],&quot;options&quot;:{&quot;title&quot;:&quot;Performance of State\u0027s and UT\u0027s on SDGs&quot;,&quot;xAxisLabel&quot;:&quot;Category&quot;,&quot;yAxisLabel&quot;:&quot;Value&quot;,&quot;colors&quot;:[&quot;#d30318&quot;,&quot;#fbe80e&quot;,&quot;#228b22&quot;,&quot;#4682b4&quot;,&quot;#9467bd&quot;,&quot;#8c564b&quot;,&quot;#e377c2&quot;,&quot;#7f7f7f&quot;]}}">
+            <div id="dataset-chart-936-amcharts" style="width: 100%; height: 100%; display: none;"></div>
+            <canvas id="dataset-chart-936-canvas" style="width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
+    
+    
+    <div style="padding: 12px 20px; background: #f9fafb; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 50px; margin-top: auto;">
+        <div style="font-size: 12px; color: #6b7280; line-height: 1.4; flex: 1; min-width: 200px; word-wrap: break-word; overflow-wrap: break-word;">
+            <span style="color: #dc2626;">Source:</span> SDG index
+        </div>
+        <div style="display: flex; gap: 6px; flex-shrink: 0;">
+            <button onclick="downloadChartPNG('dataset-chart-936', 'performance-of-states-and-uts-on-sdgs')" 
+                    title="Download PNG"
+                    style="background: #3b82f6; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ PNG
+            </button>
+            <button onclick="downloadChartCSV('dataset-chart-936', 'performance-of-states-and-uts-on-sdgs')" 
+                    title="Download CSV"
+                    style="background: #10b981; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ CSV
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const containerId = 'dataset-chart-936';
+    let originalConfig = null;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById(containerId);
+        if (container) {
+            const configStr = container.getAttribute('data-chart');
+            if (configStr) {
+                originalConfig = JSON.parse(configStr);
+            }
+        }
+        
+        // Filter handler
+        document.querySelectorAll('.chart-filter-select[data-container="' + containerId + '"]').forEach(select => {
+            select.addEventListener('change', function() {
+                if (!originalConfig) return;
+                
+                const filterType = this.getAttribute('data-filter');
+                const selectedValue = this.value;
+                const container = document.getElementById(containerId);
+                
+                let chartData = originalConfig.chartData;
+                
+                if (selectedValue && filterType === 'metric') {
+                    const colIdx = parseInt(selectedValue);
+                    const xCol = (originalConfig.xAxisColumns || [0])[0] || 0;
+                    
+                    chartData = {
+                        labels: originalConfig.rows.map(row => row[xCol]),
+                        datasets: [{
+                            label: originalConfig.columns[colIdx] || 'Value',
+                            data: originalConfig.rows.map(row => parseFloat(row[colIdx]) || 0)
+                        }]
+                    };
+                }
+                
+                if (typeof ChartRenderer !== 'undefined') {
+                    new ChartRenderer().render(container, originalConfig.chartType, chartData, originalConfig.options || {});
+                }
+            });
+        });
+    });
+    
+    // Export functions (global)
+    window.downloadChartPNG = window.downloadChartPNG || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) {
+            console.error('Container not found:', id);
+            return;
+        }
+        
+        // Check if this is an amCharts chart
+        const amchartsDiv = container.querySelector('[id$="-amcharts"]');
+        const isAmChart = amchartsDiv && amchartsDiv.style.display !== 'none';
+        
+        if (isAmChart && container._root) {
+            // amCharts 5 export using built-in exporting
+            console.log('Exporting amCharts chart...');
+            
+            // Use amCharts 5 export functionality
+            try {
+                // Get the chart instance from the root
+                const root = container._root;
+                
+                // Create a temporary exporting menu
+                const exporting = am5plugins_exporting.Exporting.new(root, {
+                    menu: am5plugins_exporting.ExportingMenu.new(root, {}),
+                    filePrefix: filename,
+                    pngOptions: {
+                        quality: 0.95,
+                        maintainPixelRatio: true
+                    }
+                });
+                
+                // Export as PNG
+                exporting.export("png").then(function(imgData) {
+                    // Create download link
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = imgData;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Clean up
+                    exporting.dispose();
+                }).catch(function(error) {
+                    console.error('amCharts export error:', error);
+                    alert('Failed to export chart. Please try again.');
+                });
+                
+            } catch (error) {
+                console.error('amCharts export error:', error);
+                
+                // Fallback to html2canvas
+                if (typeof html2canvas !== 'undefined') {
+                    console.log('Falling back to html2canvas...');
+                    html2canvas(amchartsDiv, {
+                        backgroundColor: '#ffffff',
+                        scale: 2,
+                        logging: false
+                    }).then(function(canvas) {
+                        const link = document.createElement('a');
+                        link.download = filename + '.png';
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                    }).catch(function(err) {
+                        console.error('html2canvas error:', err);
+                        alert('Failed to export chart. Please try again.');
+                    });
+                } else {
+                    alert('Export functionality not available. Please ensure all required libraries are loaded.');
+                }
+            }
+        } else {
+            // Chart.js export (canvas-based)
+            const canvas = container.querySelector('canvas');
+            if (canvas && canvas.style.display !== 'none') {
+                console.log('Exporting Chart.js chart...');
+                const link = document.createElement('a');
+                link.download = filename + '.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            } else if (typeof html2canvas !== 'undefined') {
+                // Fallback to html2canvas for any other chart type
+                console.log('Exporting using html2canvas...');
+                html2canvas(container, {
+                    backgroundColor: '#ffffff',
+                    scale: 2,
+                    logging: false
+                }).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                }).catch(function(err) {
+                    console.error('html2canvas error:', err);
+                    alert('Failed to export chart. Please try again.');
+                });
+            } else {
+                console.error('No export method available');
+                alert('Unable to export chart. No canvas or html2canvas found.');
+            }
+        }
+    };
+    
+    window.downloadChartCSV = window.downloadChartCSV || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) return;
+        
+        try {
+            const config = JSON.parse(container.getAttribute('data-chart'));
+            if (config.columns && config.rows) {
+                let csv = config.columns.join(',') + '\n';
+                config.rows.forEach(row => {
+                    csv += row.map(c => '"' + (c || '') + '"').join(',') + '\n';
+                });
+                
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename + '.csv';
+                link.click();
+            }
+        } catch (e) {
+            console.error('CSV export error:', e);
+        }
+    };
+})();
+</script>
+                    </div>
+                                        <div class="col-lg-6 col-md-6 mb-4 datasets-chart-card">
+                        <div class="chart-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e5e7eb; height: 100%; display: flex; flex-direction: column;">
+    
+    <div style="padding: 16px 20px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+        <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: #1f2937; line-height: 1.4; flex: 1;">
+            State wide HIV incidence per 1000 uninfected population in India
+        </h4>
+        <a href="https://datahub.kerala.gov.in/charts/eyJpdiI6IjEwblFaQkhNYUVCY0cvSWEvZ1MwcUE9PSIsInZhbHVlIjoiQ1lHeFd0NjgzcDIxRHdGdi84QUFsdz09IiwibWFjIjoiYTRkMDljYjBiNThiNTdjMmFkMjU5MzBkMjAwODE1YWUzNTEzMTc4MTA5NTAwN2IwZWE3YTFhMDNkMzMxN2M4NyIsInRhZyI6IiJ9" target="_blank" 
+           title="View Full Details in New Tab"
+           style="color: #9ca3af; padding: 4px; border-radius: 4px; display: flex; align-items: center; text-decoration: none; transition: color 0.2s;"
+           onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+        </a>
+    </div>
+    
+    
+        
+    
+    <div style="padding: 16px 20px; flex: 1; display: flex; flex-direction: column;">
+        <div id="dataset-chart-935" 
+             class="chart-container"
+             style="width: 100%; height: 450px; position: relative; flex: 1; min-height: 450px;"
+             data-chart="{&quot;chartType&quot;:&quot;bar&quot;,&quot;chartData&quot;:{&quot;labels&quot;:[&quot;Mizoram&quot;,&quot;Nagaland&quot;,&quot;Meghalaya&quot;,&quot;Manipur&quot;,&quot;Tripura&quot;,&quot;Delhi&quot;,&quot;Arunachal Pradesh&quot;,&quot;Andhra Pradesh&quot;,&quot;Assam&quot;,&quot;Bihar&quot;,&quot;Goa&quot;,&quot;Haryana&quot;,&quot;Punjab&quot;,&quot;Puducherry&quot;,&quot;Chandigarh&quot;,&quot;Chhattisgarh&quot;,&quot;Telangana&quot;,&quot;Karnataka&quot;,&quot;India&quot;,&quot;Uttarakhand&quot;,&quot;Uttar Pradesh&quot;,&quot;Odisha&quot;,&quot;A&amp;N Islands&quot;,&quot;Maharashtra&quot;,&quot;Gujarat&quot;,&quot;Jharkhand&quot;,&quot;Tamil Nadu&quot;,&quot;Rajasthan&quot;,&quot;West Bengal&quot;,&quot;Sikkim&quot;,&quot;Himachal Pradesh&quot;,&quot;Madhya Pradesh&quot;,&quot;J&amp;K and Ladakh&quot;,&quot;Kerala&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;HIV Incidence per 1000&quot;,&quot;data&quot;:[0.86,0.48,0.31,0.27,0.18,0.14,0.11,0.1,0.08,0.07,0.07,0.07,0.07,0.06,0.06,0.05,0.05,0.05,0.05,0.05,0.04,0.04,0.04,0.04,0.03,0.03,0.03,0.03,0.03,0.03,0.023,0.018,0.017,0.007]}]},&quot;columns&quot;:[&quot;State&quot;,&quot;HIV Incidence per 1000&quot;],&quot;rows&quot;:[[&quot;Mizoram&quot;,&quot;0.86&quot;],[&quot;Nagaland&quot;,&quot;0.48&quot;],[&quot;Meghalaya&quot;,&quot;0.31&quot;],[&quot;Manipur&quot;,&quot;0.27&quot;],[&quot;Tripura&quot;,&quot;0.18&quot;],[&quot;Delhi&quot;,&quot;0.14&quot;],[&quot;Arunachal Pradesh&quot;,&quot;0.11&quot;],[&quot;Andhra Pradesh&quot;,&quot;0.1&quot;],[&quot;Assam&quot;,&quot;0.08&quot;],[&quot;Bihar&quot;,&quot;0.07&quot;],[&quot;Goa&quot;,&quot;0.07&quot;],[&quot;Haryana&quot;,&quot;0.07&quot;],[&quot;Punjab&quot;,&quot;0.07&quot;],[&quot;Puducherry&quot;,&quot;0.06&quot;],[&quot;Chandigarh&quot;,&quot;0.06&quot;],[&quot;Chhattisgarh&quot;,&quot;0.05&quot;],[&quot;Telangana&quot;,&quot;0.05&quot;],[&quot;Karnataka&quot;,&quot;0.05&quot;],[&quot;India&quot;,&quot;0.05&quot;],[&quot;Uttarakhand&quot;,&quot;0.05&quot;],[&quot;Uttar Pradesh&quot;,&quot;0.04&quot;],[&quot;Odisha&quot;,&quot;0.04&quot;],[&quot;A&amp;N Islands&quot;,&quot;0.04&quot;],[&quot;Maharashtra&quot;,&quot;0.04&quot;],[&quot;Gujarat&quot;,&quot;0.03&quot;],[&quot;Jharkhand&quot;,&quot;0.03&quot;],[&quot;Tamil Nadu&quot;,&quot;0.03&quot;],[&quot;Rajasthan&quot;,&quot;0.03&quot;],[&quot;West Bengal&quot;,&quot;0.03&quot;],[&quot;Sikkim&quot;,&quot;0.03&quot;],[&quot;Himachal Pradesh&quot;,&quot;0.023&quot;],[&quot;Madhya Pradesh&quot;,&quot;0.018&quot;],[&quot;J&amp;K and Ladakh&quot;,&quot;0.017&quot;],[&quot;Kerala&quot;,&quot;0.007&quot;]],&quot;xAxisColumns&quot;:[&quot;0&quot;],&quot;yAxisColumns&quot;:[&quot;1&quot;],&quot;options&quot;:{&quot;title&quot;:&quot;State wide HIV incidence per 1000 uninfected population in India&quot;,&quot;xAxisLabel&quot;:&quot;State&quot;,&quot;yAxisLabel&quot;:&quot;HIV incidence per 1000&quot;,&quot;colors&quot;:[&quot;#8b4513&quot;,&quot;#daa520&quot;,&quot;#228b22&quot;,&quot;#4682b4&quot;]}}">
+            <div id="dataset-chart-935-amcharts" style="width: 100%; height: 100%; display: none;"></div>
+            <canvas id="dataset-chart-935-canvas" style="width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
+    
+    
+    <div style="padding: 12px 20px; background: #f9fafb; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 50px; margin-top: auto;">
+        <div style="font-size: 12px; color: #6b7280; line-height: 1.4; flex: 1; min-width: 200px; word-wrap: break-word; overflow-wrap: break-word;">
+            <span style="color: #dc2626;">Source:</span> SDG index
+        </div>
+        <div style="display: flex; gap: 6px; flex-shrink: 0;">
+            <button onclick="downloadChartPNG('dataset-chart-935', 'state-wide-hiv-incidence-per-1000-uninfected-population-in-india')" 
+                    title="Download PNG"
+                    style="background: #3b82f6; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ PNG
+            </button>
+            <button onclick="downloadChartCSV('dataset-chart-935', 'state-wide-hiv-incidence-per-1000-uninfected-population-in-india')" 
+                    title="Download CSV"
+                    style="background: #10b981; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ CSV
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const containerId = 'dataset-chart-935';
+    let originalConfig = null;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById(containerId);
+        if (container) {
+            const configStr = container.getAttribute('data-chart');
+            if (configStr) {
+                originalConfig = JSON.parse(configStr);
+            }
+        }
+        
+        // Filter handler
+        document.querySelectorAll('.chart-filter-select[data-container="' + containerId + '"]').forEach(select => {
+            select.addEventListener('change', function() {
+                if (!originalConfig) return;
+                
+                const filterType = this.getAttribute('data-filter');
+                const selectedValue = this.value;
+                const container = document.getElementById(containerId);
+                
+                let chartData = originalConfig.chartData;
+                
+                if (selectedValue && filterType === 'metric') {
+                    const colIdx = parseInt(selectedValue);
+                    const xCol = (originalConfig.xAxisColumns || [0])[0] || 0;
+                    
+                    chartData = {
+                        labels: originalConfig.rows.map(row => row[xCol]),
+                        datasets: [{
+                            label: originalConfig.columns[colIdx] || 'Value',
+                            data: originalConfig.rows.map(row => parseFloat(row[colIdx]) || 0)
+                        }]
+                    };
+                }
+                
+                if (typeof ChartRenderer !== 'undefined') {
+                    new ChartRenderer().render(container, originalConfig.chartType, chartData, originalConfig.options || {});
+                }
+            });
+        });
+    });
+    
+    // Export functions (global)
+    window.downloadChartPNG = window.downloadChartPNG || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) {
+            console.error('Container not found:', id);
+            return;
+        }
+        
+        // Check if this is an amCharts chart
+        const amchartsDiv = container.querySelector('[id$="-amcharts"]');
+        const isAmChart = amchartsDiv && amchartsDiv.style.display !== 'none';
+        
+        if (isAmChart && container._root) {
+            // amCharts 5 export using built-in exporting
+            console.log('Exporting amCharts chart...');
+            
+            // Use amCharts 5 export functionality
+            try {
+                // Get the chart instance from the root
+                const root = container._root;
+                
+                // Create a temporary exporting menu
+                const exporting = am5plugins_exporting.Exporting.new(root, {
+                    menu: am5plugins_exporting.ExportingMenu.new(root, {}),
+                    filePrefix: filename,
+                    pngOptions: {
+                        quality: 0.95,
+                        maintainPixelRatio: true
+                    }
+                });
+                
+                // Export as PNG
+                exporting.export("png").then(function(imgData) {
+                    // Create download link
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = imgData;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Clean up
+                    exporting.dispose();
+                }).catch(function(error) {
+                    console.error('amCharts export error:', error);
+                    alert('Failed to export chart. Please try again.');
+                });
+                
+            } catch (error) {
+                console.error('amCharts export error:', error);
+                
+                // Fallback to html2canvas
+                if (typeof html2canvas !== 'undefined') {
+                    console.log('Falling back to html2canvas...');
+                    html2canvas(amchartsDiv, {
+                        backgroundColor: '#ffffff',
+                        scale: 2,
+                        logging: false
+                    }).then(function(canvas) {
+                        const link = document.createElement('a');
+                        link.download = filename + '.png';
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                    }).catch(function(err) {
+                        console.error('html2canvas error:', err);
+                        alert('Failed to export chart. Please try again.');
+                    });
+                } else {
+                    alert('Export functionality not available. Please ensure all required libraries are loaded.');
+                }
+            }
+        } else {
+            // Chart.js export (canvas-based)
+            const canvas = container.querySelector('canvas');
+            if (canvas && canvas.style.display !== 'none') {
+                console.log('Exporting Chart.js chart...');
+                const link = document.createElement('a');
+                link.download = filename + '.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            } else if (typeof html2canvas !== 'undefined') {
+                // Fallback to html2canvas for any other chart type
+                console.log('Exporting using html2canvas...');
+                html2canvas(container, {
+                    backgroundColor: '#ffffff',
+                    scale: 2,
+                    logging: false
+                }).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                }).catch(function(err) {
+                    console.error('html2canvas error:', err);
+                    alert('Failed to export chart. Please try again.');
+                });
+            } else {
+                console.error('No export method available');
+                alert('Unable to export chart. No canvas or html2canvas found.');
+            }
+        }
+    };
+    
+    window.downloadChartCSV = window.downloadChartCSV || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) return;
+        
+        try {
+            const config = JSON.parse(container.getAttribute('data-chart'));
+            if (config.columns && config.rows) {
+                let csv = config.columns.join(',') + '\n';
+                config.rows.forEach(row => {
+                    csv += row.map(c => '"' + (c || '') + '"').join(',') + '\n';
+                });
+                
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename + '.csv';
+                link.click();
+            }
+        } catch (e) {
+            console.error('CSV export error:', e);
+        }
+    };
+})();
+</script>
+                    </div>
+                                        <div class="col-lg-6 col-md-6 mb-4 datasets-chart-card">
+                        <div class="chart-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e5e7eb; height: 100%; display: flex; flex-direction: column;">
+    
+    <div style="padding: 16px 20px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+        <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: #1f2937; line-height: 1.4; flex: 1;">
+            Supplyco Outlets 2025
+        </h4>
+        <a href="https://datahub.kerala.gov.in/charts/eyJpdiI6ImlHa1JoaGQzeTNYendZdEJUWVpNSmc9PSIsInZhbHVlIjoid3R0K2JLVncyT0NIeS9CeWNsWE54Zz09IiwibWFjIjoiNDVlMmU5YWIwMDg3YmE3ODI0MDIwZDMxZGFkODUyZTM3NWI0ZTEyOWE1OTUyZWJhOWYxOTllNjMwOGJiYTZhNyIsInRhZyI6IiJ9" target="_blank" 
+           title="View Full Details in New Tab"
+           style="color: #9ca3af; padding: 4px; border-radius: 4px; display: flex; align-items: center; text-decoration: none; transition: color 0.2s;"
+           onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#9ca3af'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+        </a>
+    </div>
+    
+    
+        
+    
+    <div style="padding: 16px 20px; flex: 1; display: flex; flex-direction: column;">
+        <div id="dataset-chart-859" 
+             class="chart-container"
+             style="width: 100%; height: 450px; position: relative; flex: 1; min-height: 450px;"
+             data-chart="{&quot;chartType&quot;:&quot;pie&quot;,&quot;chartData&quot;:{&quot;labels&quot;:[&quot;Maveli Stores&quot;,&quot;Super Markets&quot;,&quot;People s Bazaar&quot;,&quot;Medical Stores&quot;,&quot;Petrol Pumps&quot;,&quot;LPG Outlets&quot;,&quot;Kerosene Depot&quot;,&quot;Mobile Maveli Stores&quot;,&quot;Premium In &amp; Out Store&quot;,&quot;Hyper Markets&quot;,&quot;Apna Bazaar&quot;,&quot;Maveli Super Stores&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Outlets as on 31.08.2025&quot;,&quot;data&quot;:[793,549,39,87,13,3,1,21,1,6,1,112]}]},&quot;columns&quot;:[&quot;Description&quot;,&quot;Outlets as on 31.08.2025&quot;],&quot;rows&quot;:[[&quot;Maveli Stores&quot;,&quot;793&quot;],[&quot;Super Markets&quot;,&quot;549&quot;],[&quot;People s Bazaar&quot;,&quot;39&quot;],[&quot;Medical Stores&quot;,&quot;87&quot;],[&quot;Petrol Pumps&quot;,&quot;13&quot;],[&quot;LPG Outlets&quot;,&quot;3&quot;],[&quot;Kerosene Depot&quot;,&quot;1&quot;],[&quot;Mobile Maveli Stores&quot;,&quot;21&quot;],[&quot;Premium In &amp; Out Store&quot;,&quot;1&quot;],[&quot;Hyper Markets&quot;,&quot;6&quot;],[&quot;Apna Bazaar&quot;,&quot;1&quot;],[&quot;Maveli Super Stores&quot;,&quot;112&quot;]],&quot;xAxisColumns&quot;:[&quot;0&quot;],&quot;yAxisColumns&quot;:[&quot;1&quot;],&quot;options&quot;:{&quot;title&quot;:&quot;Supplyco Outlets 2025&quot;,&quot;xAxisLabel&quot;:&quot;Name of Outlet&quot;,&quot;yAxisLabel&quot;:&quot;Outlets as on 31.08.2025&quot;,&quot;colors&quot;:[&quot;#8b4513&quot;,&quot;#daa520&quot;,&quot;#228b22&quot;,&quot;#4682b4&quot;,&quot;#9467bd&quot;,&quot;#00ffee&quot;,&quot;#170712&quot;,&quot;#d41616&quot;]}}">
+            <div id="dataset-chart-859-amcharts" style="width: 100%; height: 100%; display: none;"></div>
+            <canvas id="dataset-chart-859-canvas" style="width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
+    
+    
+    <div style="padding: 12px 20px; background: #f9fafb; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 50px; margin-top: auto;">
+        <div style="font-size: 12px; color: #6b7280; line-height: 1.4; flex: 1; min-width: 200px; word-wrap: break-word; overflow-wrap: break-word;">
+            <span style="color: #dc2626;">Source:</span> Economic Review 2026
+        </div>
+        <div style="display: flex; gap: 6px; flex-shrink: 0;">
+            <button onclick="downloadChartPNG('dataset-chart-859', 'supplyco-outlets-2025')" 
+                    title="Download PNG"
+                    style="background: #3b82f6; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ PNG
+            </button>
+            <button onclick="downloadChartCSV('dataset-chart-859', 'supplyco-outlets-2025')" 
+                    title="Download CSV"
+                    style="background: #10b981; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; height: 26px; line-height: 14px; white-space: nowrap;">
+                ↓ CSV
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const containerId = 'dataset-chart-859';
+    let originalConfig = null;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById(containerId);
+        if (container) {
+            const configStr = container.getAttribute('data-chart');
+            if (configStr) {
+                originalConfig = JSON.parse(configStr);
+            }
+        }
+        
+        // Filter handler
+        document.querySelectorAll('.chart-filter-select[data-container="' + containerId + '"]').forEach(select => {
+            select.addEventListener('change', function() {
+                if (!originalConfig) return;
+                
+                const filterType = this.getAttribute('data-filter');
+                const selectedValue = this.value;
+                const container = document.getElementById(containerId);
+                
+                let chartData = originalConfig.chartData;
+                
+                if (selectedValue && filterType === 'metric') {
+                    const colIdx = parseInt(selectedValue);
+                    const xCol = (originalConfig.xAxisColumns || [0])[0] || 0;
+                    
+                    chartData = {
+                        labels: originalConfig.rows.map(row => row[xCol]),
+                        datasets: [{
+                            label: originalConfig.columns[colIdx] || 'Value',
+                            data: originalConfig.rows.map(row => parseFloat(row[colIdx]) || 0)
+                        }]
+                    };
+                }
+                
+                if (typeof ChartRenderer !== 'undefined') {
+                    new ChartRenderer().render(container, originalConfig.chartType, chartData, originalConfig.options || {});
+                }
+            });
+        });
+    });
+    
+    // Export functions (global)
+    window.downloadChartPNG = window.downloadChartPNG || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) {
+            console.error('Container not found:', id);
+            return;
+        }
+        
+        // Check if this is an amCharts chart
+        const amchartsDiv = container.querySelector('[id$="-amcharts"]');
+        const isAmChart = amchartsDiv && amchartsDiv.style.display !== 'none';
+        
+        if (isAmChart && container._root) {
+            // amCharts 5 export using built-in exporting
+            console.log('Exporting amCharts chart...');
+            
+            // Use amCharts 5 export functionality
+            try {
+                // Get the chart instance from the root
+                const root = container._root;
+                
+                // Create a temporary exporting menu
+                const exporting = am5plugins_exporting.Exporting.new(root, {
+                    menu: am5plugins_exporting.ExportingMenu.new(root, {}),
+                    filePrefix: filename,
+                    pngOptions: {
+                        quality: 0.95,
+                        maintainPixelRatio: true
+                    }
+                });
+                
+                // Export as PNG
+                exporting.export("png").then(function(imgData) {
+                    // Create download link
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = imgData;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Clean up
+                    exporting.dispose();
+                }).catch(function(error) {
+                    console.error('amCharts export error:', error);
+                    alert('Failed to export chart. Please try again.');
+                });
+                
+            } catch (error) {
+                console.error('amCharts export error:', error);
+                
+                // Fallback to html2canvas
+                if (typeof html2canvas !== 'undefined') {
+                    console.log('Falling back to html2canvas...');
+                    html2canvas(amchartsDiv, {
+                        backgroundColor: '#ffffff',
+                        scale: 2,
+                        logging: false
+                    }).then(function(canvas) {
+                        const link = document.createElement('a');
+                        link.download = filename + '.png';
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                    }).catch(function(err) {
+                        console.error('html2canvas error:', err);
+                        alert('Failed to export chart. Please try again.');
+                    });
+                } else {
+                    alert('Export functionality not available. Please ensure all required libraries are loaded.');
+                }
+            }
+        } else {
+            // Chart.js export (canvas-based)
+            const canvas = container.querySelector('canvas');
+            if (canvas && canvas.style.display !== 'none') {
+                console.log('Exporting Chart.js chart...');
+                const link = document.createElement('a');
+                link.download = filename + '.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            } else if (typeof html2canvas !== 'undefined') {
+                // Fallback to html2canvas for any other chart type
+                console.log('Exporting using html2canvas...');
+                html2canvas(container, {
+                    backgroundColor: '#ffffff',
+                    scale: 2,
+                    logging: false
+                }).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = filename + '.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                }).catch(function(err) {
+                    console.error('html2canvas error:', err);
+                    alert('Failed to export chart. Please try again.');
+                });
+            } else {
+                console.error('No export method available');
+                alert('Unable to export chart. No canvas or html2canvas found.');
+            }
+        }
+    };
+    
+    window.downloadChartCSV = window.downloadChartCSV || function(id, filename) {
+        const container = document.getElementById(id);
+        if (!container) return;
+        
+        try {
+            const config = JSON.parse(container.getAttribute('data-chart'));
+            if (config.columns && config.rows) {
+                let csv = config.columns.join(',') + '\n';
+                config.rows.forEach(row => {
+                    csv += row.map(c => '"' + (c || '') + '"').join(',') + '\n';
+                });
+                
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename + '.csv';
+                link.click();
+            }
+        } catch (e) {
+            console.error('CSV export error:', e);
+        }
+    };
+})();
+</script>
+                    </div>
+                                    </div>
+
+                <!-- Pagination -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="news-sidebar__pagination">
+                            <nav>
+        <ul class="pagination">
+            
+                            <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
+                    <span class="page-link" aria-hidden="true">&lsaquo;</span>
+                </li>
+            
+            
+                            
+                
+                
+                                                                                        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=2">2</a></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=3">3</a></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=4">4</a></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=5">5</a></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=6">6</a></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=7">7</a></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=8">8</a></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=9">9</a></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=10">10</a></li>
+                                                                                        
+                                    <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
+                
+                
+                                            
+                
+                
+                                                                                        <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=15">15</a></li>
+                                                                                                <li class="page-item"><a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=16">16</a></li>
+                                                                        
+            
+                            <li class="page-item">
+                    <a class="page-link" href="https://datahub.kerala.gov.in/datasets?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+                </li>
+                    </ul>
+    </nav>
+
+                        </div>
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+</section>
+<!--Datasets End-->
+
+
+        
+                    <footer class="site-footer">
+    <div class="site-footer-bg" style="background-image: url(https://datahub.kerala.gov.in/webassets/assets/images/backgrounds/site-footer-bg.png);"></div>
+    <div class="container">
+        <div class="site-footer__top">
+            <div class="row">
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="footer-widget__column footer-widget__about">
+                        <div class="footer-widget__logo">
+                            <a href="https://datahub.kerala.gov.in">
+                                <img src="https://datahub.kerala.gov.in/webassets/assets/images/logo2.png" alt="" style="width: 100%;">
+                            </a>
+                        </div>
+                        <div class="site-footer__social">
+                            <a href="https://x.com/iprdkerala" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/keralainformation"  target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/iprdkerala" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/iprdkerala" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="footer-widget__column footer-widget-three__links clearfix">
+                        <h3 class="footer-widget-three__title">ABOUT THE GOVERNMENT</h3>
+                        <ul class="footer-widget-three__links-list list-unstyled clearfix">
+                            <li><a href="https://kerala.gov.in/"  target="_blank">Government of Kerala</a></li>
+                            <li><a href="https://keralacm.gov.in/" target="_blank">Kerala Chief Minister</a></li>
+                            <li><a href="https://prd.kerala.gov.in" target="_blank">Information & Public Relations Department</a></li>
+                            <li><a href="https://spb.kerala.gov.in/en" target="_blank">Kerala State Planning Board</a></li>
+                             <li><a href="https://itmission.kerala.gov.in/" target="_blank">IT Mission</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="footer-widget__column footer-widget-three__links clearfix">
+                        <h3 class="footer-widget-three__title">Informations</h3>
+                        <ul class="footer-widget-three__links-list list-unstyled clearfix">
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About the portal</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#hyperlinkModal">Hyperlink policy</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a></li>
+                         <li><a href="#" data-bs-toggle="modal" data-bs-target="#copyrightModal">Copyright Policy</a></li>
+                          <li><a href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal">Disclaimer</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#faqModal">FAQ</a></li>
+                    </ul>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="footer-widget__column footer-widget__contact clearfix">
+                        <h3 class="footer-widget-three__title">GET IN TOUCH</h3>
+                        <ul class="footer-widget__contact-list list-unstyled clearfix">
+                            <li>
+                                <div class="icon">
+                                    <span class="fas fa-phone"></span>
+                                </div>
+                                <div class="text">
+                                    <p><a href="tel:+914712525444">+91  4712327782, 2518443</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-email"></span>
+                                </div>
+                                <div class="text">
+                                    <p><a href="mailto:webprd@kerala.gov.in">webprd@kerala.gov.in</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-pin"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Information and Public Relations Department,
+                                        South Block, <br> Government Secretariat
+                                        Thiruvananthapuram – 695 001<br> Kerala<br>
+                                       </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="site-footer__bottom-inner">
+                        <p class="site-footer__bottom-text">
+                        Contents are owned by I & PRD.Portal is designed and developed by C-DIT
+                       </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="aboutModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title">About the Portal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>Kerala Data Portal is the state's centralized repository for authoritative facts, figures, and statistics. 
+        We empower citizens, policymakers, and institutions by providing standardized, authenticated data to foster transparency, accountability,
+        and evidence-based governance across the state.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="hyperlinkModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Hyperlink Policy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>Kerala Data Portal  provides links to external websites for user convenience but is not responsible for their content, reliability, or availability.
+         While we welcome direct links to this portal from other sites, such links must open in a new browser window; loading Kerala Data Portal 
+          pages into frames on external websites is strictly prohibited. 
+        The presence of a link does not imply an endorsement of the external site's views or services.</p>
+        <p>We cannot guarantee that these links will work all the time and we have no control over the availability of linked pages.</p>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="termsModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Terms and Conditions</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <ul>
+            <li>This website is designed, developed and maintained by <strong>C-DIT</strong>.</li>
+
+            <li>Though all efforts have been made to ensure the accuracy and currency of the content on this website, the same should not be construed as a statement of law or used for any legal purposes. Users are advised to verify with the concerned departments.</li>
+
+            <li>Under no circumstances will this Department be liable for any expense, loss, or damage arising from the use of this website.</li>
+
+            <li>These terms and conditions shall be governed by the laws of India and subject to the jurisdiction of the courts of India.</li>
+
+            <li>The Government of Kerala reserves the right to modify or update these terms and conditions at any time without prior notice.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="copyrightModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Copyright Policy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>Content on Kerala Data Portal may be reproduced free of charge, provided it is reproduced accurately and the source is prominently acknowledged.
+         This permission does not apply to third-party content. Use of data in a misleading or derogatory context is strictly prohibited. © 2026 Government of Kerala.</p>
+        
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="disclaimerModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Disclaimer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>Kerala Data Portal  is a Government of Kerala initiative developed by C-DIT to provide centralized access to official state data. 
+        The content is a collaborative effort of various state departments and institutions. While we strive for accuracy, users are encouraged to verify data with source departments.
+         Please report any discrepancies to help us improve.</p>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="faqModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Frequently Asked Questions (FAQ)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <p><strong>1. What is the Kerala Data Portal ?</strong><br>
+        Kerala Data Portal is a centralized, web-based repository designed to publish authoritative facts, figures, and statistics related to the development and welfare initiatives of the Government of Kerala. It serves as a single source of truth for official state data.</p>
+
+        <p><strong>2. Who manages and maintains this portal?</strong><br>
+        The portal is an initiative of the Government of Kerala. The technical design, development, and maintenance are handled by C-DIT, while the data is provided through a collaborative effort of various state departments and institutions.</p>
+
+        <p><strong>3. Can I use the data from this portal for my research or publication?</strong><br>
+        Yes. You can reproduce the material featured on this portal free of charge. However, you must ensure the data is reproduced accurately and is not used in a misleading context. It is mandatory to prominently acknowledge "Kerala Data Portal, Government of Kerala" as the source.</p>
+
+        <p><strong>4. In what formats can I download the data?</strong><br>
+        To support Open Data standards, the portal aims to provide datasets in machine-readable and industry-standard formats such as CSV, XML, and XLSX.</p>
+
+        <p><strong>5. How often is the data on the portal updated?</strong><br>
+        The frequency of updates varies depending on the nature of the data. Some datasets are updated periodically while others are updated annually.</p>
+
+        <p><strong>6. Is there a fee to access the datasets?</strong><br>
+        No. Access to all public datasets hosted on the Kerala Data Portal is free of charge for all citizens, institutions, and researchers.</p>
+
+        <p><strong>7. What should I do if I find an error in the data?</strong><br>
+        If you notice any discrepancy, please contact us through the details provided in the Contact Us section.</p>
+
+        <p><strong>8. Can I link to Kerala Data Portal from my own website?</strong><br>
+        Yes, we welcome direct linking to the information on this portal. However, our pages must load into a newly opened browser window or tab and should not be loaded inside frames on your website.</p>
+
+      </div>
+
+    </div>
+  </div>
+</div>            </div>
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <script>
+    function record() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
+
+        recognition.onresult = function(event) {
+            document.getElementById('speechToText').value = event.results[0][0].transcript;
+        }
+        recognition.start();
+    }
+</script>
+
+<script>
+    function showArea(areaId) {
+        var areas = document.querySelectorAll('.ker-det');
+        for (var i = 0; i < areas.length; i++) {
+            areas[i].style.display = 'none';
+        }
+        document.getElementById(areaId).style.display = 'block';
+    }
+</script>
+
+<!-- Load jQuery first before using it -->
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+
+<!-- Now jQuery-dependent code can run -->
+<script>
+    /*global $*/
+    $(document).ready(function () {
+        "use strict";
+        var heading = $('#our-services .desc .heading h1'),
+            txt = $('#our-services .desc .text'),
+            serviceItem = $('#our-services .services .column .service'),
+            tl = new TimelineLite();
+
+        tl
+            .from(heading, 0.3, {opacity : 0, y : -20}, '+=0.3')
+            .from(txt, 0.3, {opacity : 0, y : -20})
+            .staggerFrom(serviceItem, 0.2, {x : -10, autoAlpha : 0}, 0.1);
+    });
+</script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/jarallax/jarallax.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/nouislider/nouislider.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/odometer/odometer.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/swiper/swiper.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/wnumb/wNumb.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/wow/wow.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/isotope/isotope.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/countdown/countdown.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/vegas/vegas.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/jquery-ui/jquery-ui.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/timepicker/timePicker.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/circleType/jquery.circleType.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/circleType/jquery.lettering.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/js/insur.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/assets/js/carousel-init.js"></script>
+
+<!-- Chart Libraries (loaded only if charts are present on page) -->
+<!-- html2canvas for PNG export -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<!-- amCharts 5 Libraries (Local) -->
+<script src="https://datahub.kerala.gov.in/webassets/amchart5/index.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/amchart5/xy.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/amchart5/percent.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/amchart5/map.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/amchart5/radar.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/amchart5/Animated.js"></script>
+<script src="https://datahub.kerala.gov.in/webassets/amchart5/plugins/exporting.js"></script>
+
+
+<script>
+    am5.addLicense("AM5C296394986");
+</script>
+
+
+<script src="https://datahub.kerala.gov.in/assets/amcharts/indiaHigh.js"></script>
+<script src="https://datahub.kerala.gov.in/js/kerala-geodata.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart Renderer -->
+<script src="https://datahub.kerala.gov.in/js/chart-renderer.js?v=1792846761"></script>
+
+<script>
+// Chart Box Helper Functions
+function toggleFullscreen(containerId) {
+    const modal = document.getElementById(containerId + '-fullscreen-modal');
+    const fullscreenChart = document.getElementById(containerId + '-fullscreen-chart');
+    const originalContainer = document.getElementById(containerId);
+    
+    if (modal && fullscreenChart && originalContainer) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        
+        // Re-render chart in fullscreen container
+        const config = JSON.parse(originalContainer.getAttribute('data-chart'));
+        if (config) {
+            let chartData = config.chartData;
+            if ((!chartData || !chartData.labels) && config.columns && config.rows) {
+                chartData = ChartRenderer.generateChartData(config.columns, config.rows, config.xAxisColumns, config.yAxisColumns);
+            }
+            
+            // Add canvas/amcharts container
+            fullscreenChart.innerHTML = '<div id="' + containerId + '-fs-amcharts" style="width:100%;height:100%;display:none;"></div><canvas id="' + containerId + '-fs-canvas"></canvas>';
+            
+            const renderer = new ChartRenderer();
+            renderer.render(fullscreenChart, config.chartType, chartData, config.options || {});
+        }
+    }
+}
+
+function closeFullscreen(containerId) {
+    const modal = document.getElementById(containerId + '-fullscreen-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+function exportChart(containerId, format) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    if (format === 'png') {
+        const canvas = container.querySelector('canvas');
+        if (canvas) {
+            const link = document.createElement('a');
+            link.download = 'chart-export.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        } else {
+            alert('PNG export is available for Chart.js charts only');
+        }
+    } else if (format === 'csv') {
+        const config = JSON.parse(container.getAttribute('data-chart'));
+        if (config && config.columns && config.rows) {
+            let csv = config.columns.join(',') + '\n';
+            config.rows.forEach(row => {
+                csv += row.join(',') + '\n';
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const link = document.createElement('a');
+            link.download = 'chart-data.csv';
+            link.href = URL.createObjectURL(blob);
+            link.click();
+        } else {
+            alert('No data available for export');
+        }
+    }
+}
+
+// Close fullscreen on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.chart-fullscreen-modal').forEach(modal => {
+            modal.style.display = 'none';
+        });
+        document.body.style.overflow = '';
+    }
+});
+
+// autoRenderCharts is already called automatically by chart-renderer.js
+// No need to call it again here to avoid "multiple Roots" error
+</script>
+    <script>
+    // Auto-render charts when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof autoRenderCharts === 'function') {
+            autoRenderCharts();
+        }
+        
+        // Initialize filter value dropdown based on current filter type
+        const currentFilterType = '';
+        if (currentFilterType && currentFilterType !== 'all') {
+            loadFilterValues(currentFilterType);
+        }
+        
+        // Handle clear keyword button
+        const clearKeywordBtn = document.getElementById('clearKeywordBtn');
+        if (clearKeywordBtn) {
+            clearKeywordBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const filterType = '';
+                const filterValue = '';
+                let url = 'https://datahub.kerala.gov.in/datasets';
+                if (filterType && filterType !== 'all' && filterValue) {
+                    url += '?filter_type=' + filterType + '&filter_value=' + filterValue;
+                }
+                window.location.href = url;
+            });
+        }
+        
+        // Handle change keyword button
+        const changeKeywordBtn = document.getElementById('changeKeywordBtn');
+        if (changeKeywordBtn) {
+            changeKeywordBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const tagDisplay = document.getElementById('keywordTagDisplay');
+                if (tagDisplay) {
+                    tagDisplay.style.display = 'none';
+                }
+                const inputGroup = document.getElementById('searchInputGroup');
+                if (inputGroup) {
+                    inputGroup.style.display = 'flex';
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchInput) {
+                        searchInput.focus();
+                        searchInput.select();
+                    }
+                }
+            });
+        }
+    });
+    
+    // Handle filter type change
+    const filterTypeSelect = document.getElementById('filterType');
+    if (filterTypeSelect) {
+        filterTypeSelect.addEventListener('change', function() {
+            const filterType = this.value;
+            loadFilterValues(filterType);
+        });
+    }
+    
+    // Load filter values based on selected type
+    function loadFilterValues(filterType) {
+        const filterValueSelect = document.getElementById('filterValue');
+        
+        if (!filterType || filterType === 'all') {
+            filterValueSelect.innerHTML = '<option value="">All</option>';
+            filterValueSelect.disabled = true;
+            return;
+        }
+        
+        filterValueSelect.innerHTML = '<option value="">Loading...</option>';
+        filterValueSelect.disabled = false;
+        
+        fetch(`/api/filter-values?type=${filterType}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                let optionsHtml = '<option value="">Select ' + filterType + '</option>';
+                data.forEach(item => {
+                    const selected = '' == item.id ? 'selected' : '';
+                    optionsHtml += `<option value="${item.id}" ${selected}>${item.name}</option>`;
+                });
+                filterValueSelect.innerHTML = optionsHtml;
+            })
+            .catch(error => {
+                console.error('Error loading filter values:', error);
+                filterValueSelect.innerHTML = '<option value="">Error loading options</option>';
+            });
+    }
+    
+    // Handle filter value change - auto submit
+    const filterValueSelect = document.getElementById('filterValue');
+    if (filterValueSelect) {
+        filterValueSelect.addEventListener('change', function() {
+            if (this.value) {
+                document.getElementById('searchFilterForm').submit();
+            }
+        });
+    }
+    
+    // Reset button
+    const resetBtn = document.getElementById('resetBtn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = 'https://datahub.kerala.gov.in/datasets';
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "verified_at_utc": "2026-10-24T13:06:07.211461+00:00",
+  "evidence_status": "public_source_informed_synthetic_not_empirically_validated",
+  "environment": {
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3"
+  },
+  "candidate_count": 28,
+  "actual_field_observation_count": 0,
+  "source_elements": 431,
+  "motor_road_ways": 286,
+  "deduplicated_destination_features": 91,
+  "candidate_basis_counts": {
+    "mapped_road_junction_candidate": 27,
+    "mapped_crossing_unverified": 1
+  },
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "passed": 21,
+    "log": "reports/synthetic_tests.txt"
+  },
+  "checks": {
+    "valid_scores_bounds_types_coordinates_provenance": true,
+    "coordinates_linked_to_actual_osm_road_nodes": true,
+    "candidate_radius_max_m": 3000,
+    "candidate_spacing_min_m": 80,
+    "identical_snapshot_seed_regenerates_csv_bytes": true,
+    "all_14_exports_identical_across_two_1000_draw_runs": true,
+    "five_criterion_closeness_independently_reconstructed": true,
+    "exact_rank_reconstruction_uses_round_trip_csv_parsing": true,
+    "original_11_demo_csv_exports_match_fresh_run_tolerance": 1e-12,
+    "field_input_constraints_preserved": true,
+    "source_refresh_failure_preserves_prior_snapshot": true,
+    "all_selected_500m_catchments_within_query_rectangle": true,
+    "district_csv_exports_match_saved_embedded_chart_json": true,
+    "saved_pdf_content_types_and_magic_bytes_verified": true
+  },
+  "data_sha256": "e767e2a8a3a878717872d37a7c09ad670525dea1253a480b29f874154da8c63a",
+  "output_sha256": {
+    "fuzzy_topsis_results.csv": "604cea27010acbd9b861c929f17058da0e5d4d879afb814ef1d330c3a289fa00",
+    "synthetic_base_ranking.csv": "8bcfb33748a01a7ded4f4b0c1407f7907eb9dd84eed91ba360e9bd4321fcf3cd",
+    "synthetic_calculation_trace.csv": "9ac23c2f0f2aef070b5fbecfd28f8996847de509ac2f29f10c66efbfbb023d0b",
+    "synthetic_cleaned_decision_matrix.csv": "c278da9e00fb6565b3cae3e24de7a4e619edf14ef4b7625d7ee9ec209d6eaa14",
+    "synthetic_comparisons.csv": "6c25eebba867d829d109e181b0026e9d51690ee95098af2cd9249656e75da44b",
+    "synthetic_crisp_baseline.csv": "9f31a74e0f1fc7d63c39eda45f7a50b4bcc8aac174c684c4f97ecfaff48b830b",
+    "synthetic_criterion_correlations.csv": "cbbbf2446075d38fe8264a958fd39c7599c78798dec0f56646abf4d6712ba8c8",
+    "synthetic_extension_ranking.csv": "d4bd97e41d17e587f6c5b82011d2cb30ed0f3fd823a8a37aec97d9db06f3ea84",
+    "synthetic_preprocessing_log.csv": "a279d9c95f35b570bc3813d5b9492b743b64dd79dbb019d98fa89405a526a3e4",
+    "synthetic_run_manifest.json": "8abff0119b1a016e8210a4beed6fe2b31f56463b9bce40b63a0a6c1e676466f9",
+    "synthetic_uncertainty_sensitivity.csv": "d6ac0167c2a953a259f14ff03839a080dadbea58251498f5bafb49dbedaa6c27",
+    "synthetic_weight_sensitivity.svg": "59b5cf6fb03550a30e9d1b793a5c0dcac0c92a8f134c819ece5656650f27c6c3",
+    "synthetic_weight_sensitivity_runs.csv": "af379a33b9d12604ee20e843b3e147f648dc4ea642cc469ab34ac5d7db8a02a4",
+    "synthetic_weight_sensitivity_summary.csv": "77c338ec5fbebe575af92c627d2940c53c2f4b6ee02606c85a1636d465e9319d"
+  },
+  "limitations": [
+    "No independent field verification, counts, speeds, condition audits or engineering feasibility review.",
+    "Government sources are context only; scores are not calibrated to public traffic statistics.",
+    "OSM wider-buffer/full-node-tag refresh failed; prior snapshot retained.",
+    "Four-criterion sensitivity diagnostics are not five-criterion robustness validation.",
+    "Passing tests is implementation verification, not empirical validation."
+  ],
+  "source_inventory": {
+    "records": 17,
+    "saved_resource_records": 16,
+    "failed_download_records": 1,
+    "all_saved_resource_sha256_verified": true,
+    "all_public_source_html_pdf_csv_bodies_in_inventory": true,
+    "inventory_sha256": "7843f138ffd7b6ce808dfa52638095b94c0b4935470d86f9b1877de0aa9b02dd"
+  }
+}

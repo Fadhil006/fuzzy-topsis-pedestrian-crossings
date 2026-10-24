@@ -1,0 +1,37 @@
+{
+  "retrieved_at_utc": null,
+  "timestamp_note": "The original HTTP request-completion time was not captured. osm_timestamp_osm_base is the server-reported OSM data timestamp, not the request time.",
+  "archived_and_verified_at_utc": "2026-10-24T12:41:47Z",
+  "source_url": "https://overpass-api.de/api/interpreter",
+  "attempted_source_urls": [
+    "https://overpass-api.de/api/interpreter"
+  ],
+  "failures_before_success": [],
+  "query_file": "osm_snapshot_query.overpassql",
+  "response_file": "osm_context.json",
+  "bbox_south_west_north_east": [9.7284, 76.6225, 9.7825, 76.6765],
+  "bbox_basis": "Actual preserved approximately 3 km campus-centered rectangular extract; not all candidate catchments have a full 500 m context buffer",
+  "refresh_requested_bbox_south_west_north_east": [9.7229, 76.617, 9.788, 76.682],
+  "refresh_requested_query_file": "osm_query.overpassql",
+  "snapshot_bbox_south_west_north_east": [9.7284, 76.6225, 9.7825, 76.6765],
+  "snapshot_query_limitation": "The preserved response was fetched before the wider-bbox/member-node query update. Refresh was attempted but not completed; this file remains the older 3 km extract without guaranteed road-member child-node features.",
+  "latest_refresh_attempt": {
+    "recorded_at_utc": "2026-10-24T12:47:00Z",
+    "failure_file": "osm_fetch_failures.json",
+    "result": "No replacement extract was received; prior response and success provenance retained."
+  },
+  "campus_center": {
+    "latitude": 9.7554364,
+    "longitude": 76.649535,
+    "osm_type": "way",
+    "osm_id": 1077351803,
+    "name": "IIIT Kottayam",
+    "source_url": "https://nominatim.openstreetmap.org/search?q=Indian+Institute+of+Information+Technology+Kottayam&format=jsonv2&limit=5",
+    "evidence_file": "osm_campus_nominatim.json",
+    "campus_bbox_south_north_west_east": [9.7528706, 9.7580483, 76.6470055, 76.6516777]
+  },
+  "license": "OpenStreetMap contributors, ODbL 1.0",
+  "osm_timestamp_osm_base": "2026-10-24T12:38:18Z",
+  "element_count": 431,
+  "notes": "Raw response is source data, not field verification. Mapped candidate features do not establish that a crossing exists or is safe/usable."
+}
