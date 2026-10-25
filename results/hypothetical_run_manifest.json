@@ -2,9 +2,9 @@
   "input_file": "/home/fadhil/Projects/fuzzy-topsis-pedestrian-crossings/data/hypothetical_demo.csv",
   "input_sha256": "97011f374c7c2ce85acf92012d99efec41186432e7689d2507986882b459e53f",
   "evidence_status": "hypothetical",
-  "python": "3.12.14",
-  "numpy": "2.3.5",
-  "pandas": "2.2.3",
+  "python": "3.14.8",
+  "numpy": "2.5.4",
+  "pandas": "2.3.3",
   "draws": 1000,
   "seed": 20261009,
   "width_factors": [

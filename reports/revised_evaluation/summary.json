@@ -1,0 +1,1123 @@
+{
+  "primary": {
+    "candidate_count": 28,
+    "evidence_status": "public_source_informed_synthetic",
+    "input_sha256": "e767e2a8a3a878717872d37a7c09ad670525dea1253a480b29f874154da8c63a",
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "draws": 1000,
+    "sensitivity_seed": 20261009,
+    "data_seed": 20261024,
+    "tie_policy": "exact ties share minimum rank; sensitivity top1 uses deterministic ID-selected rank order, not probability",
+    "top_candidates": [
+      {
+        "rank": 1,
+        "alternative_id": "SYN-OSM-716872373",
+        "location_name": "Pala - Valavoor - Uzhavoor Road \u2014 hypothetical candidate 716872373",
+        "score": 0.6839195866576928,
+        "base_rank": 1,
+        "crisp_rank": 1
+      },
+      {
+        "rank": 1,
+        "alternative_id": "SYN-OSM-764885861",
+        "location_name": "Pala - Valavoor - Uzhavoor Road \u2014 hypothetical candidate 764885861",
+        "score": 0.6839195866576928,
+        "base_rank": 1,
+        "crisp_rank": 1
+      },
+      {
+        "rank": 3,
+        "alternative_id": "SYN-OSM-679043325",
+        "location_name": "Valavoor - Chakkampuzha Road (Part) \u2014 hypothetical candidate 679043325",
+        "score": 0.650427034975106,
+        "base_rank": 4,
+        "crisp_rank": 4
+      },
+      {
+        "rank": 4,
+        "alternative_id": "SYN-OSM-679049378",
+        "location_name": "Valavoor - Chakkampuzha Road (Part) \u2014 hypothetical candidate 679049378",
+        "score": 0.6138439486964109,
+        "base_rank": 3,
+        "crisp_rank": 3
+      },
+      {
+        "rank": 5,
+        "alternative_id": "SYN-OSM-4778312540",
+        "location_name": "Pala Vaikom Road \u2014 hypothetical candidate 4778312540",
+        "score": 0.5829402769073505,
+        "base_rank": 6,
+        "crisp_rank": 9
+      },
+      {
+        "rank": 6,
+        "alternative_id": "SYN-OSM-9119950895",
+        "location_name": "palackattumala-valavoor road \u2014 hypothetical candidate 9119950895",
+        "score": 0.5808002353307228,
+        "base_rank": 7,
+        "crisp_rank": 8
+      },
+      {
+        "rank": 7,
+        "alternative_id": "SYN-OSM-679049494",
+        "location_name": "Valvoor - Vellappura Road \u2014 hypothetical candidate 679049494",
+        "score": 0.5734850630379974,
+        "base_rank": 5,
+        "crisp_rank": 5
+      },
+      {
+        "rank": 8,
+        "alternative_id": "SYN-OSM-678584549",
+        "location_name": "Pala - Valavoor - Uzhavoor Road \u2014 hypothetical candidate 678584549",
+        "score": 0.5586916624858076,
+        "base_rank": 10,
+        "crisp_rank": 16
+      },
+      {
+        "rank": 9,
+        "alternative_id": "SYN-OSM-2463032701",
+        "location_name": "Pala - Valavoor - Uzhavoor Road \u2014 hypothetical candidate 2463032701",
+        "score": 0.550468804404615,
+        "base_rank": 11,
+        "crisp_rank": 15
+      },
+      {
+        "rank": 10,
+        "alternative_id": "SYN-OSM-718505044",
+        "location_name": "Valvoor - Vellappura Road \u2014 hypothetical candidate 718505044",
+        "score": 0.532603254476581,
+        "base_rank": 8,
+        "crisp_rank": 6
+      }
+    ],
+    "all_candidates": [
+      {
+        "rank": 1,
+        "alternative_id": "SYN-OSM-716872373",
+        "location_name": "Pala - Valavoor - Uzhavoor Road \u2014 hypothetical candidate 716872373",
+        "score": 0.6839195866576928,
+        "base_rank": 1,
+        "crisp_rank": 1
+      },
+      {
+        "rank": 1,
+        "alternative_id": "SYN-OSM-764885861",
+        "location_name": "Pala - Valavoor - Uzhavoor Road \u2014 hypothetical candidate 764885861",
+        "score": 0.6839195866576928,
+        "base_rank": 1,
+        "crisp_rank": 1
+      },
+      {
+        "rank": 3,
+        "alternative_id": "SYN-OSM-679043325",
+        "location_name": "Valavoor - Chakkampuzha Road (Part) \u2014 hypothetical candidate 679043325",
+        "score": 0.650427034975106,
+        "base_rank": 4,
+        "crisp_rank": 4
+      },
+      {
+        "rank": 4,
+        "alternative_id": "SYN-OSM-679049378",
+        "location_name": "Valavoor - Chakkampuzha Road (Part) \u2014 hypothetical candidate 679049378",
+        "score": 0.6138439486964109,
+        "base_rank": 3,
+        "crisp_rank": 3
+      },
+      {
+        "rank": 5,
+        "alternative_id": "SYN-OSM-4778312540",
+        "location_name": "Pala Vaikom Road \u2014 hypothetical candidate 4778312540",
+        "score": 0.5829402769073505,
+        "base_rank": 6,
+        "crisp_rank": 9
+      },
+      {
+        "rank": 6,
+        "alternative_id": "SYN-OSM-9119950895",
+        "location_name": "palackattumala-valavoor road \u2014 hypothetical candidate 9119950895",
+        "score": 0.5808002353307228,
+        "base_rank": 7,
+        "crisp_rank": 8
+      },
+      {
+        "rank": 7,
+        "alternative_id": "SYN-OSM-679049494",
+        "location_name": "Valvoor - Vellappura Road \u2014 hypothetical candidate 679049494",
+        "score": 0.5734850630379974,
+        "base_rank": 5,
+        "crisp_rank": 5
+      },
+      {
+        "rank": 8,
+        "alternative_id": "SYN-OSM-678584549",
+        "location_name": "Pala - Valavoor - Uzhavoor Road \u2014 hypothetical candidate 678584549",
+        "score": 0.5586916624858076,
+        "base_rank": 10,
+        "crisp_rank": 16
+      },
+      {
+        "rank": 9,
+        "alternative_id": "SYN-OSM-2463032701",
+        "location_name": "Pala - Valavoor - Uzhavoor Road \u2014 hypothetical candidate 2463032701",
+        "score": 0.550468804404615,
+        "base_rank": 11,
+        "crisp_rank": 15
+      },
+      {
+        "rank": 10,
+        "alternative_id": "SYN-OSM-718505044",
+        "location_name": "Valvoor - Vellappura Road \u2014 hypothetical candidate 718505044",
+        "score": 0.532603254476581,
+        "base_rank": 8,
+        "crisp_rank": 6
+      },
+      {
+        "rank": 11,
+        "alternative_id": "SYN-OSM-9878266128",
+        "location_name": "unnamed service road \u2014 hypothetical candidate 9878266128",
+        "score": 0.4954773467965113,
+        "base_rank": 19,
+        "crisp_rank": 14
+      },
+      {
+        "rank": 12,
+        "alternative_id": "SYN-OSM-8361480469",
+        "location_name": "Valavoor-St. Thomas Mount- Edakkoli(Uzhavoor East) road \u2014 hypothetical candidate 8361480469",
+        "score": 0.4920113312238069,
+        "base_rank": 8,
+        "crisp_rank": 6
+      },
+      {
+        "rank": 13,
+        "alternative_id": "SYN-OSM-2937370792",
+        "location_name": "Chakkampuzha Church - Valavoor Road \u2014 hypothetical candidate 2937370792",
+        "score": 0.46716307654870576,
+        "base_rank": 17,
+        "crisp_rank": 18
+      },
+      {
+        "rank": 14,
+        "alternative_id": "SYN-OSM-13132320792",
+        "location_name": "Valvoor - Vellappura Road \u2014 hypothetical candidate 13132320792",
+        "score": 0.46283120912340964,
+        "base_rank": 12,
+        "crisp_rank": 10
+      },
+      {
+        "rank": 14,
+        "alternative_id": "SYN-OSM-800653779",
+        "location_name": "Chakkampuzha Church - Valavoor Road \u2014 hypothetical candidate 800653779",
+        "score": 0.46283120912340964,
+        "base_rank": 12,
+        "crisp_rank": 10
+      },
+      {
+        "rank": 14,
+        "alternative_id": "SYN-OSM-9878266129",
+        "location_name": "unnamed service road \u2014 hypothetical candidate 9878266129",
+        "score": 0.46283120912340964,
+        "base_rank": 22,
+        "crisp_rank": 20
+      },
+      {
+        "rank": 17,
+        "alternative_id": "SYN-OSM-13046000350",
+        "location_name": "Chakkampuzha - Nechipuzhoor Road \u2014 hypothetical candidate 13046000350",
+        "score": 0.45974234336722586,
+        "base_rank": 23,
+        "crisp_rank": 21
+      },
+      {
+        "rank": 18,
+        "alternative_id": "SYN-OSM-9878266122",
+        "location_name": "Chakkampuzha Church - Valavoor Road \u2014 hypothetical candidate 9878266122",
+        "score": 0.45945640945875854,
+        "base_rank": 18,
+        "crisp_rank": 17
+      },
+      {
+        "rank": 19,
+        "alternative_id": "SYN-OSM-2249909190",
+        "location_name": "Fathimapuram - Amettupally Road \u2014 hypothetical candidate 2249909190",
+        "score": 0.4430762019612377,
+        "base_rank": 12,
+        "crisp_rank": 10
+      },
+      {
+        "rank": 19,
+        "alternative_id": "SYN-OSM-5970919652",
+        "location_name": "Pala- Ramapuram- Koothattukulam road \u2014 hypothetical candidate 5970919652",
+        "score": 0.4430762019612377,
+        "base_rank": 12,
+        "crisp_rank": 10
+      },
+      {
+        "rank": 21,
+        "alternative_id": "SYN-OSM-764885749",
+        "location_name": "Pala - Valavoor - Uzhavoor Road \u2014 hypothetical candidate 764885749",
+        "score": 0.42703600589043267,
+        "base_rank": 16,
+        "crisp_rank": 18
+      },
+      {
+        "rank": 22,
+        "alternative_id": "SYN-OSM-12716637337",
+        "location_name": "unnamed service road \u2014 hypothetical candidate 12716637337",
+        "score": 0.3884487368782163,
+        "base_rank": 24,
+        "crisp_rank": 24
+      },
+      {
+        "rank": 23,
+        "alternative_id": "SYN-OSM-874214059",
+        "location_name": "chakkampuzha- st. thomas mount road \u2014 hypothetical candidate 874214059",
+        "score": 0.37006701110336054,
+        "base_rank": 20,
+        "crisp_rank": 21
+      },
+      {
+        "rank": 23,
+        "alternative_id": "SYN-OSM-8859297040",
+        "location_name": "nechipuzhoor - Valavoor Road \u2014 hypothetical candidate 8859297040",
+        "score": 0.37006701110336054,
+        "base_rank": 20,
+        "crisp_rank": 21
+      },
+      {
+        "rank": 25,
+        "alternative_id": "SYN-OSM-12716637471",
+        "location_name": "unnamed service road \u2014 hypothetical candidate 12716637471",
+        "score": 0.3640761960549963,
+        "base_rank": 28,
+        "crisp_rank": 28
+      },
+      {
+        "rank": 26,
+        "alternative_id": "SYN-OSM-12716637312",
+        "location_name": "unnamed service road \u2014 hypothetical candidate 12716637312",
+        "score": 0.3562725229116594,
+        "base_rank": 25,
+        "crisp_rank": 25
+      },
+      {
+        "rank": 27,
+        "alternative_id": "SYN-OSM-13132320783",
+        "location_name": "nechipuzhoor - Valavoor Road \u2014 hypothetical candidate 13132320783",
+        "score": 0.29656563267394254,
+        "base_rank": 25,
+        "crisp_rank": 25
+      },
+      {
+        "rank": 28,
+        "alternative_id": "SYN-OSM-2937370755",
+        "location_name": "Road in Chakkampuzha \u2014 hypothetical candidate 2937370755",
+        "score": 0.2965656326739425,
+        "base_rank": 25,
+        "crisp_rank": 25
+      }
+    ],
+    "comparisons": [
+      {
+        "comparison": "base_vs_crisp",
+        "top1_changed": false,
+        "top_k_overlap": 1.0,
+        "spearman": 0.9642367346710298
+      },
+      {
+        "comparison": "base_vs_extension",
+        "top1_changed": false,
+        "top_k_overlap": 0.6666666666666666,
+        "spearman": 0.9085675778058893
+      }
+    ],
+    "sensitivity": {
+      "mean_top_k_overlap": 1.0,
+      "min_top_k_overlap": 1.0,
+      "mean_spearman": 0.9896767726437404,
+      "min_spearman": 0.964109914692839,
+      "top1_frequencies": [
+        {
+          "alternative_id": "SYN-OSM-12716637312",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-12716637337",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-12716637471",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-13046000350",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-13132320783",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-13132320792",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-2249909190",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-2463032701",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-2937370755",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-2937370792",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-4778312540",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-5970919652",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-678584549",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-679043325",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-679049378",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-679049494",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-716872373",
+          "top1_count": 514,
+          "top1_fraction": 0.514
+        },
+        {
+          "alternative_id": "SYN-OSM-718505044",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-764885749",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-764885861",
+          "top1_count": 486,
+          "top1_fraction": 0.486
+        },
+        {
+          "alternative_id": "SYN-OSM-800653779",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-8361480469",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-874214059",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-8859297040",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-9119950895",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-9878266122",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-9878266128",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        },
+        {
+          "alternative_id": "SYN-OSM-9878266129",
+          "top1_count": 0,
+          "top1_fraction": 0.0
+        }
+      ]
+    },
+    "uncertainty": [
+      {
+        "width_factor": 0.0,
+        "top1_ids": [
+          "SYN-OSM-716872373",
+          "SYN-OSM-764885861"
+        ],
+        "spearman_vs_full": 0.9765528680860254,
+        "status": "computed"
+      },
+      {
+        "width_factor": 0.5,
+        "top1_ids": [
+          "SYN-OSM-716872373",
+          "SYN-OSM-764885861"
+        ],
+        "spearman_vs_full": 0.9845186581793103,
+        "status": "computed"
+      },
+      {
+        "width_factor": 1.0,
+        "top1_ids": [
+          "SYN-OSM-716872373",
+          "SYN-OSM-764885861"
+        ],
+        "spearman_vs_full": 1.0,
+        "status": "computed"
+      }
+    ],
+    "worked_example": {
+      "alternative_id": "SYN-OSM-716872373",
+      "criteria": [
+        {
+          "criterion": "ped",
+          "raw": [
+            3.0,
+            4.0,
+            5.0
+          ],
+          "normalized": [
+            0.5,
+            0.75,
+            1.0
+          ],
+          "weight": 0.2,
+          "weighted": [
+            0.1,
+            0.15000000000000002,
+            0.2
+          ],
+          "distance_positive": 0.06454972243679027,
+          "distance_negative": 0.15545631755148026
+        },
+        {
+          "criterion": "vehicle",
+          "raw": [
+            4.0,
+            5.0,
+            5.0
+          ],
+          "normalized": [
+            0.75,
+            1.0,
+            1.0
+          ],
+          "weight": 0.2,
+          "weighted": [
+            0.15000000000000002,
+            0.2,
+            0.2
+          ],
+          "distance_positive": 0.02886751345948128,
+          "distance_negative": 0.18484227510682363
+        },
+        {
+          "criterion": "access",
+          "raw": [
+            1.5,
+            3.0,
+            4.5
+          ],
+          "normalized": [
+            0.125,
+            0.5,
+            0.875
+          ],
+          "weight": 0.2,
+          "weighted": [
+            0.025,
+            0.1,
+            0.17500000000000002
+          ],
+          "distance_positive": 0.11726039399558576,
+          "distance_negative": 0.11726039399558576
+        },
+        {
+          "criterion": "deficiency",
+          "raw": [
+            2.5,
+            4.0,
+            5.0
+          ],
+          "normalized": [
+            0.375,
+            0.75,
+            1.0
+          ],
+          "weight": 0.2,
+          "weighted": [
+            0.07500000000000001,
+            0.15000000000000002,
+            0.2
+          ],
+          "distance_positive": 0.07772815877574013,
+          "distance_negative": 0.15069284433354274
+        },
+        {
+          "criterion": "destination",
+          "raw": [
+            3.0,
+            4.0,
+            5.0
+          ],
+          "normalized": [
+            0.5,
+            0.75,
+            1.0
+          ],
+          "weight": 0.2,
+          "weighted": [
+            0.1,
+            0.15000000000000002,
+            0.2
+          ],
+          "distance_positive": 0.06454972243679027,
+          "distance_negative": 0.15545631755148026
+        }
+      ],
+      "score": 0.6839195866576928,
+      "distance_positive": 0.3529555111043877,
+      "distance_negative": 0.7637081485389126
+    },
+    "candidate_basis_counts": {
+      "mapped_road_junction_candidate": 27,
+      "mapped_crossing_unverified": 1
+    },
+    "confidence_counts": {
+      "access": {
+        "very_low_assumption": 27,
+        "low_mapped_proxy": 1
+      },
+      "deficiency": {
+        "very_low_assumption": 27,
+        "low_mapped_proxy": 1
+      },
+      "destination": {
+        "low_proximity_proxy": 22,
+        "very_low_mapping_incomplete": 6
+      },
+      "ped": {
+        "low_context_proxy": 28
+      },
+      "vehicle": {
+        "low_context_proxy": 28
+      }
+    },
+    "ped_destination_spearman": 0.8006210876468257,
+    "old_demo": [
+      {
+        "alternative_id": "HYP-A",
+        "base_score": 0.5956458335592981,
+        "base_rank": 1,
+        "crisp_rank": 1,
+        "extension_score": 0.5659040639658182,
+        "extension_rank": 2
+      },
+      {
+        "alternative_id": "HYP-B",
+        "base_score": 0.5612185293246226,
+        "base_rank": 2,
+        "crisp_rank": 2,
+        "extension_score": 0.5591144818479992,
+        "extension_rank": 3
+      },
+      {
+        "alternative_id": "HYP-C",
+        "base_score": 0.5051056210353784,
+        "base_rank": 4,
+        "crisp_rank": 2,
+        "extension_score": 0.570866553300513,
+        "extension_rank": 1
+      },
+      {
+        "alternative_id": "HYP-D",
+        "base_score": 0.5597629955302444,
+        "base_rank": 3,
+        "crisp_rank": 4,
+        "extension_score": 0.4982476221088935,
+        "extension_rank": 4
+      }
+    ]
+  },
+  "additional_baselines": {
+    "deficiency_rule": [
+      {
+        "alternative_id": "SYN-OSM-9878266128",
+        "rank": 1,
+        "score": 1.0
+      },
+      {
+        "alternative_id": "SYN-OSM-13132320792",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-2249909190",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-5970919652",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-679049378",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-679049494",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-716872373",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-718505044",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-764885861",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-800653779",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-8361480469",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-9878266129",
+        "rank": 2,
+        "score": 0.8333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-12716637337",
+        "rank": 13,
+        "score": 0.6666666666666666
+      },
+      {
+        "alternative_id": "SYN-OSM-13046000350",
+        "rank": 13,
+        "score": 0.6666666666666666
+      },
+      {
+        "alternative_id": "SYN-OSM-679043325",
+        "rank": 13,
+        "score": 0.6666666666666666
+      },
+      {
+        "alternative_id": "SYN-OSM-874214059",
+        "rank": 13,
+        "score": 0.6666666666666666
+      },
+      {
+        "alternative_id": "SYN-OSM-8859297040",
+        "rank": 13,
+        "score": 0.6666666666666666
+      },
+      {
+        "alternative_id": "SYN-OSM-9119950895",
+        "rank": 13,
+        "score": 0.6666666666666666
+      },
+      {
+        "alternative_id": "SYN-OSM-9878266122",
+        "rank": 13,
+        "score": 0.6666666666666666
+      },
+      {
+        "alternative_id": "SYN-OSM-12716637312",
+        "rank": 20,
+        "score": 0.5
+      },
+      {
+        "alternative_id": "SYN-OSM-13132320783",
+        "rank": 20,
+        "score": 0.5
+      },
+      {
+        "alternative_id": "SYN-OSM-2937370755",
+        "rank": 20,
+        "score": 0.5
+      },
+      {
+        "alternative_id": "SYN-OSM-2937370792",
+        "rank": 20,
+        "score": 0.5
+      },
+      {
+        "alternative_id": "SYN-OSM-4778312540",
+        "rank": 20,
+        "score": 0.5
+      },
+      {
+        "alternative_id": "SYN-OSM-764885749",
+        "rank": 20,
+        "score": 0.5
+      },
+      {
+        "alternative_id": "SYN-OSM-12716637471",
+        "rank": 26,
+        "score": 0.3333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-2463032701",
+        "rank": 26,
+        "score": 0.3333333333333333
+      },
+      {
+        "alternative_id": "SYN-OSM-678584549",
+        "rank": 28,
+        "score": 0.16666666666666666
+      }
+    ],
+    "crisp_topsis": [
+      {
+        "alternative_id": "SYN-OSM-716872373",
+        "rank": 1,
+        "score": 0.8277099248285451,
+        "distance_positive": 0.08333333333333334,
+        "distance_negative": 0.4003470716488105
+      },
+      {
+        "alternative_id": "SYN-OSM-764885861",
+        "rank": 1,
+        "score": 0.8277099248285451,
+        "distance_positive": 0.08333333333333334,
+        "distance_negative": 0.4003470716488105
+      },
+      {
+        "alternative_id": "SYN-OSM-679043325",
+        "rank": 3,
+        "score": 0.7768683557922531,
+        "distance_positive": 0.10671873729054748,
+        "distance_negative": 0.3715582801601326
+      },
+      {
+        "alternative_id": "SYN-OSM-679049378",
+        "rank": 4,
+        "score": 0.7465906285766605,
+        "distance_positive": 0.11785113019775792,
+        "distance_negative": 0.3472111109333277
+      },
+      {
+        "alternative_id": "SYN-OSM-679049494",
+        "rank": 5,
+        "score": 0.6920854158279494,
+        "distance_positive": 0.14624940645653536,
+        "distance_negative": 0.32871804872193366
+      },
+      {
+        "alternative_id": "SYN-OSM-9119950895",
+        "rank": 5,
+        "score": 0.6920854158279494,
+        "distance_positive": 0.14624940645653536,
+        "distance_negative": 0.32871804872193366
+      },
+      {
+        "alternative_id": "SYN-OSM-4778312540",
+        "rank": 7,
+        "score": 0.6649506394017456,
+        "distance_positive": 0.16499158227686112,
+        "distance_negative": 0.32744804507314174
+      },
+      {
+        "alternative_id": "SYN-OSM-718505044",
+        "rank": 8,
+        "score": 0.6326986428881048,
+        "distance_positive": 0.18408935028645437,
+        "distance_negative": 0.31710495984067416
+      },
+      {
+        "alternative_id": "SYN-OSM-2463032701",
+        "rank": 9,
+        "score": 0.5845415705714013,
+        "distance_positive": 0.23333333333333336,
+        "distance_negative": 0.3282952600598702
+      },
+      {
+        "alternative_id": "SYN-OSM-9878266128",
+        "rank": 10,
+        "score": 0.5833333333333333,
+        "distance_positive": 0.25,
+        "distance_negative": 0.35000000000000003
+      },
+      {
+        "alternative_id": "SYN-OSM-8361480469",
+        "rank": 11,
+        "score": 0.5761033202713007,
+        "distance_positive": 0.21730674684008833,
+        "distance_negative": 0.29533408577782255
+      },
+      {
+        "alternative_id": "SYN-OSM-678584549",
+        "rank": 12,
+        "score": 0.5711814314947852,
+        "distance_positive": 0.24551533104427062,
+        "distance_negative": 0.32702361450580975
+      },
+      {
+        "alternative_id": "SYN-OSM-9878266129",
+        "rank": 13,
+        "score": 0.5503390064254963,
+        "distance_positive": 0.2587362449376671,
+        "distance_negative": 0.3166666666666667
+      },
+      {
+        "alternative_id": "SYN-OSM-13046000350",
+        "rank": 14,
+        "score": 0.5500843184707462,
+        "distance_positive": 0.23213980461973535,
+        "distance_negative": 0.28382310609877337
+      },
+      {
+        "alternative_id": "SYN-OSM-9878266122",
+        "rank": 15,
+        "score": 0.5451410837205005,
+        "distance_positive": 0.21408720964441885,
+        "distance_negative": 0.2565800719723442
+      },
+      {
+        "alternative_id": "SYN-OSM-13132320792",
+        "rank": 16,
+        "score": 0.53360841231832,
+        "distance_positive": 0.2544056253745625,
+        "distance_negative": 0.29107081994288303
+      },
+      {
+        "alternative_id": "SYN-OSM-800653779",
+        "rank": 16,
+        "score": 0.53360841231832,
+        "distance_positive": 0.2544056253745625,
+        "distance_negative": 0.29107081994288303
+      },
+      {
+        "alternative_id": "SYN-OSM-2937370792",
+        "rank": 18,
+        "score": 0.531373033403114,
+        "distance_positive": 0.2160246899469287,
+        "distance_negative": 0.24494897427831783
+      },
+      {
+        "alternative_id": "SYN-OSM-2249909190",
+        "rank": 19,
+        "score": 0.49002925917584395,
+        "distance_positive": 0.29486343354923555,
+        "distance_negative": 0.2833333333333334
+      },
+      {
+        "alternative_id": "SYN-OSM-5970919652",
+        "rank": 19,
+        "score": 0.49002925917584395,
+        "distance_positive": 0.29486343354923555,
+        "distance_negative": 0.2833333333333334
+      },
+      {
+        "alternative_id": "SYN-OSM-764885749",
+        "rank": 21,
+        "score": 0.4713346626784275,
+        "distance_positive": 0.25495097567963926,
+        "distance_negative": 0.22730302828309762
+      },
+      {
+        "alternative_id": "SYN-OSM-12716637337",
+        "rank": 22,
+        "score": 0.46639158768168,
+        "distance_positive": 0.29107081994288303,
+        "distance_negative": 0.2544056253745625
+      },
+      {
+        "alternative_id": "SYN-OSM-12716637471",
+        "rank": 23,
+        "score": 0.4199311300734951,
+        "distance_positive": 0.31313823713426564,
+        "distance_negative": 0.22669117514559076
+      },
+      {
+        "alternative_id": "SYN-OSM-12716637312",
+        "rank": 24,
+        "score": 0.4084198226758988,
+        "distance_positive": 0.298607881119482,
+        "distance_negative": 0.206155281280883
+      },
+      {
+        "alternative_id": "SYN-OSM-874214059",
+        "rank": 25,
+        "score": 0.4043115258782463,
+        "distance_positive": 0.3144660377352202,
+        "distance_negative": 0.21343747458109497
+      },
+      {
+        "alternative_id": "SYN-OSM-8859297040",
+        "rank": 25,
+        "score": 0.4043115258782463,
+        "distance_positive": 0.3144660377352202,
+        "distance_negative": 0.21343747458109497
+      },
+      {
+        "alternative_id": "SYN-OSM-13132320783",
+        "rank": 27,
+        "score": 0.30806243395217275,
+        "distance_positive": 0.35316033500695154,
+        "distance_negative": 0.15723301886761007
+      },
+      {
+        "alternative_id": "SYN-OSM-2937370755",
+        "rank": 27,
+        "score": 0.30806243395217275,
+        "distance_positive": 0.35316033500695154,
+        "distance_negative": 0.15723301886761007
+      }
+    ],
+    "comparisons": [
+      {
+        "comparison": "five_criterion_fuzzy_vs_deficiency_rule",
+        "top1_changed": true,
+        "top_k_overlap": 0.0,
+        "spearman": 0.34200560402031716,
+        "top1_ids": {
+          "baseline": [
+            "SYN-OSM-716872373",
+            "SYN-OSM-764885861"
+          ],
+          "reference": [
+            "SYN-OSM-9878266128"
+          ]
+        }
+      },
+      {
+        "comparison": "five_criterion_fuzzy_vs_crisp_topsis",
+        "top1_changed": false,
+        "top_k_overlap": 1.0,
+        "spearman": 0.97354353210785,
+        "top1_ids": {
+          "baseline": [
+            "SYN-OSM-716872373",
+            "SYN-OSM-764885861"
+          ],
+          "reference": [
+            "SYN-OSM-716872373",
+            "SYN-OSM-764885861"
+          ]
+        }
+      }
+    ]
+  },
+  "worked_crisp": {
+    "alternative_id": "SYN-OSM-716872373",
+    "rawcentral": [
+      4.0,
+      5.0,
+      3.0,
+      4.0,
+      4.0
+    ],
+    "normalized": [
+      0.75,
+      1.0,
+      0.6666666666666666,
+      1.0,
+      1.0
+    ],
+    "weights": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "weighted": [
+      0.15000000000000002,
+      0.2,
+      0.13333333333333333,
+      0.2,
+      0.2
+    ],
+    "minimums": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "maximums": [
+      5.0,
+      5.0,
+      4.0,
+      4.0,
+      4.0
+    ],
+    "positiveideal": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "negativeideal": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "distance_positive": 0.08333333333333334,
+    "distance_negative": 0.4003470716488105,
+    "score": 0.8277099248285451
+  },
+  "methods_note": "The primary evaluation, including its original four-central-mean comparison, is preserved. The added deficiency rule and standard crisp TOPSIS are additional computational comparisons on the same 28 inputs, not independent validation."
+}

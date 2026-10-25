@@ -1,0 +1,71 @@
+{
+  "verified_utc": "2026-10-25T12:19:53.234851+00:00",
+  "guidance_file_read_in_full": "/home/fadhil/Downloads/Guidance to submit.docx",
+  "guidance_sha256": "8280aa3d4cb48f3819e490e8f5b1170488e6b02fec47d590c82f1b9ac55a9d1f",
+  "original_report_read_in_full_and_preserved": true,
+  "original_input_and_primary_evaluation_preserved": true,
+  "main_pages": 5,
+  "references_begin_page": 6,
+  "total_pages": 10,
+  "main_candidates": 28,
+  "separate_supplementary_alternatives": 4,
+  "tests_passed": 32,
+  "test_log": "reports/revised_tests.txt",
+  "primary_evaluation_exactly_matches_original": true,
+  "revised_evaluation_files_identical_after_repeat_1000_draw_run": true,
+  "all_numeric_result_tables_and_worked_examples_checked": true,
+  "native_editable_numbered_equations": 6,
+  "no_en_or_em_dashes_in_all_docx_xml_parts_and_pdf_text": true,
+  "no_author_or_template_placeholders": true,
+  "pdf_all_28_and_4_ids_checked": true,
+  "visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+  ],
+  "independent_content_review": "No blocking factual or numeric findings; correlation wording clarified.",
+  "reference_metadata_verified_this_turn": 5,
+  "reference_metadata_requests_failed_this_turn": [
+    "S1"
+  ],
+  "literature_access_limit": "Some related studies remain abstract/metadata reviewed; only the Current Science paper was available and read in full during this bounded check.",
+  "remaining_items_file": "reports/revised_submission_notes.md",
+  "source_file_hashes_preserved": {
+    "/home/fadhil/Downloads/Guidance to submit.docx": "8280aa3d4cb48f3819e490e8f5b1170488e6b02fec47d590c82f1b9ac55a9d1f",
+    "P20_Fuzzy_TOPSIS_Report.docx": "f51124ee355850dd1144a00f2c22aa1de6f0efab6a398b11dcfaae56d2bfa285",
+    "P20_Fuzzy_TOPSIS_Report.pdf": "e3960cff13e5ff4ef1d129fcf3a27ac670d77efda276c613fe4bf20317012bd7",
+    "data/processed/pedestrian_crossings_fuzzy_topsis.csv": "e767e2a8a3a878717872d37a7c09ad670525dea1253a480b29f874154da8c63a",
+    "reports/evaluation/summary.json": "462116d47524c58ff7df604eea13fa3caf21af9b797395515303907896625e26"
+  },
+  "artifact_sha256": {
+    "P20_Fuzzy_TOPSIS_Report_Revised.docx": "d6b184467dc13323490eed7a4f966807c6b06142560e2c7d808344314f24e781",
+    "P20_Fuzzy_TOPSIS_Report_Revised.pdf": "0ebfbddbd42ac8b11bf01813c9f04a92122f39ffb94e42623673f07155579048",
+    "scripts/build_revised_report.py": "a49c6a73e27cafa0d8941bf248c81bff731e2ece96458e233ed1a924e6191be5",
+    "scripts/evaluate_revised_report.py": "88ae024a4cb041e89909d2ec962366aa88e57f157e8e7229d0bf34cb332d45bc",
+    "reports/revised_evaluation/summary.json": "f322489ddd659b174fd4d99cf823869543fd0b6578c9765d4ac90802d5ee2609",
+    "reports/revised_figures/weight_top1_sensitivity.png": "9f383beabbd999ab9e0551edf2f9fc09350747735dc7e27572e719ea745b44ae",
+    "reports/revised_guidance_checklist.md": "117eb6775ae0a5ad32fb234b1142c3200e6d9a095b847086a6f128edf2c8454b",
+    "reports/revised_submission_notes.md": "43b4f249ad47f444d1656bcaaddc7ae906dc6348ca8712bf7a30abff3ce763c1",
+    "reports/revised_tests.txt": "07d626b39a5efcfd53c7127fd37b9f04d3729960ad3aef55fce49689dbdf0f3e"
+  },
+  "team_number": "034",
+  "team_members": [
+    {
+      "name": "Mohammed Ashar Husain",
+      "roll_number": "2024BCS0137"
+    },
+    {
+      "name": "Muhamed Fadhil",
+      "roll_number": "2024BCS0093"
+    },
+    {
+      "name": "Anjo P S",
+      "roll_number": "2024BCS0097"
+    }
+  ],
+  "repository_url": "https://github.com/Fadhil006/fuzzy-topsis-pedestrian-crossings",
+  "team_block_and_repository_url_checked_in_pdf": true
+}

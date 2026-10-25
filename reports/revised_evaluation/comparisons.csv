@@ -1,0 +1,3 @@
+comparison,top1_changed,top_k_overlap,spearman,top1_ids
+five_criterion_fuzzy_vs_deficiency_rule,True,0.0,0.34200560402031716,"{'baseline': ['SYN-OSM-716872373', 'SYN-OSM-764885861'], 'reference': ['SYN-OSM-9878266128']}"
+five_criterion_fuzzy_vs_crisp_topsis,False,1.0,0.97354353210785,"{'baseline': ['SYN-OSM-716872373', 'SYN-OSM-764885861'], 'reference': ['SYN-OSM-716872373', 'SYN-OSM-764885861']}"

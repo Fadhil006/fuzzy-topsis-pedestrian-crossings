@@ -1,0 +1,4 @@
+width_factor,top1_ids,spearman_vs_full,status
+0.0,"['SYN-OSM-716872373', 'SYN-OSM-764885861']",0.9765528680860254,computed
+0.5,"['SYN-OSM-716872373', 'SYN-OSM-764885861']",0.9845186581793103,computed
+1.0,"['SYN-OSM-716872373', 'SYN-OSM-764885861']",1.0,computed

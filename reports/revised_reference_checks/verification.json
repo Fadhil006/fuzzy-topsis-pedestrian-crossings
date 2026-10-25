@@ -1,0 +1,392 @@
+[
+  {
+    "id": "S1",
+    "url": "https://api.crossref.org/works/10.1016%2FS0165-0114%2897%2900377-1",
+    "status": "failed",
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "id": "S2",
+    "url": "https://api.crossref.org/works/10.1016%2Fj.trpro.2023.02.220",
+    "verified_utc": "2026-10-25T11:11:48.240389+00:00",
+    "title": [
+      "A Decision Support System for the safety evaluation of urban pedestrian crossings"
+    ],
+    "authors": [
+      {
+        "given": "Roberto",
+        "family": "Battistini",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Claudio",
+        "family": "Lantieri",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Andrea",
+        "family": "Simone",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Giulio",
+        "family": "Dondi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Valeria",
+        "family": "Vignali",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "container": [
+      "Transportation Research Procedia"
+    ],
+    "volume": "69",
+    "issue": null,
+    "page": "655-662",
+    "published": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "status": "verified_metadata"
+  },
+  {
+    "id": "S3",
+    "url": "https://api.crossref.org/works/10.1061%2F%28ASCE%29UP.1943-5444.0000718",
+    "verified_utc": "2026-10-25T11:11:48.013476+00:00",
+    "title": [
+      "Pedestrian Satisfaction-Based Methodology for Prioritization of Critical Sidewalk and Crosswalk Attributes Influencing Walkability"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-7721-8436",
+        "authenticated-orcid": true,
+        "given": "Bandhan B.",
+        "family": "Majumdar",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Assistant Professor, Dept. of Civil Engineering, BITS Pilani, Hyderabad 500078, India (corresponding author). ORCID: ."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-4309-5631",
+        "authenticated-orcid": true,
+        "given": "Prasanta K.",
+        "family": "Sahu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Assistant Professor, Dept. of Civil Engineering, BITS Pilani, Hyderabad 500078, India. ORCID: ."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-1773-0037",
+        "authenticated-orcid": true,
+        "given": "Mallikarjun",
+        "family": "Patil",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Research Scholar, Dept. of Civil Engineering, BITS Pilani, Hyderabad 500078, India. ORCID: ."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nikitha",
+        "family": "Vendotti",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Former Master\u2019s Student, Dept. of Civil Engineering, BITS Pilani, Hyderabad 500078, India."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container": [
+      "Journal of Urban Planning and Development"
+    ],
+    "volume": "147",
+    "issue": "3",
+    "page": null,
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          9
+        ]
+      ]
+    },
+    "status": "verified_metadata"
+  },
+  {
+    "id": "S4",
+    "url": "https://api.crossref.org/works/10.1061%2FJTEPBS.0000720",
+    "verified_utc": "2026-10-25T11:11:49.524039+00:00",
+    "title": [
+      "Evaluating the Pedestrian Gap Acceptance in Semicontrolled Midblock Crosswalks with an Integrated AHP-FL Approach"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-9833-4505",
+        "authenticated-orcid": true,
+        "given": "Yal\u00e7\u0131n",
+        "family": "Alver",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Ege Univ.",
+            "place": [
+              "Turkey"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7172-8192",
+        "authenticated-orcid": true,
+        "given": "Burak Yi\u011fit",
+        "family": "Katanalp",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Ege Univ.",
+            "place": [
+              "Turkey"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container": [
+      "Journal of Transportation Engineering, Part A: Systems"
+    ],
+    "volume": "148",
+    "issue": "9",
+    "page": null,
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          9,
+          1
+        ]
+      ]
+    },
+    "status": "verified_metadata"
+  },
+  {
+    "id": "S8",
+    "url": "https://api.crossref.org/works/10.3390%2Fsym13020223",
+    "verified_utc": "2026-10-25T11:11:49.369059+00:00",
+    "title": [
+      "Item Response Theory Models for the Fuzzy TOPSIS in the Analysis of Survey Data"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-0335-0036",
+        "authenticated-orcid": false,
+        "given": "Bart\u0142omiej",
+        "family": "Jefma\u0144ski",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Econometrics and Computer Science, Wroclaw University of Economics and Business, 53\u2013345 Wroc\u0142aw, Poland"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Adam",
+        "family": "Sagan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Market Analysis and Marketing Research, Cracow University of Economics, 31\u2013510 Cracow, Poland"
+          },
+          {
+            "name": "Institute of Sociology, Jagiellonian University, 31\u2013044 Cracow, Poland"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container": [
+      "Symmetry"
+    ],
+    "volume": "13",
+    "issue": "2",
+    "page": "223",
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          29
+        ]
+      ]
+    },
+    "status": "verified_metadata"
+  },
+  {
+    "id": "S10",
+    "url": "https://api.crossref.org/works/10.18520%2Fcs%2Fv123%2Fi9%2F1117-1128",
+    "verified_utc": "2026-10-25T11:11:48.967536+00:00",
+    "title": [
+      "Pedestrian safety analysis at urban midblock section under mixed traffic conditions using time to collision as surrogate safety measure"
+    ],
+    "authors": [
+      {
+        "given": "Hareshkumar",
+        "family": "Golakiya",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ritvik",
+        "family": "Chauhan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Chintaman Santosh",
+        "family": "Bari",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ashish",
+        "family": "Dhamaniya",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container": [
+      "Current Science"
+    ],
+    "volume": "123",
+    "issue": "9",
+    "page": "1117",
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          11,
+          10
+        ]
+      ]
+    },
+    "status": "verified_metadata"
+  }
+]

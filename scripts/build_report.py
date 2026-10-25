@@ -1,169 +1,188 @@
-"""Build the academic report from reproducible hypothetical exports.
+"""Build the report from the current reproducible synthetic evaluation."""
+from __future__ import annotations
 
-Optional authoring dependency: python-docx. Runtime analysis needs only
-requirements.txt. Run the demo before rebuilding this report.
-"""
-from pathlib import Path
 import csv
+import sys
+from pathlib import Path
+
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from evaluate_report import build_evaluation
+
+INPUT = ROOT / "data/processed/pedestrian_crossings_fuzzy_topsis.csv"
+OUT = ROOT / "reports/evaluation"
+FIGS = ROOT / "reports/report_figures"
+evaluation = build_evaluation(INPUT, OUT, draws=1000)
+
 doc = Document()
-section = doc.sections[0]
-section.page_width, section.page_height = Inches(8.27), Inches(11.69)
-section.top_margin = section.bottom_margin = Inches(.7)
-section.left_margin = section.right_margin = Inches(.75)
-style = doc.styles['Normal']
-style.font.name = 'Times New Roman'
-style.font.size = Pt(11)
-style.paragraph_format.space_after = Pt(7)
-style.paragraph_format.line_spacing = 1.08
-for name in ['Title', 'Heading 1', 'Heading 2']:
-    doc.styles[name].font.name = 'Times New Roman'
+sec = doc.sections[0]
+sec.page_width, sec.page_height = Inches(8.27), Inches(11.69)
+sec.top_margin = sec.bottom_margin = Inches(.7)
+sec.left_margin = sec.right_margin = Inches(.75)
+normal = doc.styles["Normal"]
+normal.font.name, normal.font.size = "Times New Roman", Pt(10.5)
+normal.paragraph_format.space_after, normal.paragraph_format.line_spacing = Pt(5), 1.03
+for name, size in (("Title", 19), ("Heading 1", 13), ("Heading 2", 11)):
+    doc.styles[name].font.name = "Times New Roman"
+    doc.styles[name].font.size = Pt(size)
     doc.styles[name].font.color.rgb = RGBColor(0, 0, 0)
-doc.styles['Title'].font.size = Pt(19)
-doc.styles['Heading 1'].font.size = Pt(14)
-doc.styles['Heading 2'].font.size = Pt(12)
-for named_style in doc.styles:
-    for border in list(named_style.element.iter(qn('w:pBdr'))):
-        border.getparent().remove(border)
-    for fonts in named_style.element.iter(qn('w:rFonts')):
-        for attribute in list(fonts.attrib):
-            if attribute.endswith('Theme'):
-                del fonts.attrib[attribute]
 
 def p(text):
-    doc.add_paragraph(text)
+    doc.add_paragraph(str(text))
 
-def h(text):
-    doc.add_heading(text, level=1)
+def h(text, level=1):
+    doc.add_heading(text, level=level)
 
-def table(headers, rows):
+def table(headers, rows, size=8.5):
     t = doc.add_table(rows=1, cols=len(headers))
-    t.style = 'Light Shading Accent 1'
-    for cell, text in zip(t.rows[0].cells, headers):
-        cell.text = text
-    repeat = OxmlElement('w:tblHeader')
+    t.style = "Light Shading Accent 1"
+    for c, value in zip(t.rows[0].cells, headers): c.text = str(value)
+    repeat = OxmlElement("w:tblHeader")
     t.rows[0]._tr.get_or_add_trPr().append(repeat)
     for row in rows:
-        for cell, value in zip(t.add_row().cells, row):
-            cell.text = str(value)
+        cells = t.add_row().cells
+        for c, value in zip(cells, row): c.text = str(value)
     for row in t.rows:
         for cell in row.cells:
-            for paragraph in cell.paragraphs:
-                paragraph.paragraph_format.space_after = Pt(4)
-                for run in paragraph.runs:
-                    run.font.size = Pt(10)
+            for para in cell.paragraphs:
+                para.paragraph_format.space_after = Pt(2)
+                for run in para.runs: run.font.size = Pt(size)
     return t
 
-def read(name):
-    with (ROOT / 'results' / ('hypothetical_' + name + '.csv')).open() as f:
-        return list(csv.DictReader(f))
+def f(value, digits=4): return f"{float(value):.{digits}f}"
 
-doc.add_paragraph('A Fuzzy TOPSIS Framework for Prioritising Pedestrian Crossing Safety and Accessibility Improvements', 'Title')
-p('Soft Computing Assignment P20 • IIIT Kottayam')
-h('Abstract')
-p('This project develops a reproducible decision-support procedure for prioritising feasible pedestrian-crossing improvement packages. Four baseline criteria describe pedestrian demand, vehicle exposure, accessibility deficiency and control or visibility deficiency. Triangular fuzzy numbers express documented observation ranges or assessor disagreement. A declared adaptation of triangular fuzzy TOPSIS combines observed-range normalisation, provisional equal weights and summed vertex distances. An extension adds essential-destination access importance. Four hypothetical alternatives demonstrate the complete pipeline; no site survey or empirical priority list is claimed. Evaluation compares a crisp baseline, the extension, 1,000 weight perturbations and three uncertainty-width scenarios. The example shows that a stable leading candidate under some assumptions can coexist with substantial changes elsewhere in the ranking. Collection forms, calculation traces, tests and source records support subsequent field application. Independent validation and engineering review remain necessary before a real allocation decision.')
-p('Keywords: pedestrian crossings; accessibility; triangular fuzzy numbers; TOPSIS; sensitivity analysis')
-h('1 Introduction and decision scope')
-p('A crossing improvement decision combines evidence measured in different units and observations that vary across time or assessors. A transparent ranking can help reviewers identify packages requiring attention, provided the score is interpreted within its candidate set. The decision here is which feasible package should receive earlier review. It is neither an estimate of accident probability nor a calculation of treatment effectiveness. A package may combine related actions at one crossing; choosing among multiple competing designs at the same site requires a separate engineering assessment.')
-p('The proposed study boundary covers the IIIT Kottayam campus and immediately adjoining public-road approaches. This is a study design: the crossing inventory and boundary have not been verified on site. Candidate records must identify a crossing, describe its proposed intervention, cite photographs and state feasibility. Only one eligible package per crossing enters the comparison. Rejected candidates retain a written reason. The campus facilities team and relevant road authority are the intended reviewers; the algorithm cannot grant approval or establish compliance.')
-h('2 Research question and contribution')
-p('The research question is whether adding essential-destination access changes the ordering or top group after local demand and deficiency criteria have been held fixed. The contribution is an inspectable implementation and an explicit comparison protocol. Applying TOPSIS at a new location alone is not a novelty claim. A changed ranking demonstrates that the additional criterion matters mathematically; it does not establish that the revised recommendation is better. That judgement needs evidence independent of the inputs.')
+title = "A Fuzzy TOPSIS Framework for Prioritising Pedestrian Crossing Safety and Accessibility Improvements"
+doc.add_paragraph(title, "Title")
+p("Team [Team number] • [Team member names]")
+p("Department of [Department], IIIT Kottayam, India • [Institutional email addresses]")
+h("Abstract")
+p(f"This report asks whether adding essential-destination access (E1) changes the leading group beyond a four-criterion baseline. In the 28-candidate simulation, the five-criterion model gives a tied top score of {f(evaluation['all_candidates'][0]['score'],4)}; the top-three overlap with the four-criterion model is {f(evaluation['comparisons'][1]['top_k_overlap'],3)}, and 1,000 bounded weight draws have mean top-three overlap {f(evaluation['sensitivity']['mean_top_k_overlap'],3)}. The pedestrian-demand/E1 central-score Spearman correlation is {f(evaluation['ped_destination_spearman'],2)}, indicating substantial constructed-proxy overlap. These are synthetic calculations informed by public map geometry—not measured conditions, verified crossings, or an empirical safety ranking. The older four-row example remains a separate teaching illustration.")
+p("Keywords: pedestrian crossings; accessibility; fuzzy TOPSIS; synthetic data; sensitivity analysis")
 
-doc.add_page_break()
-h('3 Related work and evidence sources')
-p('Structured inspection is a relevant precedent, but the decision target and geographical setting matter. Table 1 distinguishes crossing assessment, pedestrian satisfaction and behavioural modelling. The detailed source register records verified bibliographic metadata, access dates and reuse conditions. Claims from abstracts are kept at abstract level; inaccessible details have not been reconstructed.')
-p('Table 1. Literature comparison and transfer limits')
-table(['Study', 'Question and method', 'Project implication'], [
-    ['Battistini et al. [1]', 'Checklist-based decision support at ten unsignalized crossings on two Bologna roads.', 'Supports systematic site inspection; Italian scores are not local compliance thresholds.'],
-    ['Majumdar et al. [2]', 'Pedestrian satisfaction and TOPSIS prioritisation of sidewalk and crosswalk attributes.', 'Supports pedestrian-focused criteria; ranking attributes differs from ranking site packages.'],
-    ['Alver and Katanalp [3]', 'Integrated AHP and fuzzy logic for gap acceptance at semicontrolled crossings.', 'Shows a transport application of fuzzy modelling; does not validate these ratings.'],
-    ['Chen [4]; Jefmański and Sagan [5]', 'Triangular fuzzy TOPSIS foundation and analysis of fuzzy scale choices.', 'Motivates vertex distances and explicit sensitivity to representation choices.']])
-p('The three transport studies address related decisions rather than providing local measurements. Chen [4] supplies the method lineage; this project does not claim an unchanged implementation of its group linguistic formulation. The full original paper was not accessible through the earlier open-source review. The declared project equations below therefore define the implemented model precisely. The open exposition in [5] also supports examining sensitivity to fuzzy conversion choices.')
-h('4 Criteria and data collection')
-p('All criteria increase priority. Table 2 defines the small baseline and its extension. Equal weights are a transparent starting point because no expert elicitation has occurred. Cost is excluded because no verified estimates exist. Feasibility is an inclusion gate, not an invented numerical benefit.')
-table(['Code', 'Criterion and unit', 'Evidence and uncertainty'], [
-    ['P1', 'Pedestrian demand, persons/hour', 'Repeated matched windows; minimum, median, maximum rates.'],
-    ['P2', 'Vehicle exposure, vehicles/hour', 'Same windows and approach; minimum, median, maximum rates.'],
-    ['P3', 'Accessibility deficiency, 0–3', 'Independent photo-supported audits; documented rating range.'],
-    ['P4', 'Control or visibility deficiency, 0–3', 'Structured checklist; keep components distinct from P3.'],
-    ['E1', 'Essential-destination access, 0–3', 'Verified routes, destination IDs and alternative-route evidence.']])
-p('The protocol proposes two ordinary weekdays, morning, midday and evening periods, and three 15-minute intervals per period. Counts become hourly rates using count × 60/minutes. Weather and disruptions are recorded; atypical sessions are repeated or analysed separately. Two assessors retain independent ratings and evidence IDs. Disagreement is preserved or adjudicated with a written reason. OpenStreetMap is a potential inventory aid [6], not a verified local dataset in this submission. No map extract, traffic counts or field photographs are included.')
+h("I Introduction")
+p("A transparent multi-criteria ranking can organise review when demand, road context, accessibility and control evidence are incomplete, but its meaning depends on its inputs and candidate set. This project ranks hypothetical improvement packages for earlier review—not danger, crash prevention, or a budget-optimal portfolio. Its contribution is a reproducible context-informed synthetic dataset: unlike independently random alternatives, candidate selection follows saved road geometry and shared-node junction topology, while road hierarchy and mapped destinations inform explicit proxy formulas. This creates traceable intermediate evidence and assumptions, not stronger empirical observations; modeled deficiencies remain prior-based and every score remains synthetic. Feasibility is an external engineering and jurisdictional gate.")
+h("II Related Work")
+p("Structured crossing checklists [1], pedestrian-facility prioritisation [2], and fuzzy gap-acceptance analysis [3] motivate documented evidence and decision support, but their settings and outcomes do not validate these inputs. Chen [4] informs the TOPSIS lineage; fuzzy conversion research [5] motivates explicit sensitivity. Kerala’s road-safety vision [6] and a midblock study from four other Indian cities [7] provide context only. OSM [8] supplies the mapped layer; Kerala district charts [9] are not score inputs. The declared calculations below are project adaptations, not an unchanged reproduction of an earlier formulation.")
+table(["Study", "Data and approach", "Relevance and transfer limit"], [
+    ["Battistini et al. [1]", "Checklists at ten unsignalized crossings on two Bologna roads; decision support for intervention priorities.", "Supports structured inspection; Italian site ratings are not local observations or Indian compliance thresholds."],
+    ["Majumdar et al. [2]", "Pedestrian satisfaction and TOPSIS prioritisation of sidewalk/crosswalk attributes in an Indian context.", "Supports pedestrian-focused criteria; ranking infrastructure attributes differs from ranking crossing packages."],
+    ["Alver and Katanalp [3]", "Integrated AHP and fuzzy logic for gap acceptance at semicontrolled midblock crossings.", "Illustrates fuzzy transport modelling; behavioral analysis does not validate our synthetic deficiency scale."],
+], size=9)
 
 doc.add_page_break()
-h('5 Mathematical specification')
-p('For alternative i and criterion j, x̃ᵢⱼ = (lᵢⱼ, cᵢⱼ, uᵢⱼ), with l ≤ c ≤ u. For counts, the three values are the minimum, median and maximum observed hourly rates. For audits, they record the lower, central and upper documented ratings. The triangular shape is a modelling approximation: observed bounds alone do not establish that membership declines linearly. Temporal variation and assessor disagreement are different sources of imprecision and must remain identifiable in the underlying records.')
-p('For a nondegenerate triangle (l,c,u), membership is zero outside [l,u], rises as (x−l)/(c−l) from l to c, equals one at c, and falls as (u−x)/(u−c) from c to u. A hypothetical triangle (100,120,160) has membership 0.5 at 110 and 140 and membership 1 at 120. These grades are not probabilities. When l=c or c=u, the corresponding rising or falling segment is absent; a fully crisp triple concentrates at its one value.')
-p('Shared outer bounds are Lⱼ = minᵢ lᵢⱼ and Uⱼ = maxᵢ uᵢⱼ. Each component q is normalised by zᵢⱼq = (xᵢⱼq−Lⱼ)/(Uⱼ−Lⱼ). Identical criterion triples across alternatives are excluded, including zero-range criteria. The remaining weights are renormalised. This avoids division by zero and prevents a non-discriminating criterion changing the score. All included criteria are priority-oriented, so no cost reversal is applied.')
-p('With m active criteria, wⱼ = 1/m initially. Form the weighted triangle ṽᵢⱼ = wⱼz̃ᵢⱼ. The positive ideal is Aⱼ⁺ = (wⱼ,wⱼ,wⱼ), and the negative ideal is Aⱼ⁻ = (0,0,0). These are theoretical corners of the weighted scale; they need not be observed packages. The normalisation, crisp weights and weighted ideals are explicit project adaptations, while the vertex metric and distance summation retain the Chen-style structure.')
-p('d(ã,b̃) = √[((aₗ−bₗ)² + (a꜀−b꜀)² + (aᵤ−bᵤ)²)/3]')
-p('Dᵢ⁺ = Σⱼ d(ṽᵢⱼ,Aⱼ⁺);     Dᵢ⁻ = Σⱼ d(ṽᵢⱼ,Aⱼ⁻);     Cᵢ = Dᵢ⁻/(Dᵢ⁺+Dᵢ⁻).')
-p('Rank Cᵢ in descending order. Larger scores mean closer to the high-priority ideal relative to the low-priority ideal. A zero denominator is rejected. Exact equal scores receive the same minimum rank; alternative IDs determine display order. The program exports each normalised triple, active weight and criterion distance, so every total can be reconstructed. Appendix A independently checks a two-criterion example.')
-h('6 Processing workflow and comparison design')
-p('Figure 1. Reproducible workflow')
-table(['Stage', 'Output'], [
-    ['Inventory and evidence → feasibility gate', 'Eligible packages and retained rejection reasons'],
-    ['Validate → derive triples → normalise', 'Clean matrix and preprocessing log'],
-    ['Weight → calculate distances → rank', 'Scores and criterion calculation trace'],
-    ['Compare → perturb assumptions → human review', 'Evaluation tables, chart and review priorities']])
-p('The crisp comparator min–max scales central observations separately and averages active columns. The extension adds E1 at weight 1/5 and assigns each original criterion 1/5, preserving their relative weights. It asks about the effect of adding access importance; it is not a controlled test of predictive accuracy. Correlations among central criteria flag possible overlap, but four invented rows cannot establish independence or justify deleting a criterion.')
+h("III Study Scope and Data")
+p("The generator reads the saved data/raw/osm_context.json extract and data/raw/osm_metadata.json metadata. The extract contains 431 elements (286 accepted motor-road ways; 91 deduplicated destinations). From the mapped center (9.7554364° N, 76.6495350° E), a deterministic 3 km search, ≥80 m spacing, and map-evidence priority selected 28 coordinates: 27 road-junction candidates and one explicitly mapped crossing. All are unverified. Shared-node junctions are candidate locations, not proof of crossings; road ownership, field conditions, and map completeness are unknown.")
+p("Evidence chain: saved map geometry/tags and destination objects are mapped facts; formulas derive context indicators; deterministic seeded rules produce synthetic ordinal centers and ranges. Example SYN-OSM-716872373 is near mapped St Mary’s Church (60 m), Alphonsa English Medium School Valavoor (83 m), Valavoor School (277 m), and a post office (286 m), all straight-line distances. Proximity does not show a walking route or access need. All centers are integer scores 1–5. Fuzzy widths are ±1.0 for low-confidence proxies and ±1.5 for very-low/unknown assumptions, clipped to scale bounds; these are not confidence intervals.")
+table(["Criterion", "Map/context input and generation rule", "Interpretation"], [
+    ["P1 Demand", "Nearby mapped amenity intensity I, bus stop B, vehicle score; round_clip(1+1.05 ln(1+I)+0.35B+0.12(vehicle−2)+U(−0.65,0.65)).", "Constructed demand proxy; no counts."],
+    ["P2 Vehicle", "Highest adjacent road class (motorway/trunk/primary 5; secondary 4; tertiary 3; residential/unclassified 2; service/living street 1); +0.5 for each satisfied condition: ≥3 mapped lanes, numeric maxspeed ≥60 km/h; U(−0.35,0.35).", "Road context, not volume or operating speed."],
+    ["P3 Access", "Prior 3 + shared U(−0.45,0.45) + N(0,0.85); mapped wheelchair, kerb/sloped curb and tactile tags adjust it.", "Unknown tags stay unknown; deficiency mostly assumed."],
+    ["P4 Control", "Prior 3 + shared variation +0.2(vehicle−3)+N(0,0.85); mapped signals/markings and lighting adjust it.", "Not a visibility or condition audit."],
+    ["E1 Destination", "Strongest mapped destination proximity plus total intensity: round_clip(1+1.05M+0.25 ln(1+I)).", "Straight-line proxy, not walking-network access."],
+], size=8.2)
+p("Within 500 m, each destination contributes a(1−d/600), where d is great-circle distance in metres and a is the declared destination-type weight. I sums these contributions; M is their maximum (zero when none are mapped). B=1 if a mapped bus stop/platform lies within 250 m, otherwise 0. Schools/clinics/hospitals have a=3, universities/pharmacies/markets 2.5, bus stops 2, banks/post offices/community or worship facilities 1.5, and other shops 1. round_clip rounds to the nearest integer and clips to 1–5. N(0,0.85) denotes mean zero and standard deviation 0.85; all draws are seeded assumptions.")
+p("Scores/ranges are synthetic, not calibrated. For deficiency criteria, the prior is 3 and missing tags do not imply absence. Generator seed 20261024 differs from sensitivity seed 20261009. Exact feature weights, road-class constants, draw order, and source records are in reports/synthetic_data_methodology.md and data/source_inventory.csv. No counts, surveys, operating speeds, expert validation, or feasibility findings were invented.")
 
 doc.add_page_break()
-h('7 Implementation and hypothetical evaluation')
-p('The Python pipeline validates required metadata, unique identifiers, ordered finite nonnegative triples, survey-date format and the 0–3 audit limits. It rejects missing measurements instead of replacing them with zero. Eight automated tests cover independent arithmetic, constant criteria, orientation, invalid data, duplicate identifiers, large weights and the evaluation exports. The run manifest records the input SHA-256 hash, runtime versions, seed and experiment settings. Input provenance and photograph authenticity still require human review.')
-p('Table 3. Synthetic demonstration only; no actual crossing observations')
-base = read('base_ranking')
-ext = {r['alternative_id']: r for r in read('extension_ranking')}
-crisp = {r['alternative_id']: r for r in read('crisp_baseline')}
-table(['Alternative', 'Base score', 'Base rank', 'Crisp rank', 'Extended rank'], [
-    [r['alternative_id'], f"{float(r['score']):.6f}", r['rank'], crisp[r['alternative_id']]['rank'], ext[r['alternative_id']]['rank']] for r in base])
-p('HYP-A leads the four-criterion fuzzy model. HYP-B and HYP-D differ by only about 0.00146, which is too small to treat as a substantive field conclusion even if the inputs were observed. HYP-C moves from fourth to first when destination access is introduced. This reversal illustrates the question being tested: local deficiency and demand can yield a different ordering from a model that also values access consequences. No improvement in safety or decision quality follows from this numerical change alone.')
-p('Table 4. Comparison of rankings on the same hypothetical alternatives')
-table(['Comparison', 'Top choice changes', 'Top-three overlap', 'Spearman'], [
-    [r['comparison'].replace('_', ' '), r['top1_changed'], f"{float(r['top_k_overlap']):.3f}", f"{float(r['spearman']):.3f}"] for r in read('comparisons')])
-p('Spearman is correlation between average ranks and describes ordering agreement. Top-three overlap is the shared number of selected alternatives divided by three. Exact ties use ID order for selection statistics; this arbitrary boundary choice must be checked when ties occur. Neither agreement nor disagreement validates the ranking against a real outcome. The crisp comparison changes both fuzzy representation and scaling, so it cannot isolate the effect of uncertainty alone.')
-h('8 Sensitivity to weights and uncertainty')
-p('Weight sensitivity uses 1,000 reproducible draws with seed 20261009. Each equal weight is multiplied by an independent uniform factor between 0.8 and 1.2, then the vector is renormalised. These bounds are an exploratory scenario, not an elicited distribution of stakeholder preferences. HYP-A leads 864 draws (86.4%) and HYP-B leads 136 (13.6%). Thus even the leading base candidate is conditional on the chosen weighting assumptions. The saved SVG visualises these frequencies.')
-p('Uncertainty sensitivity contracts each triangle around its central value using x̃(α) = c + α(x̃−c), for α = 0, 0.5 and 1, then recomputes the shared normalisation bounds. HYP-A remains first in these three scenarios. At α=0, B and C tie for second; at α=0.5, C is third and D fourth; at α=1, D is third. Rank correlations with the full-width model are approximately 0.632, 0.800 and 1.000. These are stress tests of the representation and its scaling, not improved measurements or calibrated uncertainty estimates.')
+h("IV Methodology")
+p("For alternative i and criterion j, represent the priority-oriented input as a triangular fuzzy number x̃ᵢⱼ=(l,c,u), where l≤c≤u. Components are normalized against shared input outer bounds Lⱼ=minᵢlᵢⱼ and Uⱼ=maxᵢuᵢⱼ: z=(x−Lⱼ)/(Uⱼ−Lⱼ). Non-discriminating criteria are removed and remaining equal weights renormalized. With five active criteria, each weight is 1/5. Weighted triangles are compared with theoretical positive ideals (wⱼ,wⱼ,wⱼ) and negative ideals (0,0,0). The positive ideal means greatest intervention priority, not the safest condition.")
+p("The vertex distance is d(ã,b̃)=√(((aₗ−bₗ)²+(a꜀−b꜀)²+(aᵤ−bᵤ)²)/3). Criterion distances are summed: Dᵢ⁺=Σⱼd(ṽᵢⱼ,Aⱼ⁺), Dᵢ⁻=Σⱼd(ṽᵢⱼ,Aⱼ⁻); closeness is Cᵢ=Dᵢ⁻/(Dᵢ⁺+Dᵢ⁻). Descending C ranks higher priority. This is a declared project adaptation: shared-range normalization, equal weights, weighted theoretical ideals, and summed distances. Fuzzy membership grades are not probabilities; ranges are uncalibrated stress-test representations.")
+p(f"Research question: does adding E1 change ordering while the four original criteria are retained? E1 is a 500 m straight-line proxy, not the field definition based on verified walking routes and access necessity. Demand and E1 share amenity context; their central-score Spearman correlation is {f(evaluation['ped_destination_spearman'],3)}, so double-counting is plausible. The crisp comparator min–max scales central values and averages active columns; it is not crisp TOPSIS. The comparison does not establish predictive accuracy.")
+h("Processing path and comparison design", 2)
+table(["Stage", "Input → output", "What enters model"], [
+    ["Select candidates", "osm_context.json + osm_metadata.json → mapped candidates/context", "Coordinates, road/destination context"],
+    ["Generate synthetic rows", "build_synthetic_dataset.py → processed/pedestrian_crossings_fuzzy_topsis.csv", "Five synthetic criterion triples"],
+    ["Run CLI", "--synthetic-input reads that CSV → scores/ranks", "Criterion triples only; metadata fields validate provenance, not criteria"],
+    ["Evaluate/report", "evaluate_report.py → comparisons, sensitivity, calculation trace", "Same CSV; four- and five-criterion analyses"]], size=8.0)
+p("The CLI does not reread the OSM files or the field observation template: those inputs are upstream of the generated CSV. The model receives the five criterion triples; identifiers and provenance metadata do not become extra TOPSIS criteria.")
 
 doc.add_page_break()
-h('9 Interpretation and independent validation plan')
-p('The calculation trace explains why a package receives its score: each criterion contributes a distance to the two ideals, and the summed distances determine closeness. A reviewer can inspect a high score alongside the original count intervals and audit photographs. The trace is more defensible than treating a final ranking as self-explanatory. In practice, close alternatives should be discussed together and checked for measurement differences that could reverse their order.')
-p('Independent validation remains pending data collection. A reviewer who did not provide the original ratings should examine a preregistered sample of crossing records or sites without seeing model ranks. The validation form records accessibility barriers, control and visibility concerns, proposed action suitability and a written assessment of urgency. Preserve disagreements rather than adjusting inputs to match the model. Report the sample selection rule, reviewer role, evidence dates, agreement and unresolved differences. Expert agreement would support practical relevance, but would still not prove a reduction in crashes.')
-p('The destination extension requires a verified destination inventory, walking routes and a defined catchment. Assess whether a crossing is a necessary link and whether a usable alternative route exists. An ordinary destination count can duplicate pedestrian demand and should not automatically become E1. The exported pairwise central-value correlations provide an initial overlap screen. A larger field sample and substantive route inspection are needed to decide whether the extension adds a distinct decision dimension.')
-h('10 Limitations and remaining fieldwork')
-p('There is no empirical ranking in this submission. The four HYP alternatives are invented solely for reproducibility and demonstration. Site identity, feasibility, observations, photo evidence and destination access have not been verified. The 0–3 audit rubric is a proposed study scale, not an Indian compliance standard. The exact instructor handout and individual author details were not supplied, so institutional formatting and contribution declarations require student review before submission.')
-p('Min–max bounds depend on the candidate set; adding or removing a crossing can change scores and ordering. Triangular ranges combine observed variability with a shape assumption and do not encode a probability distribution. Equal weights and the perturbation interval express provisional choices. Uncertainty contraction also changes normalisation, so its effects should not be attributed solely to fuzziness. A small top-group overlap metric can conceal a major first-place reversal; multiple evaluation summaries are therefore reported.')
-p('A priority order is not a budget-optimal portfolio. Real decisions need cost estimates, implementation dependencies, jurisdiction, accessibility requirements and engineering feasibility. Intervention effects and crash reduction would need a different evaluation design. The method must not be used to claim that a low-ranked crossing is safe, or that a high-ranked package has a quantified benefit. It supports a review process within a verified candidate set.')
-h('11 Conclusion')
-p('The project delivers a complete executable demonstration of a declared triangular fuzzy TOPSIS adaptation, a transparent crisp comparator and an essential-destination extension. The example demonstrates why assumption checks matter: weight variation changes the leading candidate in some draws, uncertainty contraction changes lower ranks, and the extension changes the winner. The implementation exposes intermediate calculations and rejects incomplete inputs. The remaining empirical contribution is to collect and verify the crossing evidence, run the same pipeline and obtain independent review. Until then, the defensible result is methodological reproducibility, not a recommendation for a real crossing.')
+h("V Implementation and Evaluation")
+p("scripts/build_synthetic_dataset.py generates the synthetic CSV from the preserved OSM extract; the existing CLI/model pipeline evaluates it. scripts/evaluate_report.py regenerates reports/evaluation/summary.json, seeded weight runs, uncertainty scenarios, and a per-criterion trace. This builder reads that summary, including the input SHA-256 and runtime versions; numerical results are not hardcoded. Tests assess reproducibility and arithmetic consistency, not empirical validity.")
+p(f"The recorded execution uses Python {evaluation['python']}, NumPy {evaluation['numpy']} and pandas {evaluation['pandas']}. Validation checks required metadata, unique IDs, coordinates, integer central scores and ordered finite bounds in 1–5; missing values are rejected rather than set to zero. The calculation is deterministic: randomness is confined to the documented synthetic generator and explicitly seeded sensitivity experiments. Appendix B reconstructs one complete five-criterion result.")
+h("VI Results")
+top = evaluation["top_candidates"]
+table(["Rank", "OSM node ID", "Mapped context (hypothetical)", "Score", "4-criterion rank", "Crisp rank"], [
+    [r["rank"], r["alternative_id"].removeprefix("SYN-OSM-"), r["location_name"].split(" — hypothetical")[0], f(r["score"]), r["base_rank"], r["crisp_rank"]] for r in top[:8]])
+p("Table 1 reports the leading eight of 28 alternatives under the five-criterion model. Candidate IDs are SYN-OSM- followed by the displayed node ID; full IDs appear in Appendix A. The score and ranks describe this synthetic candidate set only; shared-bound normalization means adding or removing alternatives can change results. The comparisons below use the same alternatives.")
+table(["Comparison", "Top-1 changed", "Top-3 overlap", "Spearman"], [[
+    x["comparison"].replace("_", " "), x["top1_changed"], f(x["top_k_overlap"], 3), f(x["spearman"], 3)] for x in evaluation["comparisons"]])
+p("The leading two candidates exchange their demand and vehicle fuzzy triples while their other three triples match. Equal weights yield equal scores; weight changes expose that trade-off rather than establishing a unique best location. Adding E1 exchanges the third and fourth baseline positions, so two of the three selected leading alternatives remain shared. This illustrates a controlled extension effect, not a before/after safety improvement. Rounded scores should not be used to infer meaningful separation of near-tied candidates.")
+s = evaluation["sensitivity"]
+doc.add_page_break()
+h("Sensitivity to assumptions")
+p("Weight sensitivity uses 1,000 seeded perturbations: each equal weight is multiplied by an independent U(0.8,1.2) factor and renormalized. These are exploratory scenarios, not stakeholder preference probabilities. Width sensitivity contracts triangles toward their centers by α∈{0,0.5,1} and recomputes normalization; it tests the full representation/scaling procedure, not fuzziness in isolation. Exact ties share minimum rank; top-choice frequencies use deterministic ID ordering, not probabilities.")
+p(f"The five-criterion top group is tied between {top[0]['alternative_id']} and {top[1]['alternative_id']} at {f(top[0]['score'],4)}. Adding E1 gives top-three overlap {f(evaluation['comparisons'][1]['top_k_overlap'],3)} versus the four-criterion baseline (Spearman {f(evaluation['comparisons'][1]['spearman'],3)}); this is an assumption comparison, not validation.")
+p(f"Across {evaluation['draws']} weight draws, mean top-three overlap with equal weights is {f(s['mean_top_k_overlap'],3)} (minimum {f(s['min_top_k_overlap'],3)}); mean Spearman rank correlation is {f(s['mean_spearman'],3)} (minimum {f(s['min_spearman'],3)}). These perturbations are scenarios, not probabilities of field priority.")
+u = evaluation["uncertainty"]
+p("Uncertainty-width scenarios (α, top-ranked ID(s), Spearman versus full width): " + "; ".join(
+    f"{x['width_factor']}: {', '.join(x['top1_ids'])}, {f(x['spearman_vs_full'],3)}" for x in u) + ".")
+FIGS.mkdir(parents=True, exist_ok=True)
+fig, ax = plt.subplots(figsize=(6.4, 1.35))
+freq = sorted((r for r in s["top1_frequencies"] if r["top1_count"]),
+              key=lambda x: (-x["top1_fraction"], x["alternative_id"]))
+bars = ax.barh([r["alternative_id"] for r in freq], [100*r["top1_fraction"] for r in freq], color="#315f89")
+ax.invert_yaxis(); ax.set_xlim(0, 110); ax.set_xlabel("Weight draws selected as top-1 (%)", fontsize=9)
+ax.tick_params(labelsize=9)
+for bar, row in zip(bars, freq):
+    ax.text(bar.get_width()+1, bar.get_y()+bar.get_height()/2, f"{100*row['top1_fraction']:.1f}%", va="center", fontsize=9)
+fig.tight_layout(pad=.3)
+fig.savefig(FIGS / "weight_top1_sensitivity.png", dpi=200); plt.close(fig)
+doc.add_picture(str(FIGS / "weight_top1_sensitivity.png"), width=Inches(5.7))
+p(f"Figure 1. Only the {len(freq)} alternatives selected at least once are shown; the other {evaluation['candidate_count']-len(freq)} candidates had zero selections. Deterministic tie handling applies. These are experiment frequencies, not probabilities of need.")
+
+h("VII Discussion and Limitations")
+p("The experiment demonstrates computational behavior, not relative safety. A high closeness score means proximity to the modeled high-priority ideal within this candidate set. The public map extract supports candidate geometry and contextual proxies, but 27 junction candidates and the one mapped crossing remain unverified. In particular, road class is not traffic volume or operating speed; mapped tags do not certify current conditions; unknown attributes remain unknown. The destination proxy is not a verified route or access measure, and shared amenity inputs may count context twice.")
+p("Central-score demand/destination association is reported as a diagnostic, not evidence that criteria are empirically independent. The five-versus-four comparison tests the mathematical consequence of adding E1 at equal weight, not predictive accuracy or improved decisions. The crisp comparator changes representation and scaling. Sensitivity ranges are analyst-chosen, fuzzy bounds uncalibrated, and equal weights provisional. A stable or unstable rank under these scenarios cannot validate the assumptions.")
+p("Before operational use, collect matched pedestrian and vehicle counts, independently documented accessibility/control audits, current photographs, walking-route and destination verification, dates and disruptions, costs, jurisdiction, and feasibility. Preserve missingness and disagreements, then obtain independent review against predefined evidence. The model cannot establish code compliance, crash risk, treatment effect, or a budget-optimal portfolio. A low rank does not imply safety; a high rank does not quantify benefit.")
+h("VIII Conclusion")
+p("A reproducible five-criterion simulation demonstrates how a declared fuzzy TOPSIS adaptation can organize hypothetical crossing-improvement candidates and expose sensitivity to weighting and range assumptions. Its evidence-informed geography is not field evidence: public map facts, derived indicators, and modeled scores are kept distinct. Results must not be presented as validated site priorities. The report retains an older four-alternative example separately for teaching and provides reproducible artifacts for later replacement with verified observations.")
 
 doc.add_page_break()
-h('References')
-with (ROOT / 'docs/source_register.csv').open() as f:
-    sources = {r['id']: r for r in csv.DictReader(f)}
-for index, key in enumerate(['S2', 'S3', 'S4', 'S1', 'S8', 'S7'], 1):
-    r = sources[key]
-    p(f"[{index}] {r['full_reference']} {r['url']}")
-h('Appendix A Independent arithmetic example')
-p('Use two already normalised criteria with weights 0.4 and 0.6. Alternative A has triangles (0.2,0.4,0.6) and (0.5,0.7,0.9); alternative B has (0.7,0.8,0.9) and (0.1,0.2,0.3). For A, the weighted triangles are (0.08,0.16,0.24) and (0.30,0.42,0.54). The positive ideals are (0.4,0.4,0.4) and (0.6,0.6,0.6); both negative ideals are zero.')
-table(['Quantity for A', 'Criterion 1', 'Criterion 2', 'Sum'], [
-    ['Distance to positive', '0.2487301081', '0.2049390153', '0.4536691234'],
-    ['Distance to negative', '0.1728197520', '0.4312771731', '0.6040969250']])
-p('For example, the first positive distance is √[(0.32²+0.24²+0.16²)/3] = 0.2487301081. Thus C_A = 0.6040969250 / (0.4536691234+0.6040969250) = 0.5711063670. The automated check compares these independently calculated constants to the implementation. The demonstration calculation trace extends this audit trail to every baseline alternative and criterion.')
-h('Appendix B Reproduction and field handoff')
-p('Install requirements.txt in a Python 3.10+ environment. Run python src/run_project.py --demo and python -m unittest discover -s tests -v. For real data, complete a copy of data/raw_observation_template.csv and retain the count and audit forms. Run python src/run_project.py --input data/my_completed_observations.csv --output-dir results/field_run. Keep hypothetical and field outputs separate. The field prefix identifies the input mode, not independently certified data.')
-p('README.md documents all exports. docs/field_readiness.md lists evidence needed before field interpretation; docs/viva_guide.md explains the main modelling choices. The author should complete docs/contribution_log.csv with actual work history. Report regeneration additionally requires python-docx and uses scripts/build_report.py after regenerating the demo.')
+h("References")
+with (ROOT / "docs/source_register.csv").open(encoding="utf-8") as fh:
+    sources = {r["id"]: r for r in csv.DictReader(fh)}
+for n, key in enumerate(("S2", "S3", "S4", "S1", "S8", "S9", "S10", "S7", "S11"), 1):
+    r = sources[key]; p(f"[{n}] {r['full_reference']} {r['url']}")
+h("Appendix A. Complete synthetic five-criterion ranking")
+all_candidates = evaluation["all_candidates"]
+ranking_table = table(["Rank", "Alternative ID", "Score", "4-criterion rank", "Crisp rank"], [[r["rank"], r["alternative_id"], f(r["score"],6), r["base_rank"], r["crisp_rank"]] for r in all_candidates])
+ranking_table.autofit = False
+for column, width in zip(ranking_table.columns, (0.5, 2.15, 1.15, 1.4, 1.4)):
+    column.width = Inches(width)
+for row in ranking_table.rows:
+    for cell, width in zip(row.cells, (0.5, 2.15, 1.15, 1.4, 1.4)):
+        cell.width = Inches(width)
+h("Appendix B. Worked five-criterion calculation")
+w = evaluation["worked_example"]
+p(f"Alternative {w['alternative_id']}: raw and normalized triples, equal weight, weighted triple, and criterion-level vertex distances are shown below. Distances sum across criteria; C = D−/(D+ + D−).")
+table(["Criterion", "Raw (l,c,u)", "Normalized", "Weight", "Weighted", "d+", "d−"], [[
+    c["criterion"], str([round(float(v),4) for v in c["raw"]]), str([round(float(v),4) for v in c["normalized"]]),
+    f(c["weight"],3), str([round(float(v),4) for v in c["weighted"]]), f(c["distance_positive"],6), f(c["distance_negative"],6)
+] for c in w["criteria"]])
+p(f"Totals: D+={f(w['distance_positive'],8)}, D−={f(w['distance_negative'],8)}, C={f(w['score'],8)}.")
+p("For the demand criterion, shared bounds are 1 and 5: (3,4,5) becomes (0.5,0.75,1), then weight 0.2 gives (0.1,0.15,0.2). Its positive-ideal distance is √[((0.1−0.2)²+(0.15−0.2)²+(0.2−0.2)²)/3] = 0.06454972. Repeating for each criterion and summing gives the totals above; 0.76370815/(0.35295551+0.76370815) = 0.68391959. These calculations explain a synthetic result, not measured safety.")
+h("Appendix C. Separate four-alternative teaching illustration")
+p("The original hypothetical_demo.csv is a separate small teaching illustration; its invented rows are not part of the 28-candidate map-informed experiment. Its rankings are regenerated by the original demo pipeline and kept distinct.")
+table(["ID", "4-criterion score", "4-criterion rank", "Crisp rank", "5-criterion score", "5-criterion rank"], [[
+    r["alternative_id"], f(r["base_score"],6), r["base_rank"], r["crisp_rank"],
+    f(r["extension_score"],6), r["extension_rank"]
+] for r in evaluation["old_demo"]])
+p("The four criteria are pedestrian demand, vehicle exposure, accessibility deficiency, and control/visibility deficiency; the five-criterion extension adds essential-destination access. Unlike the main 1–5 dataset, the original example uses invented hourly rates and 0–3 audit ratings, normalized within its own four rows. Raw triples remain in data/hypothetical_demo.csv. HYP-C moves from fourth to first after E1 is added, illustrating rank reversal; this does not validate the larger experiment. Scores from the two candidate sets are not directly comparable.")
+h("Appendix D. Reproduction")
+p("From the repository root, generate the map-informed synthetic CSV with python scripts/build_synthetic_dataset.py; run the synthetic-input CLI using the documented command in README.md and its dedicated synthetic output directory; then run python scripts/build_report.py. The report builder invokes scripts/evaluate_report.py and writes reports/evaluation/summary.json plus reports/report_figures/weight_top1_sensitivity.png. The four-row demo remains separately available through python src/run_project.py --demo. Do not use either synthetic dataset as field input. See reports/synthetic_data_methodology.md and data/source_inventory.csv for exact inputs, provenance, formulas, and limitations.")
 
-footer = section.footer.paragraphs[0]
+footer = sec.footer.paragraphs[0]
 footer.alignment = 2
-field = OxmlElement('w:fldSimple')
-field.set(qn('w:instr'), 'PAGE')
-footer._p.append(field)
-doc.core_properties.title = 'Fuzzy TOPSIS Pedestrian Crossing Prioritisation'
-doc.core_properties.author = ''
-doc.save(ROOT / 'P20_Fuzzy_TOPSIS_Report.docx')
+field = OxmlElement("w:fldSimple"); field.set(qn("w:instr"), "PAGE"); footer._p.append(field)
+doc.core_properties.title = title
+doc.core_properties.author = ""
+doc.save(ROOT / "P20_Fuzzy_TOPSIS_Report.docx")

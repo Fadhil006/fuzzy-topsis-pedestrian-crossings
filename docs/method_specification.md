@@ -23,6 +23,12 @@ below. All arithmetic and provisional equal weights remain the same. See
 `reports/synthetic_data_methodology.md` for the evidence, ordinal equal-spacing
 assumption, correlated proxies, candidate selection, confidence widths and limits.
 
+For the completed report, `scripts/evaluate_report.py` reuses the same model and
+sensitivity helpers for all five criteria. Its artifacts in `reports/evaluation/`
+are separate from the original CLI's four-criterion diagnostics and include a
+five-criterion worked trace, seeded weight runs and three width scenarios. The
+old four-row hypothetical example remains a separate decision matrix.
+
 ## Evaluation and trace exports
 
 Uncertainty scenarios use x(alpha) = c + alpha * (x-c), with alpha in {0, 0.5, 1}, and refit observed bounds in each scenario. These contractions are hypothetical stress tests, not evidence-derived replacement measurements. They change both width and scaling. The alpha=0 case equals the crisp equal-weight baseline when central criteria discriminate: vertex distances reduce to absolute distances and the total denominator is one.

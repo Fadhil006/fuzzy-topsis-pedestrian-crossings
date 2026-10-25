@@ -4,3 +4,9 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 results/field_run/
+graphify-out/
+~$*.docx
+.~lock.*#
+/Guidance to submit*.docx
+/Guidance to submit*.pdf
+/results/hypothetical_report_sensitivity.png

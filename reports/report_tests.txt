@@ -1,0 +1,31 @@
+test_existing_field_cli_with_synthetic_field_shaped_fixture (test_dataset_generation.DatasetGenerationChecks.test_existing_field_cli_with_synthetic_field_shaped_fixture) ... ok
+test_explicit_mapped_absence_and_legacy_zebra_tag_are_not_ignored (test_dataset_generation.DatasetGenerationChecks.test_explicit_mapped_absence_and_legacy_zebra_tag_are_not_ignored) ... ok
+test_full_dataset_loads_and_all_five_criterion_scores_reconstruct (test_dataset_generation.DatasetGenerationChecks.test_full_dataset_loads_and_all_five_criterion_scores_reconstruct) ... ok
+test_identical_snapshot_seed_reproduces_committed_csv (test_dataset_generation.DatasetGenerationChecks.test_identical_snapshot_seed_reproduces_committed_csv) ... ok
+test_missing_osm_tags_do_not_imply_accessibility_absence (test_dataset_generation.DatasetGenerationChecks.test_missing_osm_tags_do_not_imply_accessibility_absence) ... ok
+test_raw_geometry_candidate_membership_and_bounds (test_dataset_generation.DatasetGenerationChecks.test_raw_geometry_candidate_membership_and_bounds) ... ok
+test_benefit_and_cost_orientation (test_model.ModelChecks.test_benefit_and_cost_orientation) ... ok
+test_complete_demo_pipeline_and_field_validation (test_model.ModelChecks.test_complete_demo_pipeline_and_field_validation) ... ok
+test_constant_column_cannot_change_ranking_or_scores (test_model.ModelChecks.test_constant_column_cannot_change_ranking_or_scores) ... ok
+test_identifiers_are_trimmed_before_duplicate_check (test_model.ModelChecks.test_identifiers_are_trimmed_before_duplicate_check) ... ok
+test_independently_calculated_two_criterion_case (test_model.ModelChecks.test_independently_calculated_two_criterion_case) ... ok
+test_invalid_and_non_discriminating_input (test_model.ModelChecks.test_invalid_and_non_discriminating_input) ... ok
+test_large_finite_weights_remain_normalized (test_model.ModelChecks.test_large_finite_weights_remain_normalized) ... ok
+test_uncertainty_scenarios_and_distance_trace (test_model.ModelChecks.test_uncertainty_scenarios_and_distance_trace) ... ok
+test_original_title_and_main_and_teaching_datasets_are_present (test_report_document.ReportDocumentChecks.test_original_title_and_main_and_teaching_datasets_are_present) ... ok
+test_summary_and_quoted_results_match_current_input (test_report_document.ReportDocumentChecks.test_summary_and_quoted_results_match_current_input) ... ok
+test_generated_contract_trace_and_reproducibility (test_report_evaluation.ReportEvaluationTests.test_generated_contract_trace_and_reproducibility) ... ok
+test_extracted_district_csvs_match_actual_embedded_chart_values (test_source_fetching.SourcePreservationChecks.test_extracted_district_csvs_match_actual_embedded_chart_values) ... ok
+test_failed_refresh_preserves_success_and_records_actual_attempt (test_source_fetching.SourcePreservationChecks.test_failed_refresh_preserves_success_and_records_actual_attempt) ... Overpass failure https://example.invalid/api: <urlopen error offline test>
+ok
+test_incomplete_http_success_cannot_replace_snapshot (test_source_fetching.SourcePreservationChecks.test_incomplete_http_success_cannot_replace_snapshot) ... Overpass failure https://example.invalid/api: Overpass response is empty or incomplete
+ok
+test_preserved_inventory_checksums_and_pdf_content (test_source_fetching.SourcePreservationChecks.test_preserved_inventory_checksums_and_pdf_content) ... ok
+test_cli_exports_five_criterion_labeled_ranking (test_synthetic_pipeline.SyntheticPipelineChecks.test_cli_exports_five_criterion_labeled_ranking) ... ok
+test_duplicates_missing_score_and_field_mode_are_rejected (test_synthetic_pipeline.SyntheticPipelineChecks.test_duplicates_missing_score_and_field_mode_are_rejected) ... ok
+test_validation_rejects_bad_ranges_scores_coordinates_and_provenance (test_synthetic_pipeline.SyntheticPipelineChecks.test_validation_rejects_bad_ranges_scores_coordinates_and_provenance) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 3.700s
+
+OK

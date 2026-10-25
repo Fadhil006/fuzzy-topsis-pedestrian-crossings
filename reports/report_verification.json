@@ -1,0 +1,51 @@
+{
+  "verified_at_utc": "2026-10-24T14:03:08.788827+00:00",
+  "title": "A Fuzzy TOPSIS Framework for Prioritising Pedestrian Crossing Safety and Accessibility Improvements",
+  "main_text_pages": 5,
+  "references_start_page": 6,
+  "total_pdf_pages": 7,
+  "main_synthetic_candidates": 28,
+  "separate_teaching_alternatives": 4,
+  "input_sha256": "e767e2a8a3a878717872d37a7c09ad670525dea1253a480b29f874154da8c63a",
+  "weight_draws": 1000,
+  "sensitivity_seed": 20261009,
+  "source_data_seed": 20261024,
+  "tests": {
+    "passed": 24,
+    "log": "reports/report_tests.txt",
+    "command": ".venv/bin/python -m unittest discover -s tests -v"
+  },
+  "checks": {
+    "original_title_retained": true,
+    "all_28_candidate_ids_in_docx_and_pdf": true,
+    "old_four_row_example_not_pooled": true,
+    "five_criterion_report_evaluation": true,
+    "all_report_evaluation_files_identical_in_second_1000_draw_run": true,
+    "worked_calculation_reconstructs_primary_result": true,
+    "related_papers_and_source_citations_present": true,
+    "docx_pdf_content_and_page_boundaries_checked": true,
+    "rendered_pages_visually_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "independent_content_review_no_blockers": true
+  },
+  "artifact_sha256": {
+    "P20_Fuzzy_TOPSIS_Report.docx": "f51124ee355850dd1144a00f2c22aa1de6f0efab6a398b11dcfaae56d2bfa285",
+    "P20_Fuzzy_TOPSIS_Report.pdf": "e3960cff13e5ff4ef1d129fcf3a27ac670d77efda276c613fe4bf20317012bd7",
+    "scripts/build_report.py": "41dc1a54101d89bbad5eec74abbbc1308d875efe328be5b28a0442e691add5f5",
+    "scripts/evaluate_report.py": "04cf0275fda7e8d4759fa5d06ef171dde768f42ca091ac5f6327e75bd0c220ab",
+    "docs/source_register.csv": "0ba86fde4650356ad9a0654be23a842c5c01822d7b8b04e0728a855b1b73ef65",
+    "reports/evaluation/summary.json": "462116d47524c58ff7df604eea13fa3caf21af9b797395515303907896625e26",
+    "reports/report_figures/weight_top1_sensitivity.png": "8c57f231fbbd7a1f3aacbb41ddf04466e4098bbb83c69805b055d6c0a9cae4f3"
+  },
+  "remaining_human_fields": [
+    "Team number, member names, department and institutional emails (intentional placeholders).",
+    "Actual individual contribution log."
+  ],
+  "scope_limit": "Public-source-informed synthetic study; no field observations, independent site validation or engineering approval claimed."
+}
